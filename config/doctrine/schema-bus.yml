@@ -1,0 +1,54 @@
+#Bus
+Bus:
+  tableName:                           t_bus
+  actAs:
+    SluggableExt:                      { fields: [ name ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                    }
+    code:                              { type: string   , length: 100                   , notnull: true                                          }#placa
+    mining_unit:                       { type: string   , length: 100                   , notnull: true                                          }    
+    padron:                            { type: string   , length: 100                   , notnull: true                                          }
+    company_id:                        { type: string   , length: 100                   , notnull: true                                          }
+    category_class:                    { type: string   , length: 100                   , notnull: true                                          }
+    brand:                             { type: string   , length: 100                   , notnull: true                                          }
+    model:                             { type: string   , length: 100                   , notnull: true                                          }
+    year_of_manufacture:               { type: string   , length: 100                   , notnull: true                                          }
+    fuel:                              { type: string   , length: 100                   , notnull: true                                          }
+    serial_number:                     { type: string   , length: 100                   , notnull: true                                          }
+    motor_number:                      { type: string   , length: 100                   , notnull: true                                          }
+    qty_seats:                         { type: string   , length: 100                   , notnull: true                                          }
+    body:                              { type: string   , length: 100                   , notnull: true                                          }
+    card_property_number:              { type: string   , length: 100                   , notnull: true                                          }
+    effective_soat_from:               { type: string   , length: 100                   , notnull: true                                          }
+    effective_soat_to:                 { type: string   , length: 100                   , notnull: true                                          }
+    policy_number:                     { type: string   , length: 100                   , notnull: true                                          }
+    effective_policy_from:             { type: string   , length: 100                   , notnull: true                                          }
+    effective_policy_to:               { type: string   , length: 100                   , notnull: true                                          }
+    effective_technical_review_from:   { type: string   , length: 100                   , notnull: true                                          }
+    effective_technical_review_to:     { type: string   , length: 100                   , notnull: true                                          }
+    circulation_card_number:           { type: string   , length: 100                   , notnull: true                                          }
+    effective_circulation_card_from:   { type: string   , length: 100                   , notnull: true                                          }
+    effective_circulation_card_to:     { type: string   , length: 100                   , notnull: true                                          }
+    vehiche_use:                       { type: string   , length: 100                   , notnull: true                                          }
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                             }
+  indexes:
+  relations:
+    Color:                             { class: Post        , local: bus_id   , foreign: color_id     , alias: Colors, refClass: BusColor        }
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]
+    
+    
+BusColor:
+  tableName:                           t_bus_color
+  actAs:
+    Timestampable:                     { updated: { disabled: true } }
+  columns:
+    bus_id:                           { type: integer  , length: 20 , primary: true                                                               }
+    color_id:                         { type: integer  , length: 20 , primary: true                                                               }
+  relations:
+    Bus:                              { class: Bus   , local: bus_id   , foreign: id, type: one , alias: Bus   , onDelete: CASCADE , onUpdate: CASCADE }
+    Color:                            { class: Color , local: color_id , foreign: id, type: one , alias: Color , onDelete: CASCADE , onUpdate: CASCADE }
+  options:
+    symfony:                           { filter: false, form: false }    

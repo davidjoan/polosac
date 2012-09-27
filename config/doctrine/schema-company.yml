@@ -1,0 +1,15 @@
+Company:
+  tableName:                           t_company
+  actAs:
+    SluggableExt:                      { fields: [ name ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                    }
+    names:                             { type: string   , length: 100                   , notnull: true                                          }    
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                             }
+  indexes:
+    u_name:                            { fields: [ name ]                               , type: unique                                           }
+  relations:
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]        
