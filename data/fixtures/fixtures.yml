@@ -1,3 +1,54 @@
+Company:    
+  Company_1:
+    name: AMERIKA FINANCIERA
+  Company_2:
+    name: INVERSIONES Y REPRESENTACIONES POLO SAC
+
+
+Bus:
+  Bus_1:
+    Company: Company_1
+    code:    'A4G-967'
+    mining_unit: 'ISCAYCRUZ EXTERNO'
+    padron:      167
+    category_class: 'M3 - OMNIBUS'
+    brand:               'MERCEDES BENZ'
+    model:               'OF 1721/59'
+    year_of_manufacture:  '2010'
+    fuel:                 'DIESEL'
+    serial_number:        '9BM84075BB729577'
+    motor_number:         '377989U0890784'
+    qty_seats:            '44'
+    body:                 'OMNIBUS INTERURBANO'
+    card_property_number: '275421'
+    policy_number:        '2101-205669'
+    circulation_card_number: '15P11007698-01'
+    vehicle_use:              'TRANSPORTE DE PERSONAL'
+    
+    
+Crew:    
+  Crew_1:
+    Bus:             Bus_1
+    name:            'CAMARGO PEÑA EDGAR'
+    dni:             '20050908'
+    driver_license:  'Q - 20050908'
+    position:        1
+    phone:           976332516
+  Crew_2:
+    Bus:             Bus_1
+    name:            'GAMARRA SOTO LUIS HERMOGENES'
+    dni:             '41729173'
+    driver_license:  'Q - 41729173'
+    position:        2
+    phone:           964913116
+  Crew_3:
+    Bus:             Bus_1
+    name:            'ELI DAVILA VILLENA'
+    dni:             '47532260'
+    driver_license:  ''
+    position:        3
+    phone:           949846653    
+
 Color:
   Color_1:
     name: Rojo
@@ -6,11 +57,6 @@ Color:
   Color_3:
     name: Plata  
     
-Company:    
-  Company_1:
-    name: AMERIKA FINANCIERA
-  Company_2:
-    name: INVERSIONES Y REPRESENTACIONES POLO SAC
 
 User:
   User_1:

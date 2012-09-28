@@ -7,29 +7,29 @@
                 (
                   'title'       => 'Inicio', 
                   'uri'         => '@home',
-                  'image'       => 'backend/menu/home.gif',
+                  'image'       => 'backend/menu/user.gif',
                 ))
           ?>       
-          <?php /*include_partial('General/tab', array
+          <?php include_partial('General/tab', array
                 (
-                  'title'       => 'Info & Banner', 
-                  'uri'         => '@company_list',
+                  'title'       => 'Tripulación', 
+                  'uri'         => '@crew_list',
                   'image'       => 'backend/menu/marketing.gif',
-                ))*/
+                ))
           ?>
-          <?php /*include_partial('General/tab', array
+          <?php include_partial('General/tab', array
                 (
-                  'title'       => 'Menu', 
-                  'uri'         => '@menu_list',
+                  'title'       => 'Buses', 
+                  'uri'         => '@bus_list',
                   'image'       => 'backend/menu/marketing.gif',
-                ))*/
+                ))
           ?>            
-          <?php /*include_partial('General/tab', array
+          <?php include_partial('General/tab', array
                 (
-                  'title'       => 'Artículos', 
-                  'uri'         => '@post_list',
+                  'title'       => 'Propietarios', 
+                  'uri'         => '@company_list',
                   'image'       => 'backend/menu/campaigns.gif',
-                ))*/
+                ))
           ?>
           <?php /*include_partial('General/tab', array
                 (

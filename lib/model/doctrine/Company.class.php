@@ -12,4 +12,9 @@
  */
 class Company extends BaseCompany
 {
+  public function getActiveStr()
+  {  	
+  	$actives = $this->getTable()->getStatuss();
+  	return $actives[$this->getActive()];
+  }    
 }

@@ -12,4 +12,14 @@
  */
 class Crew extends BaseCrew
 {
+  public function getPositionStr()
+  {  	
+  	$positions = $this->getTable()->getPositions();
+  	return $positions[$this->getPosition()];
+  }
+  
+  public function getBusCode()
+  {
+      return $this->getBus()->getCode();
+  }
 }

@@ -2,7 +2,7 @@
 Bus:
   tableName:                           t_bus
   actAs:
-    SluggableExt:                      { fields: [ name ] }
+    SluggableExt:                      { fields: [ code ] }
     Timestampable:
   columns:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                    }
@@ -30,7 +30,7 @@ Bus:
     circulation_card_number:           { type: string   , length: 100                   , notnull: true                                          }
     effective_circulation_card_from:   { type: string   , length: 100                   , notnull: true                                          }
     effective_circulation_card_to:     { type: string   , length: 100                   , notnull: true                                          }
-    vehiche_use:                       { type: string   , length: 100                   , notnull: true                                          }
+    vehicle_use:                       { type: string   , length: 100                   , notnull: true                                          }
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                             }
   indexes:
   relations:

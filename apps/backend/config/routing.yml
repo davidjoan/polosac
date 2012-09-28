@@ -1,10 +1,98 @@
+##########################
+####### Company ##########
+##########################
+
+#Company
+company_show:
+  url:             /mostrar/empresa/:slug
+  param:           { module: Company, action: show }
+  requirements:    { slug: \w+ }
+
+company_list:
+  url:             /lista/empresas/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Company, action: list, filter_by: id, filter: 0, order_by: name, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+company_new:
+  url:             /nueva/empresa
+  param:           { module: Company, action: edit }
+
+company_edit:
+  url:             /editar/empresa/:slug
+  param:           { module: Company, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+company_delete:
+  url:             /eliminar/empresa/:slug
+  param:           { module: Company, action: delete }
+  requirements:    { slug: '[\w-,]+' }
   
+
+###########################
+########## Bus ############
+###########################
+
+#Bus
+bus_show:
+  url:             /mostrar/bus/:slug
+  param:           { module: Bus, action: show }
+  requirements:    { slug: \w+ }
+
+bus_list:
+  url:             /lista/buses/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Bus, action: list, filter_by: id, filter: 0, order_by: code, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+bus_new:
+  url:             /nuevo/bus
+  param:           { module: Bus, action: edit }
+
+bus_edit:
+  url:             /editar/bus/:slug
+  param:           { module: Bus, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+bus_delete:
+  url:             /eliminar/bus/:slug
+  param:           { module: Bus, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+  
+  
+  
+############################
+########## Crew ############
+############################
+
+#Crew
+crew_show:
+  url:             /mostrar/tripulacion/:slug
+  param:           { module: Crew, action: show }
+  requirements:    { slug: \w+ }
+
+crew_list:
+  url:             /lista/tripulacion/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Crew, action: list, filter_by: id, filter: 0, order_by: id, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+crew_new:
+  url:             /nuevo/tripulacion
+  param:           { module: Crew, action: edit }
+
+crew_edit:
+  url:             /editar/tripulacion/:slug
+  param:           { module: Crew, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+crew_delete:
+  url:             /eliminar/tripulacion/:slug
+  param:           { module: Crew, action: delete }
+  requirements:    { slug: '[\w-,]+' }
   
 ############################
 ########## User ############
 ############################
 
-#Document
+#User
 user_show:
   url:             /mostrar/usuario/:slug
   param:           { module: User, action: show }

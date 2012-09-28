@@ -12,4 +12,8 @@
  */
 class Bus extends BaseBus
 {
+  public function __toString()
+  {
+      return $this->getCode();
+  }
 }
