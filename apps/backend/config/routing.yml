@@ -1,16 +1,102 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/10-Routing
+  
+  
+############################
+########## User ############
+############################
 
-# default rules
-homepage:
-  url:   /
-  param: { module: default, action: index }
+#Document
+user_show:
+  url:             /mostrar/usuario/:slug
+  param:           { module: User, action: show }
+  requirements:    { slug: \w+ }
 
-# generic rules
-# please, remove them by adding more specific rules
-default_index:
-  url:   /:module
-  param: { action: index }
+user_list:
+  url:             /lista/usuarios/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: User, action: list, filter_by: id, filter: 0, order_by: id, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
 
-default:
-  url:   /:module/:action/*
+user_new:
+  url:             /nuevo/usuario
+  param:           { module: User, action: edit }
+
+user_edit:
+  url:             /editar/usuario/:slug
+  param:           { module: User, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+user_delete:
+  url:             /eliminar/usuario/:slug
+  param:           { module: User, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+  
+###########################
+######### Log #############
+###########################
+
+#Log
+log_login:
+  url:             /
+  param:           { module: Log, action: login }
+  
+log_logout:
+  url:             /logout
+  param:           { module: Log, action: logout }
+
+
+
+
+
+###########################
+######### General #########
+###########################
+
+#default
+default_disabled:
+  url:             /default/disabled
+  param:           { module: default, action: disabled }
+
+default_error404:
+  url:             /default/error404
+  param:           { module: default, action: error404 }
+
+default_login:
+  url:             /default/login
+  param:           { module: default, action: login }
+
+default_secure:
+  url:             /default/secure
+  param:           { module: default, action: secure }
+
+
+
+#Error
+error_delete_error:
+  url:             /error/delete_error
+  param:           { module: Error, action: deleteError }
+
+
+
+#Generic
+generic_get_attribute_value:
+  url:             /generic/get_attribute_value
+  param:           { module: Generic, action: getAttributeValue }
+
+generic_add_dynamic_form:
+  url:             /generic/add_dynamic_form
+  param:           { module: Generic, action: addDynamicForm }
+
+generic_remove_dynamic_form:
+  url:             /generic/remove_dynamic_form
+  param:           { module: Generic, action: removeDynamicForm }
+
+
+
+#Home
+home:
+  url:             /inicio
+  param:           { module: Home, action: show }
+  
+##############################
+######### Default ############
+##############################
+

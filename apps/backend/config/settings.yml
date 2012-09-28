@@ -1,9 +1,6 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/04-Settings
-
 prod:
   .settings:
-    no_script_name:         true
+    no_script_name:         false
     logging_enabled:        false
 
 dev:
@@ -24,12 +21,15 @@ test:
 
 all:
   .settings:
-    # Form security secret (CSRF protection)
-    csrf_secret:            f63e973909fec900fedcae379f0fc71cf0d44958
+    csrf_secret:            symfony_rules
 
-    # Output escaping settings
-    escaping_strategy:      true
+    escaping_strategy:      false
     escaping_method:        ESC_SPECIALCHARS
 
-    # Enable the database manager
+    standard_helpers:       [ Cache, JavascriptBase, Partial, FormExt, Toolkit, UrlExt ]#, I18N
+    enabled_modules:        [ Crud, Error, Generic, Pager] #, sfDependentSelectAuto, sfMediaBrowser
+    i18n:                   true
     use_database:           true
+    
+    default_culture:        es
+    

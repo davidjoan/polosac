@@ -1,20 +1,25 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/13-View
-
 default:
   http_metas:
     content-type: text/html
 
   metas:
-    #title:        symfony project
-    #description:  symfony project
-    #keywords:     symfony, project
-    #language:     en
-    #robots:       index, follow
+    title:         Administrador POLO S.A.C.
+    description:   polosac, Site Admin
+    keywords:      polosac, Site, Admin
+    language:      es
+    robots:        index, follow
 
-  stylesheets:    [main.css]
-
-  javascripts:    []
+  stylesheets:
+    - general/main.css:                 { position: first }
+    - backend/general.css:              { position: first }
+    - backend/button.css:               { position: first }
+    - general/jquery-ui-1.8.custom.css: { position: first }
+    
+  javascripts:
+    - jquery/jquery-1.4.2.min.js
+    - jquery/jquery-ui-1.8.min.js
+    - general/general.js
+    - jquery/i18n/jquery-ui-i18n.js
 
   has_layout:     true
   layout:         layout

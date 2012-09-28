@@ -1,16 +1,16 @@
 Color:
-  tableName:                           t_color
+  tableName:           t_color
   actAs:
-    SluggableExt:                      { fields: [ name ] }
+    SluggableExt:      { fields: [ name ] }
     Timestampable:
   columns:
-    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                }
-    name:                             { type: string   , length: 100                   , notnull: true                                      }    
-    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                         }
+    id:                { type: integer  , length: 20 , primary: true    , autoincrement: true                           }
+    name:              { type: string   , length: 100                   , notnull: true                                 }
+    active:            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                    }
   indexes:
-    u_name:                            { fields: [ name ]                               , type: unique                                       }
+    u_name:            { fields: [ name ]                               , type: unique                                  }
   relations:
-    Bus:                               { class: Bus        , local: color_id   , foreign: bus_id     , alias: Buses, refClass: BusColor     }
+    Bus:               { class: Bus        , local: color_id   , foreign: bus_id     , alias: Buses, refClass: BusColor }
   options:
-    symfony:                           { filter: false, form: true }
-    boolean_columns:                   [ active ]        
+    symfony:           { filter: false, form: true }
+    boolean_columns:   [active]

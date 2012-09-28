@@ -1,17 +1,63 @@
-# # Populate this file with data to be loaded by your ORM's *:data-load task.
-# # You can create multiple files in this directory (i.e. 010_users.yml,
-# # 020_articles.yml, etc) which will be loaded in alphabetical order.
-# # 
-# # See documentation for your ORM's *:data-load task for more information.
-# 
-# User:
-#   fabien:
-#     username: fabien
-#     password: changeme
-#     name:     Fabien Potencier
-#     email:    fabien.potencier@symfony-project.com
-#   kris:
-#     username: Kris.Wallsmith
-#     password: changeme
-#     name:     Kris Wallsmith
-#     email:    kris.wallsmith@symfony-project.com
+Color:
+  Color_1:
+    name: Rojo
+  Color_2:
+    name: Dorado
+  Color_3:
+    name: Plata  
+    
+Company:    
+  Company_1:
+    name: AMERIKA FINANCIERA
+  Company_2:
+    name: INVERSIONES Y REPRESENTACIONES POLO SAC
+
+User:
+  User_1:
+    realname: 'David Tataje'
+    username: admin
+    password: 1234
+    email: davidtataje@gmail.com
+    url: www.polosac.com
+    phone: null
+    active: '1'
+    last_access_at: '2010-08-30 13:11:32'
+    slug: david
+    created_at: '2010-05-02 01:39:30'
+    updated_at: '2010-08-30 13:11:32'
+Visit:
+  Visit_1:
+    remote_address: 190.43.32.112
+    remote_port: '10992'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 13:20:00'
+    created_at: '2010-05-23 13:20:00'
+    updated_at: '2010-05-23 13:20:00'
+  Visit_2:
+    remote_address: 190.43.32.112
+    remote_port: '11000'
+    http_user_agent: 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9'
+    datetime: '2010-05-23 13:20:44'
+    created_at: '2010-05-23 13:20:44'
+    updated_at: '2010-05-23 13:20:44'
+  Visit_3:
+    remote_address: 190.43.32.112
+    remote_port: '11042'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; GTB6.4; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; OfficeLiveConnector.1.3; OfficeLi'
+    datetime: '2010-05-23 13:21:33'
+    created_at: '2010-05-23 13:21:33'
+    updated_at: '2010-05-23 13:21:33'
+  Visit_4:
+    remote_address: 190.43.32.112
+    remote_port: '11049'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; GTB6.4; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; OfficeLiveConnector.1.3; OfficeLivePatch.0.0)'
+    datetime: '2010-05-23 13:24:13'
+    created_at: '2010-05-23 13:24:13'
+    updated_at: '2010-05-23 13:24:13'
+  Visit_5:
+    remote_address: 190.43.32.112
+    remote_port: '11105'
+    http_user_agent: 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; GTB6.4; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; OfficeLiveConnector.1.3; OfficeLivePatch.0.0)'
+    datetime: '2010-05-23 13:27:33'
+    created_at: '2010-05-23 13:27:33'
+    updated_at: '2010-05-23 13:27:33'

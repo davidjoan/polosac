@@ -6,10 +6,10 @@ Bus:
     Timestampable:
   columns:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                    }
+    company_id:                        { type: integer  , length: 20                    , notnull: true                                          }
     code:                              { type: string   , length: 100                   , notnull: true                                          }#placa
     mining_unit:                       { type: string   , length: 100                   , notnull: true                                          }    
     padron:                            { type: string   , length: 100                   , notnull: true                                          }
-    company_id:                        { type: string   , length: 100                   , notnull: true                                          }
     category_class:                    { type: string   , length: 100                   , notnull: true                                          }
     brand:                             { type: string   , length: 100                   , notnull: true                                          }
     model:                             { type: string   , length: 100                   , notnull: true                                          }
@@ -34,7 +34,8 @@ Bus:
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                             }
   indexes:
   relations:
-    Color:                             { class: Post        , local: bus_id   , foreign: color_id     , alias: Colors, refClass: BusColor        }
+    Company:                           { class: Company , local: company_id , foreign: id , type: one , alias: Company , onDelete: RESTRICT, onUpdate: CASCADE }
+    Color:                             { class: Color   , local: bus_id     , foreign: color_id , alias: Colors, refClass: BusColor        }
   options:
     symfony:                           { filter: false, form: true }
     boolean_columns:                   [ active ]

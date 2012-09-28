@@ -7,7 +7,7 @@ Crew:
   columns:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                    }
     bus_id:                            { type: integer  , length: 20 , primary: true                                                             }
-    names:                             { type: string   , length: 100                   , notnull: true                                          }    
+    name:                              { type: string   , length: 100                   , notnull: true                                          }    
     dni:                               { type: string   , length: 8                     , notnull: true                                          }
     driver_license:                    { type: string   , length: 20                    , notnull: true                                          }
     position:                          { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                             }    
