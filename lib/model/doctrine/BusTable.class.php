@@ -16,4 +16,36 @@ class BusTable extends DoctrineTable
     {
         return Doctrine_Core::getTable('Bus');
     }
+    
+  const
+    FUEL_DISEL       = 1,
+    FUEL_GNV       = 2,
+    FUEL_GLP       = 3,
+    STATUS_ACTIVE       = 1,
+    STATUS_INACTIVE     = 0;
+
+    
+  protected static
+    $status        = array
+                   (
+                     self::STATUS_ACTIVE     => 'Si',
+                     self::STATUS_INACTIVE   => 'No',
+                   );
+  protected static
+    $fuel        = array
+                   (
+                     self::FUEL_DISEL     => 'Diesel',
+                     self::FUEL_GNV   => 'GNV',
+                     self::FUEL_GLP   => 'GLP',
+                   );
+                             
+  public function getStatuss()
+  {
+    return self::$status;
+  } 
+  
+  public function getFuel()
+  {
+    return self::$fuel;
+  }  
 }

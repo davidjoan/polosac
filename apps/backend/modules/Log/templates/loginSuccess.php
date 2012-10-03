@@ -1,4 +1,4 @@
-<h1>Bienvenidos al Administrador de Contenidos</h1>
+<h1>Bienvenidos al Administrador de Servicios EXternos</h1>
 <hr/>
 <br/><br/>
 <?php //echo kcCrypt::encrypt('1234') ?>
@@ -12,3 +12,4 @@
         'with_title'    => false
       ))
 ?>
+

@@ -15,7 +15,7 @@ Bus:
     brand:               'MERCEDES BENZ'
     model:               'OF 1721/59'
     year_of_manufacture:  '2010'
-    fuel:                 'DIESEL'
+    fuel:                 '1'
     serial_number:        '9BM84075BB729577'
     motor_number:         '377989U0890784'
     qty_seats:            '44'
@@ -24,6 +24,7 @@ Bus:
     policy_number:        '2101-205669'
     circulation_card_number: '15P11007698-01'
     vehicle_use:              'TRANSPORTE DE PERSONAL'
+    Colors: [Color_1, Color_2, Color_3]
     
     
 Crew:    

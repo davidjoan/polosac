@@ -16,4 +16,10 @@ class Bus extends BaseBus
   {
       return $this->getCode();
   }
+  
+  public function getFuelStr()
+  {  	
+  	$fuel = $this->getTable()->getFuel();
+  	return $fuel[$this->getFuel()];
+  }  
 }
