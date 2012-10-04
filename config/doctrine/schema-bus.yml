@@ -20,17 +20,17 @@ Bus:
     qty_seats:                         { type: string   , length: 100                   , notnull: true                                          }
     body:                              { type: string   , length: 100                   , notnull: true                                          }
     card_property_number:              { type: string   , length: 100                   , notnull: true                                          }
-    effective_soat_from:               { type: string   , length: 100                   , notnull: true                                          }
-    effective_soat_to:                 { type: string   , length: 100                   , notnull: true                                          }
+    effective_soat_from:               { type: date }
+    effective_soat_to:                 { type: date }
     policy_number:                     { type: string   , length: 100                   , notnull: true                                          }
-    effective_policy_from:             { type: string   , length: 100                   , notnull: true                                          }
-    effective_policy_to:               { type: string   , length: 100                   , notnull: true                                          }
-    effective_technical_review_from:   { type: string   , length: 100                   , notnull: true                                          }
-    effective_technical_review_to:     { type: string   , length: 100                   , notnull: true                                          }
+    effective_policy_from:             { type: date }
+    effective_policy_to:               { type: date }
+    effective_technical_review_from:   { type: date }
+    effective_technical_review_to:     { type: date }
     circulation_card_number:           { type: string   , length: 100                   , notnull: true                                          }
-    effective_circulation_card_from:   { type: string   , length: 100                   , notnull: true                                          }
-    effective_circulation_card_to:     { type: string   , length: 100                   , notnull: true                                          }
-    vehicle_use:                       { type: string   , length: 100                   , notnull: true                                          }
+    effective_circulation_card_from:   { type: date }
+    effective_circulation_card_to:     { type: date }
+    vehicle_use:                       { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                             }
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                             }
   indexes:
   relations:

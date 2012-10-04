@@ -22,7 +22,8 @@ class BusTable extends DoctrineTable
     FUEL_GNV       = 2,
     FUEL_GLP       = 3,
     STATUS_ACTIVE       = 1,
-    STATUS_INACTIVE     = 0;
+    STATUS_INACTIVE     = 0,
+    USE_PERSONAL_TRANSPORT = 1;
 
     
   protected static
@@ -38,7 +39,13 @@ class BusTable extends DoctrineTable
                      self::FUEL_GNV   => 'GNV',
                      self::FUEL_GLP   => 'GLP',
                    );
-                             
+  
+  protected static
+    $use        = array
+                   (
+                     self::USE_PERSONAL_TRANSPORT     => 'Transporte Personal'
+                   );
+  
   public function getStatuss()
   {
     return self::$status;
@@ -47,5 +54,10 @@ class BusTable extends DoctrineTable
   public function getFuel()
   {
     return self::$fuel;
+  }
+  
+  public function getUse()
+  {
+    return self::$use;
   }  
 }

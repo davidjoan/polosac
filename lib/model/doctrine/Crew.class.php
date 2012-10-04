@@ -22,4 +22,15 @@ class Crew extends BaseCrew
   {
       return $this->getBus()->getCode();
   }
+  
+  public function getBusName()
+  {
+      return $this->getBus();
+  }
+  
+  public function getPositionName()
+  {  	
+  	$positions = $this->getTable()->getPositions();
+  	return $positions[$this->getPosition()];
+  }  
 }

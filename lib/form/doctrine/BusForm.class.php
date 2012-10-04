@@ -73,7 +73,61 @@ class BusForm extends BaseBusForm
       'colors_list'          => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Color')),
       'body'                 => new sfWidgetFormInputText(array(), array('size' => 40)),
       'card_property_number' => new sfWidgetFormInputText(array(), array('size' => 40)),
-      
+      'effective_soat_from'  => new sfWidgetFormDateExt(array
+                                (
+                                  'format' => $this->widgetFormatter->getStandardDateFormat(),
+                                  'year_start' => 2000,
+                                  'year_end' => date('Y'),
+                                )), 
+      'effective_soat_to'    => new sfWidgetFormDateExt(array
+                                (
+                                  'format' => $this->widgetFormatter->getStandardDateFormat(),
+                                  'year_start' => 2000,
+                                  'year_end' => date('Y')
+                                )),
+      'policy_number'          => new sfWidgetFormInputText(array(), array('size' => 40)),
+      'effective_policy_from'  => new sfWidgetFormDateExt(array
+                                (
+                                  'format' => $this->widgetFormatter->getStandardDateFormat(),
+                                  'year_start' => 2000,
+                                  'year_end' => date('Y'),
+                                )), 
+      'effective_policy_to'    => new sfWidgetFormDateExt(array
+                                (
+                                  'format' => $this->widgetFormatter->getStandardDateFormat(),
+                                  'year_start' => 2000,
+                                  'year_end' => date('Y')
+                                )),      
+      'effective_technical_review_from'  => new sfWidgetFormDateExt(array
+                                (
+                                  'format' => $this->widgetFormatter->getStandardDateFormat(),
+                                  'year_start' => 2000,
+                                  'year_end' => date('Y'),
+                                )), 
+      'effective_technical_review_to'    => new sfWidgetFormDateExt(array
+                                (
+                                  'format' => $this->widgetFormatter->getStandardDateFormat(),
+                                  'year_start' => 2000,
+                                  'year_end' => date('Y')
+                                )),
+      'circulation_card_number' => new sfWidgetFormInputText(array(), array('size' => 40)),
+      'effective_circulation_card_from'  => new sfWidgetFormDateExt(array
+                                (
+                                  'format' => $this->widgetFormatter->getStandardDateFormat(),
+                                  'year_start' => 2000,
+                                  'year_end' => date('Y'),
+                                )), 
+      'effective_circulation_card_to'    => new sfWidgetFormDateExt(array
+                                (
+                                  'format' => $this->widgetFormatter->getStandardDateFormat(),
+                                  'year_start' => 2000,
+                                  'year_end' => date('Y')
+                                )),
+      'vehicle_use'               => new sfWidgetFormChoice(array
+                                (
+                                  'choices'          => $this->getTable()->getUse(),
+                                  'expanded'         => false,
+                                )),
       'active'               => new sfWidgetFormChoice(array
                                 (
                                   'choices'          => $this->getTable()->getStatuss(),
@@ -81,6 +135,43 @@ class BusForm extends BaseBusForm
                                   'renderer_options' => array('formatter' => array($this->widgetFormatter, 'radioFormatter'))
                                 ))
       
-    ));       
+    ));  
+  
+  
+   $this->types = array
+    (  
+       
+      'id'                              => '=',
+      'company_id'                      => 'combo',
+      'code'                            => 'code',
+      'mining_unit'                     => 'name',
+      'padron'                          => 'code',
+      'category_class'                  => 'text',
+      'brand'                           => 'name',
+      'model'                           => 'text',
+      'year_of_manufacture'             => 'fixed_number',
+      'fuel'                            => array('combo', array('choices' => array_keys($this->getTable()->getFuel()))),
+      'serial_number'                   => 'text',
+      'motor_number'                    => 'text',
+      'qty_seats'                       => 'fixed_number',
+      'body'                            => 'name',
+      'card_property_number'            => 'text',
+      'effective_soat_from'             => 'date',
+      'effective_soat_to'               => 'date',
+      'policy_number'                   => 'text',
+      'effective_policy_from'           => 'date',
+      'effective_policy_to'             => 'date',
+      'effective_technical_review_from' => 'date',
+      'effective_technical_review_to'   => 'date',
+      'circulation_card_number'         => 'text',
+      'effective_circulation_card_from' => 'date',
+      'effective_circulation_card_to'   => 'date',
+      'vehicle_use'                     => array('combo', array('choices' => array_keys($this->getTable()->getUse()))),
+      'active'                          => array('combo', array('choices' => array_keys($this->getTable()->getStatuss()))),
+      'slug'                            => '-',
+      'created_at'                      => '-',
+      'updated_at'                      => '-',
+      'colors_list'                     => 'pass'
+    ); 
   }
 }

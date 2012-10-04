@@ -14,7 +14,7 @@ class Bus extends BaseBus
 {
   public function __toString()
   {
-      return $this->getCode();
+      return $this->getCode().' -- '.$this->getPadron();
   }
   
   public function getFuelStr()
@@ -22,4 +22,31 @@ class Bus extends BaseBus
   	$fuel = $this->getTable()->getFuel();
   	return $fuel[$this->getFuel()];
   }  
+  
+  
+  public function getFuelName()
+  {  	
+  	$fuel = $this->getTable()->getFuel();
+  	return $fuel[$this->getFuel()];
+  }   
+  
+  public function getColorName()
+  {  	
+  	$colors = $this->getColors();
+        
+        $result = '<li>';
+        foreach($colors as $color)
+            
+        {
+           $result.='<ul>'.$color->getName().'</ul>';
+        }
+        
+        return $result.'</li>';
+  }  
+  
+  public function getVehicleUseName()
+  {  	
+  	$fuel = $this->getTable()->getUse();
+  	return $fuel[$this->getVehicleUse()];
+  }   
 }

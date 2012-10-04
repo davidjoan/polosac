@@ -26,8 +26,8 @@ abstract class sfUserExt extends sfBasicSecurityUser
   {
     parent::initialize($dispatcher, $storage, $options);
     
-    $this->datetimeFormatter = new sfDateFormat($this->culture);
-    $this->numberFormatter   = new sfNumberFormat($this->culture);
+    $this->datetimeFormatter = new sfDateFormatExt($this->culture);
+    $this->numberFormatter   = new sfNumberFormatExt($this->culture);
   }
   
   /**
