@@ -3,12 +3,105 @@ Company:
     name: AMERIKA FINANCIERA
   Company_2:
     name: INVERSIONES Y REPRESENTACIONES POLO SAC
+  Company_3:
+    name: AESA
+  Company_4:
+    name: JRC
+  Company_5:
+    name: MULTICOSAILOR
+  Company_6:
+    name: GISER
+  Company_7:
+    name: TOWER & TOWER
+  Company_8:
+    name: EXPLOMIN
+  Company_9:
+    name: RENTING
+  Company_10:
+    name: SUBTERRANEA
+  Company_11:
+    name: UNICON
+  Company_12:
+    name: JYL COMPETITION
+  Company_13:
+    name: ETRASIG
+  Company_14:
+    name: T-IMPULSO
+  Company_15:
+    name: CMINSA
+  Company_16:
+    name: J&V RESGUARDO
+  Company_17:
+    name: EMQSA    
 
+Contact:
+  Contact_1:
+    Company: Company_3
+    name: Juan Carlos Vizcarra	
+    email: jvizcarra@aesa.com.pe
+  Contact_2:
+    Company: Company_4
+    name: José Carlos Fierro
+    email: jfierro@jrcing.com.pe
+  Contact_3:
+    Company: Company_5
+    name: Sonia Victorio	
+    email: bienestar.iscaycruz@multicosailor.com.pe
+  Contact_4:
+    Company: Company_6
+    name: Carla Bustamante	
+    email: gfeldmuth@geserperu.com
+  Contact_5:
+    Company: Company_8
+    name: Ernesto Ramírez	
+    email: iscaycruz@explomin.com
+  Contact_6:
+    Company: Company_2
+    name: Nélida López M.
+    email: eservasmina@polosac.pe
+  Contact_7:
+    Company: Company_9
+    name: Aurelio Del Carmen	
+    email: adelcarmen@rentingsac.com.pe
+  Contact_8:
+    Company: Company_3
+    name: Isabel Fernández	
+    email: subterranea@glencore.com.pe
+  Contact_9:
+    Company: Company_10
+    name: Diego Tincopa
+    email: unicon@glencore.com.pe
+  Contact_10:
+    Company: Company_12
+    name: Luis Peñarrieta	
+    email: jylcompetitionsrl@hotmail.com
+  Contact_11:
+    Company: Company_12
+    name: Odón Espiritú	
+    email: jpalpa@glencore.com.pe
+  Contact_12:
+    Company: Company_14
+    name: Mary Ferroa	
+    email: centrodocumentario@glencore.com.pe
+  Contact_13:
+    Company: Company_15
+    name: Francisco Gonzáles	
+    email: cminsa@gmail.com
+  Contact_14:
+    Company: Company_16
+    name: Edgar Durand 	
+    email: JLIscaycruz@glencore.com.pe
+  Contact_15:
+    Company: Company_17
+    name: Rodrigo Valencia Julio Carpio	
+    email: rvalencia@glencore.com.pe   
 
 Bus:
   Bus_1:
     Company: Company_1
     code:    'A4G-967'
+    name: 'Bus 1'
+    phone:           976332516
     mining_unit: 'ISCAYCRUZ EXTERNO'
     padron:      167
     category_class: 'M3 - OMNIBUS'

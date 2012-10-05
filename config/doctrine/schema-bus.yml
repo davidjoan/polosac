@@ -2,12 +2,14 @@
 Bus:
   tableName:                           t_bus
   actAs:
-    SluggableExt:                      { fields: [ code ] }
+    SluggableExt:                      { fields: [ name ] }
     Timestampable:
   columns:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                    }
     company_id:                        { type: integer  , length: 20                    , notnull: true                                          }
     code:                              { type: string   , length: 100                   , notnull: true                                          }#placa
+    name:                              { type: string   , length: 100                   , notnull: true                                          }#placa
+    phone:                             { type: string   , length: 100                   , notnull: false                                         }
     mining_unit:                       { type: string   , length: 100                   , notnull: true                                          }    
     padron:                            { type: string   , length: 100                   , notnull: true                                          }
     category_class:                    { type: string   , length: 100                   , notnull: true                                          }

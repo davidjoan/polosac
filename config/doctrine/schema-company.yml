@@ -11,6 +11,7 @@ Company:
     u_name:                            { fields: [ name ]                               , type: unique                }
   relations:
     Bus:                               { class: Bus , local: id , foreign: company_id, type: many, alias: Buses       }
+    Contact:                           { class: Contact , local: id , foreign: company_id, type: many, alias: Contacts}
   options:
     symfony:                           { filter: false, form: true }
     boolean_columns:                   [ active ]        

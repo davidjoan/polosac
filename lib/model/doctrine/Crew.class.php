@@ -20,7 +20,7 @@ class Crew extends BaseCrew
   
   public function getBusCode()
   {
-      return $this->getBus()->getCode();
+      return $this->getBus();
   }
   
   public function getBusName()

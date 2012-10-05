@@ -16,6 +16,8 @@ class BusForm extends BaseBusForm
     (
       'company_id'                      => 'Propietario',
       'code'                            => 'Placa',
+      'name'                            => 'Nombre',
+      'phone'                           => 'Teléfono',
       'mining_unit'                     => 'Unidad Minera',
       'padron'                          => 'Padrón',
       'category_class'                  => 'CategorÍa/Clase',
@@ -55,6 +57,8 @@ class BusForm extends BaseBusForm
                                     'add_empty' => '---Seleccionar---'
                                     )),
       'code'                 => new sfWidgetFormInputText(array(), array('size' => 10)),
+      'name'                 => new sfWidgetFormInputText(array(), array('size' => 20)),
+      'phone'                => new sfWidgetFormInputText(array(), array('size' => 20)),
       'mining_unit'          => new sfWidgetFormInputText(array(), array('size' => 40)),
       'padron'               => new sfWidgetFormInputText(array(), array('size' => 10)),
       'category_class'       => new sfWidgetFormInputText(array(), array('size' => 40)),
@@ -144,6 +148,8 @@ class BusForm extends BaseBusForm
       'id'                              => '=',
       'company_id'                      => 'combo',
       'code'                            => 'code',
+      'name'                            => 'text',
+      'phone'                           => 'phone',
       'mining_unit'                     => 'name',
       'padron'                          => 'code',
       'category_class'                  => 'text',

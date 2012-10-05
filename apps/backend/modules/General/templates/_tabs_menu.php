@@ -31,12 +31,12 @@
                   'image'       => 'backend/menu/campaigns.gif',
                 ))
           ?>
-          <?php /*include_partial('General/tab', array
+          <?php include_partial('General/tab', array
                 (
-                  'title'       => 'Categorias', 
-                  'uri'         => '@category_list',
-                  'image'       => 'backend/menu/campaigns.gif',
-                ))*/
+                  'title'       => 'Contactos', 
+                  'uri'         => '@contact_list',
+                  'image'       => 'backend/menu/user.gif',
+                ))
           ?>
           <?php /*include_partial('General/tab', array
                 (

@@ -14,7 +14,7 @@ class Bus extends BaseBus
 {
   public function __toString()
   {
-      return $this->getCode().' -- '.$this->getPadron();
+      return $this->getName().' - ('.$this->getCode().') - '.$this->getPadron();
   }
   
   public function getFuelStr()
