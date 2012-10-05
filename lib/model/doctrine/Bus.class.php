@@ -34,14 +34,14 @@ class Bus extends BaseBus
   {  	
   	$colors = $this->getColors();
         
-        $result = '<li>';
+        $result = '<ul>';
         foreach($colors as $color)
             
         {
-           $result.='<ul>'.$color->getName().'</ul>';
+           $result.='<li>'.$color->getName().'</li>';
         }
         
-        return $result.'</li>';
+        return $result.'</ul>';
   }  
   
   public function getVehicleUseName()

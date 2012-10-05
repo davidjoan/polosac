@@ -1,0 +1,40 @@
+Schedule:
+  tableName:                 t_schedule
+  actAs:
+    SluggableExt:            { fields: [ id ] }
+    Timestampable:
+  columns:
+    id:                      { type: integer  , length: 20 , primary: true    , autoincrement: true         }
+    bus_id:                  { type: integer  , length: 20                    , notnull: true               }
+    place_from_id:           { type: integer  , length: 20                    , notnull: true               }
+    place_to_id:             { type: integer  , length: 20                    , notnull: true               }
+    travel_date:             { type: date }
+    active:                  { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
+  indexes:
+  relations:
+    Bus:                     { class: Bus , local: bus_id , foreign: id , type: one  , alias: Bus , onDelete: RESTRICT, onUpdate: CASCADE }
+    PlaceFrom:               { class: Place , local: place_from_id , foreign: id , type: one ,alias: PlaceFrom , onDelete: RESTRICT, onUpdate: CASCADE }
+    PlaceTo:                 { class: Place , local: place_to_id   , foreign: id , type: one ,alias: PlaceTo , onDelete: RESTRICT, onUpdate: CASCADE }
+    ScheduleDetail:          { class: ScheduleDetail , local: id,   foreign: schedule_id   , type: many , alias: ScheduleDetails }
+  options:
+    symfony:                 { filter: false, form: true }
+    boolean_columns:         [ active ]
+    
+ScheduleDetail:
+  tableName:                 t_schedule_detail
+  actAs:
+    SluggableExt:            { fields: [ id ] }
+    Timestampable:
+  columns:
+    id:                      { type: integer  , length: 20 , primary: true    , autoincrement: true         }
+    schedule_id:             { type: integer  , length: 20                    , notnull: true               }
+    company_id:              { type: integer  , length: 20                    , notnull: true               }
+    qty_seats:               { type: string   , length: 100                   , notnull: true               }
+    active:                  { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
+  indexes:
+  relations:
+    Schedule:                { class: Schedule , local: schedule_id , foreign: id , type: one , alias: Schedule , onDelete: RESTRICT, onUpdate: CASCADE }
+    Company:                 { class: Company  , local: company_id  , foreign: id , type: one , alias: Company  , onDelete: RESTRICT, onUpdate: CASCADE }
+  options:
+    symfony:                 { filter: false, form: true }
+    boolean_columns:         [ active ]

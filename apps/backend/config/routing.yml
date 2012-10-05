@@ -1,3 +1,62 @@
+########################
+####### Schedule #######
+########################
+
+#Schedule
+schedule_show:
+  url:             /mostrar/programacion/:slug
+  param:           { module: Schedule, action: show }
+  requirements:    { slug: \w+ }
+
+schedule_list:
+  url:             /lista/programaciones/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Schedule, action: list, filter_by: id, filter: 0, order_by: id, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+schedule_new:
+  url:             /nueva/programacion
+  param:           { module: Schedule, action: edit }
+
+schedule_edit:
+  url:             /editar/programacion/:slug
+  param:           { module: Schedule, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+schedule_delete:
+  url:             /eliminar/programacion/:slug
+  param:           { module: Schedule, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+
+
+########################
+####### Place ##########
+########################
+
+#Place
+place_show:
+  url:             /mostrar/lugar/:slug
+  param:           { module: Place, action: show }
+  requirements:    { slug: \w+ }
+
+place_list:
+  url:             /lista/lugares/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Place, action: list, filter_by: id, filter: 0, order_by: name, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+place_new:
+  url:             /nuevo/lugar
+  param:           { module: Place, action: edit }
+
+place_edit:
+  url:             /editar/lugar/:slug
+  param:           { module: Place, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+place_delete:
+  url:             /eliminar/lugar/:slug
+  param:           { module: Place, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+
 ##########################
 ####### Contact ##########
 ##########################

@@ -1,3 +1,12 @@
+Place:
+  Place_1:
+    name: Lima
+  Place_2:
+    name: Casapalca
+  Place_3:
+    name: Pachapaqui    
+  Place_4:
+    name: Iscaycruz    
 Company:    
   Company_1:
     name: AMERIKA FINANCIERA
@@ -116,7 +125,7 @@ Bus:
     card_property_number: '275421'
     policy_number:        '2101-205669'
     circulation_card_number: '15P11007698-01'
-    vehicle_use:              'TRANSPORTE DE PERSONAL'
+    vehicle_use:              '1'
     Colors: [Color_1, Color_2, Color_3]
     
     

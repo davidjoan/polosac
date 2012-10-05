@@ -52,12 +52,12 @@
                   'image'       => 'backend/menu/campaigns.gif',
                 ))*/
           ?>            
-          <?php /*include_partial('General/tab', array
+          <?php include_partial('General/tab', array
                 (
-                  'title'       => 'Videos', 
-                  'uri'         => '@video_list',
+                  'title'       => 'Lugares', 
+                  'uri'         => '@place_list',
                   'image'       => 'backend/menu/campaigns.gif',
-                ))*/
+                ))
           ?>            
           <?php include_partial('General/tab', array
                 (
