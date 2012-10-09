@@ -31,4 +31,13 @@ class ScheduleTable extends DoctrineTable
   {
     return self::$status;
   } 
+  
+
+    
+  public function updateQueryForList(DoctrineQuery $q)
+  {
+    $q->innerJoin('s.Bus b');
+    $q->innerJoin('s.PlaceFrom pf');
+    $q->innerJoin('s.PlaceTo pt');
+  }
 }

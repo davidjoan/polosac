@@ -9,7 +9,7 @@
  * 
  * @package    symfext
  * @subpackage widget
- * @author     Jonathan Olger Nieto Lajo <jonathan_nieto@hotmail.com>
+ * @author     David Joan Tataje Mendoza <new.skin007@gmail.com>
  */
 class sfWidgetFormJQueryCompleter extends sfWidgetFormInputText
 {
@@ -73,7 +73,7 @@ class sfWidgetFormJQueryCompleter extends sfWidgetFormInputText
     
     return $this->renderTag('input', array('type' => 'hidden', 'name' => $name, 'value' => $value, 'disabled' => false)).
            parent::render('autocomplete_'.$name, $visibleValue, $attributes, $errors).
-           //$this->renderContentTag('img', null, array('src' => $this->getOption('loading_image'), 'name' => 'loading_image_'.$name, 'style' => 'display: none;')).
+           $this->renderContentTag('img', null, array('src' => $this->getOption('loading_image'), 'name' => 'loading_image_'.$name, 'style' => 'display: none;')).
            sprintf
            (
              <<<EOF

@@ -21,8 +21,7 @@
                                   'brand'        => 'Marca',
                                   'model'        => 'Modelo',
                                   'fuel'         => 'Combustible',
-                                  'motor_number' => 'N° Motor',
-                                  'vehicle_use'  => 'Uso de Vehiculo'
+                                  'motor_number' => 'N° Motor'
                                 ),
         'columns'            => array
                                 (
@@ -30,14 +29,14 @@
                                   array('10', 'company_id'     , 'Propietario'     , 'getCompanyName'   ),
                                   array('10', 'code'           , 'Placa'           , 'getCode'          ),
                                   array('10', 'mining_unit'    , 'Unidad Minera'   , 'getMiningUnit'    ),
-                                  array('10', 'padron'         , 'Padron'          , 'getPadron'        ),
+                                  array('6' , 'padron'         , 'Padron'          , 'getPadron'        ),
                                   array('10', 'category_class' , 'Categoria/Clase' , 'getCategoryClass' ),
                                   array('10', 'brand'          , 'Marca'           , 'getBrand'         ),
                                   array('10', 'model'          , 'Modelo'          , 'getModel'         ),
-                                  array('10', 'fuel'           , 'Combustible'     , 'getFuelName'   ),
+                                  array('8', 'fuel'            , 'Combustible'     , 'getFuelName'   ),
                                   array('10', 'serial_number'  , 'N° Serie'        , 'getSerialNumber'  ),
                                   array('10', 'motor_number'   , 'N° de Motor'     , 'getMotorNumber'   ),
-                                  array('10', 'vehicle_use'    , 'Use de vehiculo' , 'getVehicleUse'    ),
+                                  array('10', 'vehicle_use'    , 'Use de vehiculo' , 'getVehicleUseName'),
                                   array('6' , 'disable_image'  , 'Activo'          , 'getDisableImage', 'center', false),
                                   array('2' , ''               , ''                , 'checkbox'         ),
                                 )

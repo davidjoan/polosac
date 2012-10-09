@@ -47,4 +47,9 @@ class CrewTable extends DoctrineTable
   {
     return self::$positions;
   }
+  
+  public function updateQueryForList(DoctrineQuery $q)
+  {
+    $q->innerJoin('c.Bus b');
+  }
 }

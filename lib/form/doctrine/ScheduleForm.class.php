@@ -31,6 +31,7 @@ class ScheduleForm extends BaseScheduleForm
       'id'                   => new sfWidgetFormInputHidden(),
       'bus_id'               => new sfWidgetFormDoctrineChoice(array(
                                     'model'   => 'Bus',
+                                    'method'  => 'getBusNameForSChedule',
                                     'add_empty' => '---Seleccionar---'
                                     )),
       'place_from_id'        => new sfWidgetFormDoctrineChoice(array(

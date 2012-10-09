@@ -469,7 +469,7 @@ abstract class sfDoctrineRecordExt extends sfDoctrineRecord
   /**
    * Returns the complete directory of the field.
    *
-   * @example C:\wamp\www\polosac_1.0\web\uploads\category_images
+   * @example C:\wamp\www\flexiwik_1.0\web\uploads\category_images
    *
    * @param   string $field  The field name
    *
@@ -486,7 +486,7 @@ abstract class sfDoctrineRecordExt extends sfDoctrineRecord
   /**
    * Returns the complete path of the field directory.
    *
-   * @example /polosac_1.0/web/uploads/category_images
+   * @example /flexiwik_1.0/web/uploads/category_images
    *
    * @param  string $field  The field name
    *
@@ -503,7 +503,7 @@ abstract class sfDoctrineRecordExt extends sfDoctrineRecord
   /**
    * Returns the complete name of the file.
    *
-   * @example C:\wamp\www\polosac_1.0\web\uploads\category_images\example.jpg
+   * @example C:\wamp\www\flexiwik_1.0\web\uploads\category_images\example.jpg
    *
    * @param  string $field  The field name
    *
@@ -517,7 +517,7 @@ abstract class sfDoctrineRecordExt extends sfDoctrineRecord
   /**
    * Returns the complete path of the file.
    *
-   * @example /polosac_1.0/web/uploads/category_images/example.jpg
+   * @example /flexiwik_1.0/web/uploads/category_images/example.jpg
    *
    * @param  string $field  The field name
    *

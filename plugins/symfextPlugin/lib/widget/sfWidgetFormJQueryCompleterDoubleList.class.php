@@ -8,7 +8,7 @@
  * 
  * @package    symfext
  * @subpackage widget
- * @author     Jonathan Olger Nieto Lajo <jonathan_nieto@hotmail.com>
+ * @author     David Joan Tataje Mendoza <new.skin007@gmail.com>
  */
 class sfWidgetFormJQueryCompleterDoubleList extends sfWidgetForm
 {
@@ -55,8 +55,8 @@ class sfWidgetFormJQueryCompleterDoubleList extends sfWidgetForm
     $this->addOption('class_select'       , 'autocompleter_list_select');
     $this->addOption('label_selected'     , 'Selected');
     $this->addOption('label_autocompleter', 'Search');
-    $this->addOption('associate'          , sprintf('<img src="%s/general/icons/add.png" alt="associate" />'      , sfConfig::get('sf_images_path')));
-    $this->addOption('disassociate'       , sprintf('<img src="%s/general/icons/delete.png" alt="unassociate" />'  , sfConfig::get('sf_images_path')));
+    $this->addOption('associate'          , sprintf('<img src="%s/general/icons/next.png" alt="associate" />'      , sfConfig::get('sf_images_path')));
+    $this->addOption('disassociate'       , sprintf('<img src="%s/general/icons/delete.gif" alt="unassociate" />'  , sfConfig::get('sf_images_path')));
     $this->addOption('template', 
       <<<EOF
         <div class="%class%">
@@ -64,16 +64,16 @@ class sfWidgetFormJQueryCompleterDoubleList extends sfWidgetForm
             <div class="autocompleter_list_label">%label_autocompleter%</div>
             %autocompleter%
           </div>
-          <div style="float: left; margin-top: 2em;margin-left:0.7em">
+          <div style="float: left; margin-top: 2em">
             <br/><br/>
             %associate%
           </div>
-          <div style="float: left;margin-top: 2.3em">
+          <div style="float: left">
             <div class="autocompleter_list_label">%label_selected%</div>
             %associated%
             %field%
           </div>
-          <div style="float: left; margin-top: 4.8em;margin-left:0.7em">
+          <div style="float: left; margin-top: 2em">
             %disassociate%
           </div>
           <br style="clear: both" />
@@ -138,7 +138,7 @@ EOF
    */
   public function getStylesheets()
   {
-    return array_merge(array('/css/widget/sfWidgetFormJQueryCompleterDoubleList.css' => 'screen', '/css/widget/sfWidgetFormJQueryCompleterList.css' => 'screen'), parent::getStylesheets());
+    return array('/css/widget/sfWidgetFormJQueryCompleterDoubleList.css' => 'screen', '/css/widget/sfWidgetFormJQueryCompleterList.css' => 'screen');
   }
   
   /**

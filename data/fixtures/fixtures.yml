@@ -127,6 +127,53 @@ Bus:
     circulation_card_number: '15P11007698-01'
     vehicle_use:              '1'
     Colors: [Color_1, Color_2, Color_3]
+
+  Bus_2:
+    Company: Company_1
+    code:    'A4G-969'
+    name: 'Bus 2'
+    phone:       989218026
+    mining_unit: 'ISCAYCRUZ EXTERNO'
+    padron:      169
+    category_class: 'M3 - OMNIBUS'
+    brand:               'MERCEDES BENZ'
+    model:               'OF 1721/59'
+    year_of_manufacture:  '2010'
+    fuel:                 '1'
+    serial_number:        '9BM384075BB730654'
+    motor_number:         '377989U0892091'
+    qty_seats:            '44'
+    body:                 'OMNIBUS INTERURBANO'
+    card_property_number: '275810'
+    policy_number:        '2101-205669'
+    circulation_card_number: '15P11007697-01'
+    vehicle_use:              '1'
+    Colors: [Color_1, Color_2, Color_3]
+  
+  Bus_3:
+    Company: Company_1
+    code:    'A4N-952'
+    name: 'Bus 3'
+    phone:           989029075
+    mining_unit: 'ISCAYCRUZ EXTERNO'
+    padron:      167
+    category_class: 'M3 - OMNIBUS'
+    brand:               'MERCEDES BENZ'
+    model:               'OF 1721/59'
+    year_of_manufacture:  '2010'
+    fuel:                 '1'
+    serial_number:        '9BM384075BB730198'
+    motor_number:         '377989U0891864'
+    qty_seats:            '44'
+    body:                 'OMNIBUS INTERURBANO'
+    card_property_number: '329873'
+    policy_number:        '2101-205669'
+    circulation_card_number: '15P11007703-01'
+    vehicle_use:              '1'
+    Colors: [Color_1, Color_2, Color_3]    
+    
+    
+  
     
     
 Crew:    

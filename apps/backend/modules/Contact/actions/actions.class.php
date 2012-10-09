@@ -10,4 +10,13 @@
  */
 class ContactActions extends ActionsCrud
 {
+  protected function getExtraFilterAndArrangeFields()
+  {
+    return array('com' => array('company_name' => 'name'));
+  }
+  
+  protected function complementList(sfWebRequest $request, DoctrineQuery $q)
+  {
+    Doctrine::getTable($this->modelClass)->updateQueryForList($q);
+  }    
 }

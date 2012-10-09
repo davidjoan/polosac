@@ -30,5 +30,10 @@ class ContactTable extends DoctrineTable
   public function getStatuss()
   {
     return self::$status;
-  }    
+  }
+  
+  public function updateQueryForList(DoctrineQuery $q)
+  {
+    $q->innerJoin('c.Company com');
+  }  
 }

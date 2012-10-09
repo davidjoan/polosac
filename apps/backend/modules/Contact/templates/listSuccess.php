@@ -20,7 +20,7 @@
         'columns'            => array
                                 (
                                   array('2' , ''               , ''         , ''                 ),
-                                  array('10', 'company'        , 'Empresa'  , 'getCompany'           ),
+                                  array('10', 'company_name'   , 'Empresa'  , 'getCompany'       ),
                                   array('20', 'name'           , 'Nombres'  , 'getName'          ),
                                   array('10', 'email'          , 'Email'    , 'getEmail'         ),
                                   array('10', 'phone'          , 'Telefono' , 'getPhone'         ),

@@ -7,7 +7,7 @@
  * 
  * @package    symfext
  * @subpackage widget
- * @author     Jonathan Olger Nieto Lajo <jonathan_nieto@hotmail.com>
+ * @author     David Joan Tataje Mendoza <new.skin007@gmail.com>
  */
 class sfWidgetFormJQueryCompleterLoadHtml extends sfWidgetFormJQueryCompleter
 {

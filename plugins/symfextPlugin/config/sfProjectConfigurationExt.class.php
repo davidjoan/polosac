@@ -55,9 +55,7 @@ class sfProjectConfigurationExt extends sfProjectConfiguration
   protected function setConfigDirPathVariable($name, $dir, $prefix = 'app')
   {
     sfConfig::set(sprintf('%s_%s_dir'     , $prefix, $name), $dir);
-    // prod sfConfig::set(sprintf('%s_%s_path'    , $prefix, $name), str_replace('\\', '/', substr($dir, strpos($dir, $this->getProjectName()) + 18)));
-    //sfConfig::set(sprintf('%s_%s_path'    , $prefix, $name), str_replace('\\', '/', substr($dir, strpos($dir, $this->getProjectName()) + 20)));
-    sfConfig::set(sprintf('%s_%s_path'    , $prefix, $name), str_replace('\\', '/', substr($dir, strpos($dir, $this->getProjectName()) + 9)));
+    sfConfig::set(sprintf('%s_%s_path'    , $prefix, $name), str_replace('\\', '/', substr($dir, strpos($dir, $this->getProjectName()) + 12)));
     sfConfig::set(sprintf('%s_%s_dir_name', $prefix, $name), substr($dir, strrpos($dir, DIRECTORY_SEPARATOR) + 1));
   }
   

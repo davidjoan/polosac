@@ -14,7 +14,7 @@ class ScheduleDetailForm extends BaseScheduleDetailForm
   {
     $this->labels = array
     (
-      'schedule_id'   => 'Programación',
+    //  'schedule_id'   => 'Programación',
       'company_id'    => 'Empresa',
       'qty_seats'     => 'Cantidad de Asientos',
       'active'        => 'Activo?',
@@ -26,7 +26,7 @@ class ScheduleDetailForm extends BaseScheduleDetailForm
   $this->setWidgets(array
     (
       'id'                   => new sfWidgetFormInputHidden(),
-      'schedule_id'          => new sfWidgetFormInputHidden(),
+    /*  'schedule_id'          => new sfWidgetFormInputHidden(),*/
       'company_id'           => new sfWidgetFormDoctrineChoice(array(
                                     'model'   => 'Company',
                                     'add_empty' => '---Seleccionar---'
@@ -50,7 +50,7 @@ class ScheduleDetailForm extends BaseScheduleDetailForm
       'slug'           => '-',
       'created_at'     => '-',
       'updated_at'     => '-',
-      'schedule_id'    => 'pass',
+      'schedule_id'    => '-',
       'company_id'  => 'Combo',
       'qty_seats'   => 'fixed_number',
       

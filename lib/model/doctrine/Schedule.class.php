@@ -22,4 +22,9 @@ class Schedule extends BaseSchedule
   {
     return $this->getTable()->getDateTimeFormatter()->format($this->getTravelDate(), $format);
   }  
+  
+  public function getBusNameForSChedule()
+  {
+    return $this->getBus()->getName().' - ('.$this->getBus()->getCode().') - '.$this->getBus()->getPadron().' - # Asientos: '.($this->getBus()->getQtySeats()- sfConfig::get('app_qty_seats_reserverd'));
+  }  
 }

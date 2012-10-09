@@ -10,10 +10,11 @@ default:
     robots:        index, follow
 
   stylesheets:
-    - general/main.css:                 { position: first }
-    - backend/general.css:              { position: first }
-    - backend/button.css:               { position: first }
-    - general/jquery-ui-1.8.custom.css: { position: first }
+    - general/main.css:                    { position: first }
+    - backend/general.css:                 { position: first }
+    - backend/button.css:                  { position: first }
+    - general/jquery-ui-1.8.custom.css:    { position: first }
+    - fullcalendar/fullcalendar.print.css: { media: print }
     
   javascripts:
     - jquery/jquery-1.4.2.min.js

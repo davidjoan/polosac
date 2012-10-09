@@ -23,7 +23,7 @@
         'columns'            => array
                                 (
                                   array('2' , ''               , ''         , ''                 ),
-                                  array('10', 'bus'            , 'Bus'      , 'getBusCode'       ),
+                                  array('10', 'bus_name'       , 'Bus'      , 'getBusCode'       ),
                                   array('20', 'name'           , 'Nombres'  , 'getNAme'          ),
                                   array('10', 'dni'            , 'DNI'      , 'getDni'           ),
                                   array('10', 'driver_license' , 'Licencia' , 'getDriverLicense' ),

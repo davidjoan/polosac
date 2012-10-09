@@ -113,7 +113,6 @@ abstract class sfActionsCrud extends ActionsProject
     if ($request->isMethod('post'))
     {
       $params = $request->getParameter($this->form->getName());
-     // Deb::print_r($params);
       $this->form->bind($params, $request->getFiles($this->form->getName()));
       
       if ($this->form->isValid())

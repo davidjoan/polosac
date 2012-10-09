@@ -1,0 +1,4 @@
+showSuccess:
+  javascripts: [fullcalendar/fullcalendar.min.js]
+  stylesheets: [fullcalendar/fullcalendar.css]
+    

@@ -10,5 +10,14 @@
  */
 class CrewActions extends ActionsCrud
 {
-
+  protected function getExtraFilterAndArrangeFields()
+  {
+    return array('b' => array('bus_name' => 'name'));
+  }
+  
+  protected function complementList(sfWebRequest $request, DoctrineQuery $q)
+  {
+    Doctrine::getTable($this->modelClass)->updateQueryForList($q);
+    //sfDynamicFormEmbedder::resetParams('menu');
+  }
 }

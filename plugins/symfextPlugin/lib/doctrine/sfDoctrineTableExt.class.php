@@ -16,7 +16,7 @@ class sfDoctrineTableExt extends Doctrine_Table
   protected static
     $assertions = array
     (
-      self::YES => 'Sí',
+      self::YES => 'Si',
       self::NO  => 'No',
     );
   
@@ -77,10 +77,12 @@ class sfDoctrineTableExt extends Doctrine_Table
     $records = $this->findBySlugs($slugs);
     if (false === $this->getTree())
     {
+    	
       $records->delete();
     }
     else
     {
+    //	Deb::print_r('paso');
       foreach ($records as $record)
       {
         $record->getNode()->delete();
