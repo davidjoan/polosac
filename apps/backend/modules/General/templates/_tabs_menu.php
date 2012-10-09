@@ -9,7 +9,14 @@
                   'uri'         => '@home',
                   'image'       => 'backend/menu/user.gif',
                 ))
-          ?>       
+          ?>
+          <?php include_partial('General/tab', array
+                (
+                  'title'       => 'Programación', 
+                  'uri'         => '@schedule_list',
+                  'image'       => 'backend/menu/marketing.gif',
+                ))
+          ?>
           <?php include_partial('General/tab', array
                 (
                   'title'       => 'Tripulación', 

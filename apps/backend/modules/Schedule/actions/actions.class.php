@@ -10,5 +10,14 @@
  */
 class ScheduleActions extends ActionsCrud
 {
-
+ /**
+  * Executes index action
+  *
+  * @param sfRequest $request A request object
+  */
+  protected function complementList(sfWebRequest $request, DoctrineQuery $q)
+  {
+    sfDynamicFormEmbedder::resetParams('schedule_detail');
+  }     
+  
 }

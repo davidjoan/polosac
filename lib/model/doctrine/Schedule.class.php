@@ -12,4 +12,14 @@
  */
 class Schedule extends BaseSchedule
 {
+  public function getActiveStr()
+  {  	
+  	$actives = $this->getTable()->getStatuss();
+  	return $actives[$this->getActive()];
+  }
+  
+  public function getFormattedTravelDate($format = 'D')
+  {
+    return $this->getTable()->getDateTimeFormatter()->format($this->getTravelDate(), $format);
+  }  
 }

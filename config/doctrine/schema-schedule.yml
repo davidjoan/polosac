@@ -1,7 +1,7 @@
 Schedule:
   tableName:                 t_schedule
   actAs:
-    SluggableExt:            { fields: [ id ] }
+    SluggableExt:            { fields: [ travel_date ] }
     Timestampable:
   columns:
     id:                      { type: integer  , length: 20 , primary: true    , autoincrement: true         }
@@ -23,7 +23,6 @@ Schedule:
 ScheduleDetail:
   tableName:                 t_schedule_detail
   actAs:
-    SluggableExt:            { fields: [ id ] }
     Timestampable:
   columns:
     id:                      { type: integer  , length: 20 , primary: true    , autoincrement: true         }
