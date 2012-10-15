@@ -9,6 +9,7 @@ Schedule:
     place_from_id:           { type: integer  , length: 20                    , notnull: true               }
     place_to_id:             { type: integer  , length: 20                    , notnull: true               }
     travel_date:             { type: date }
+    travel_time:             { type: time }
     active:                  { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
   indexes:
   relations:
@@ -37,3 +38,39 @@ ScheduleDetail:
   options:
     symfony:                 { filter: false, form: true }
     boolean_columns:         [ active ]
+    
+    
+Boarding:
+  tableName:                           t_boarding
+  actAs:
+    SluggableExt:                      { fields: [ name ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true         }
+    name:                              { type: string   , length: 100                   , notnull: true               }    
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
+  indexes:
+    u_name:                            { fields: [ name ]                               , type: unique                }
+  relations:
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]  
+  
+Passenger:
+  tableName:                           t_passenger
+  actAs:
+    SluggableExt:                      { fields: [ name ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true         }
+    boarding_id:                       { type: integer  , length: 20                    , notnull: false              }
+    company_id:                        { type: integer  , length: 20                    , notnull: false              }
+    dni:                               { type: string   , length: 8                     , notnull: true               }
+    names:                             { type: string   , length: 100                   , notnull: true               }    
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
+  indexes:
+    u_name:                            { fields: [ name ]                               , type: unique                }
+  relations:
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]    
