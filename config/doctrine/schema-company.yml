@@ -15,4 +15,4 @@ Company:
     ScheduleDetail:                    { class: ScheduleDetail , local: id , foreign: company_id, type: many, alias: ScheduleDetails }
   options:
     symfony:                           { filter: false, form: true }
-    boolean_columns:                   [ active ]        
+    boolean_columns:                   [ active ]

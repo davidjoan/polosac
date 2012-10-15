@@ -74,3 +74,22 @@ Passenger:
   options:
     symfony:                           { filter: false, form: true }
     boolean_columns:                   [ active ]    
+    
+    
+SchedulePassenger:
+  tableName:                 t_schedule_passenger
+  actAs:
+    Timestampable:
+  columns:
+    id:                      { type: integer  , length: 20 , primary: true    , autoincrement: true         }
+    schedule_detail_id:      { type: integer  , length: 20                    , notnull: true               }
+    passenger_id:            { type: integer  , length: 20                    , notnull: true               }
+    seat:                    { type: string   , length: 100                   , notnull: true               }
+    active:                  { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
+  indexes:
+  relations:
+    Schedule:                { class: Schedule , local: schedule_id , foreign: id , type: one , alias: Schedule , onDelete: RESTRICT, onUpdate: CASCADE }
+    Company:                 { class: Company  , local: company_id  , foreign: id , type: one , alias: Company  , onDelete: RESTRICT, onUpdate: CASCADE }
+  options:
+    symfony:                 { filter: false, form: true }
+    boolean_columns:         [ active ]
