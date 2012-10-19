@@ -1,3 +1,12 @@
+Boarding:
+  Boarding_1:
+    name: Plaza Norte
+  Boarding_2:
+    name: T Junin
+  Boarding_3:
+    name: Huacho
+  Boarding_4:
+    name: Lima    
 Place:
   Place_1:
     name: Lima

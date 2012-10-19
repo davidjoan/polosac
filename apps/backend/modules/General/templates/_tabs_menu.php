@@ -45,6 +45,13 @@
                   'image'       => 'backend/menu/user.gif',
                 ))
           ?>
+          <?php include_partial('General/tab', array
+                (
+                  'title'       => 'Pasajeros', 
+                  'uri'         => '@passenger_list',
+                  'image'       => 'backend/menu/user.gif',
+                ))
+          ?>            
           <?php /*include_partial('General/tab', array
                 (
                   'title'       => 'Tags', 
