@@ -92,35 +92,6 @@ place_delete:
   url:             /eliminar/lugar/:slug
   param:           { module: Place, action: delete }
   requirements:    { slug: '[\w-,]+' }
-
-##########################
-####### Contact ##########
-##########################
-
-#Contact
-contact_show:
-  url:             /mostrar/contacto/:slug
-  param:           { module: Contact, action: show }
-  requirements:    { slug: \w+ }
-
-contact_list:
-  url:             /lista/contactos/:filter_by/:filter/:order_by/:order/:max/:page
-  param:           { module: Contact, action: list, filter_by: id, filter: 0, order_by: name, order: d, max: 20, page: 1, rflow: on }
-  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
-
-contact_new:
-  url:             /nuevo/contacto
-  param:           { module: Contact, action: edit }
-
-contact_edit:
-  url:             /editar/contacto/:slug
-  param:           { module: Contact, action: edit }
-  requirements:    { slug: '[\w-]+' }
-
-contact_delete:
-  url:             /eliminar/contacto/:slug
-  param:           { module: Contact, action: delete }
-  requirements:    { slug: '[\w-,]+' }
   
 ##########################
 ####### Company ##########

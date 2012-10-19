@@ -18,7 +18,6 @@ abstract class ActionsProject extends sfActionsExt
     CREW_NAMESPACE                     = 'Crew',
     BUS_NAMESPACE                      = 'Bus',
     COMPANY_NAMESPACE                  = 'Company',
-    CONTACT_NAMESPACE                  = 'Contact',
     PLACE_NAMESPACE                    = 'Place',
     SCHEDULE_NAMESPACE                 = 'Schedule',
     PASSENGER_NAMESPACE                = 'Passenger';

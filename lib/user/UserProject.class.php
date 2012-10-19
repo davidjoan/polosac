@@ -32,11 +32,18 @@ class UserProject extends sfUserExt
    */
   public function login(User $user)
   {
-    $this->setAttribute('user_id' , $user->getId()      , ActionsProject::USER_NAMESPACE);
-    $this->setAttribute('username', $user->getUsername(), ActionsProject::USER_NAMESPACE);
-    $this->setAttribute('email'   , $user->getEmail()   , ActionsProject::USER_NAMESPACE);
-    $this->setAttribute('slug'    , $user->getSlug()    , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('user_id'   , $user->getId()      , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('username'  , $user->getUsername(), ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('email'     , $user->getEmail()   , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('slug'      , $user->getSlug()    , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('role_slug' , $user->getRole()->getSlug() , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('role_code' , $user->getRole()->getCode() , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('role_name' , $user->getRole()->getName() , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('company_name' , $user->getCompany()->getName() , ActionsProject::USER_NAMESPACE);
+    $this->setAttribute('company_slug' , $user->getCompany()->getSlug() , ActionsProject::USER_NAMESPACE);
     $this->setAuthenticated(true);
+    
+    $this->mapPermissions($user);
   }
   /**
    * Log out the user.
@@ -64,6 +71,38 @@ class UserProject extends sfUserExt
   {
     return $this->getAttribute('slug'    , $default, ActionsProject::USER_NAMESPACE);
   }
+  
+  public function getRoleCode($default = null)
+  {
+    return $this->getAttribute('role_code', $default, ActionsProject::USER_NAMESPACE);
+  }  
+  
+  public function getRoleName($default = null)
+  {
+    return $this->getAttribute('role_name', $default, ActionsProject::USER_NAMESPACE);
+  }
+
+  public function getRoleSlug($default = null)
+  {
+    return $this->getAttribute('role_slug'    , $default, ActionsProject::USER_NAMESPACE);
+  }
+  
+  public function getCompanyName($default = null)
+  {
+    return $this->getAttribute('company_name', $default, ActionsProject::USER_NAMESPACE);
+  }
+
+  public function getCompanySlug($default = null)
+  {
+    return $this->getAttribute('company_slug'    , $default, ActionsProject::USER_NAMESPACE);
+  }
+  
+  
+  public function isAdmin()
+  {
+    return ($this->getRoleCode() === 'AD')? true: false;
+  }
+ 
   
   public function isFirstRequest($boolean = null)
   {

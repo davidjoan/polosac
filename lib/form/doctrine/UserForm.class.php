@@ -14,12 +14,13 @@ class UserForm extends BaseUserForm
   {
     $this->labels = array
     (
+      'role_id'          => 'Rol',
+      'company_id'       => 'Emppresa',
       'realname'         => 'Nombres y Apellidos',
       'username'         => 'Nombre de Usuario',
       'password'         => 'Contrase&ntilde;a',
       'confirm_password' => 'Confirma Password',
       'email'            => 'Correo Electr&oacute;nico',
-      'url'              => 'Url',
       'phone'            => 'Telefono',
       'active'           => 'Activo',
     );
@@ -30,12 +31,19 @@ class UserForm extends BaseUserForm
   	$this->setWidgets(array
     (
       'id'                   => new sfWidgetFormInputHidden(),
+      'role_id'              => new sfWidgetFormDoctrineChoice(array(
+                                        'model'   => 'Role',
+                                    'add_empty' => '---Seleccionar---'
+                                    )),
+      'company_id'           => new sfWidgetFormDoctrineChoice(array(
+                                    'model'   => 'Company',
+                                    'add_empty' => '---Seleccionar---'
+                                    )),            
       'realname'             => new sfWidgetFormInputText(array(), array('size' => 30)),
       'username'             => new sfWidgetFormInputText(array(), array('size' => 30)),
       'password'             => new sfWidgetFormInputPassword(array(), array('size' => '30')),
       'confirm_password'     => new sfWidgetFormInputPassword(array(), array('size' => '30')),
       'email'                => new sfWidgetFormInputText(array(), array('size' => 30)),
-      'url'                  => new sfWidgetFormInputText(array(), array('size' => 30)),
       'phone'                => new sfWidgetFormInputText(array(), array('size' => 15)),
       'active'               => new sfWidgetFormChoice(array
                                 (
@@ -50,12 +58,13 @@ class UserForm extends BaseUserForm
   	$this->types = array
     (
       'id'               => '=',
+      'role_id'          => 'combo',
+      'company_id'       => 'combo',
       'realname'         => 'name',
       'username'         => 'user',
       'password'         => 'password',
       'confirm_password' => 'password',
       'email'            => 'email',
-      'url'              => 'url',
       'phone'            => 'phone',
       'active'           => array('combo', array('choices' => array_keys($this->getTable()->getStatuss()))),
       'last_access_at'   => '-',

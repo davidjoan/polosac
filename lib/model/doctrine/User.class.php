@@ -21,5 +21,15 @@ class User extends BaseUser
   public function setPassword($password)
   {
     $this->_set('password', kcCrypt::encrypt($password));
-  }    
+  }
+  
+  public function getRolName()
+  {
+      return $this->getRole()->getName();
+  }
+
+  public function getCompanyName()
+  {
+      return $this->getCompany()->getName();
+  }  
 }

@@ -5,21 +5,41 @@ User:
     Timestampable:
   columns:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    role_id:                           { type: integer  , length: 20                    , notnull: true                                                        }
+    company_id:                        { type: integer  , length: 20                    , notnull: true                                                        }
     realname:                          { type: string   , length: 200                   , notnull: true                                                        }
     username:                          { type: string   , length: 50                    , notnull: true                                                        }
     password:                          { type: string   , length: 255                   , notnull: true                                                        }
     email:                             { type: string   , length: 100                   , notnull: true                                                        }
-    url:                               { type: string   , length: 255                                                                                          }
     phone:                             { type: string   , length: 100                                                                                          }
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
     last_access_at:                    { type: timestamp                                                                                                       }
   indexes:
     i_username:                        { fields: [ username ]                                                                                                  }
     u_email:                           { fields: [ email ]                              , type: unique                                                         }
-    i_url:                             { fields: [ url ]                                                                                                       }
     i_active:                          { fields: [ active ]                                                                                                    }
   relations:    
+    Role:                              { class: Role    , local: role_id    , foreign: id , type: one , alias: Role    , onDelete: RESTRICT, onUpdate: CASCADE }
+    Company:                           { class: Company , local: company_id , foreign: id , type: one , alias: Company , onDelete: RESTRICT, onUpdate: CASCADE }
   options:
     symfony:                           { filter: false, form: true }
     boolean_columns:                   [ active ]    
     
+    
+Role:
+  tableName:                           t_role
+  actAs:
+    SluggableExt:                      { fields: [ name ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true                                                  }
+    code:                              { type: string   , length: 2  , fixed: true      , notnull: true                                                        }
+    name:                              { type: string   , length: 100                   , notnull: true                                                        }
+    description:                       { type: string                                                                                                          }
+  indexes:
+    u_code:                            { fields: [ code ]                               , type: unique                                                         }
+    u_name:                            { fields: [ name ]                               , type: unique                                                         }
+  relations:
+    User:                              { class: User       , local: id                  , foreign: role_id   , type: many, alias: Users                        }
+  options:
+    symfony:                           { filter: false, form: false }

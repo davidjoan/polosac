@@ -46,4 +46,10 @@ class UserTable extends DoctrineTable
          
     return $q->fetchOne();
   } 
+  
+  public function updateQueryForList(DoctrineQuery $q)
+  {
+    $q->innerJoin('u.Company c');
+    $q->innerJoin('u.Role r');
+  }  
 }

@@ -10,8 +10,8 @@ Company:
   indexes:
     u_name:                            { fields: [ name ]                               , type: unique                }
   relations:
-    Bus:                               { class: Bus , local: id , foreign: company_id, type: many, alias: Buses       }
-    Contact:                           { class: Contact , local: id , foreign: company_id, type: many, alias: Contacts }
+    Bus:                               { class: Bus  , local: id , foreign: company_id, type: many, alias: Buses       }
+    User:                              { class: User , local: id , foreign: company_id, type: many, alias: Users }
     ScheduleDetail:                    { class: ScheduleDetail , local: id , foreign: company_id, type: many, alias: ScheduleDetails }
   options:
     symfony:                           { filter: false, form: true }

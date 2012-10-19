@@ -1,4 +1,4 @@
-<h1>Bienvenidos al Administrador de Servicios EXternos</h1>
+<h1>Bienvenidos al Administrador de Servicios Externos</h1>
 <hr/>
 <br/><br/>
 <?php //echo kcCrypt::encrypt('1234') ?>

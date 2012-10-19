@@ -10,4 +10,14 @@
  */
 class UserActions extends ActionsCrud
 {
+  protected function getExtraFilterAndArrangeFields()
+  {
+    return array('c' => array('company_name' => 'name'), 
+                 'r' => array('role_name' => 'name'));
+  }    
+  protected function complementList(sfWebRequest $request, DoctrineQuery $q)
+  {
+    Doctrine::getTable($this->modelClass)->updateQueryForList($q);
+    //sfDynamicFormEmbedder::resetParams('menu');
+  }
 }

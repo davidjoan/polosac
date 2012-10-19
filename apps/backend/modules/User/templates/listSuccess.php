@@ -22,6 +22,8 @@
         'columns'            => array
                                 (
                                   array('2' , ''             , ''             , ''               ),
+                                  array('30', 'company_name' , 'Empresa'      , 'getCompanyName'   ),
+                                  array('10', 'role_name'    , 'Rol'          , 'getRolName'   ),
                                   array('30', 'realname'     , 'Nombres'      , 'getRealname'   ),
                                   array('26', 'username'     , 'Usuario'      , 'getUsername' ),
                                   array('26', 'email'        , 'Email'        , 'getEmail' ),

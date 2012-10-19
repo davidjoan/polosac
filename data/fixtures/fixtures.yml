@@ -1,3 +1,15 @@
+Role:
+  Role_1:
+    code:            'AD'
+    name:            Administrador
+    description:     'Es el rol administrador del sistema. Tiene acceso a todas las acciones del sistema.'
+  
+  Role_2:
+    code:            'CL'
+    name:            'Cliente'
+    description:     'Es el rol del cliente. Tiene acceso a pasajeros y asignarlos al viaje programado'
+  
+  
 Boarding:
   Boarding_1:
     name: Plaza Norte
@@ -51,68 +63,7 @@ Company:
     name: J&V RESGUARDO
   Company_17:
     name: EMQSA    
-
-Contact:
-  Contact_1:
-    Company: Company_3
-    name: Juan Carlos Vizcarra	
-    email: jvizcarra@aesa.com.pe
-  Contact_2:
-    Company: Company_4
-    name: José Carlos Fierro
-    email: jfierro@jrcing.com.pe
-  Contact_3:
-    Company: Company_5
-    name: Sonia Victorio	
-    email: bienestar.iscaycruz@multicosailor.com.pe
-  Contact_4:
-    Company: Company_6
-    name: Carla Bustamante	
-    email: gfeldmuth@geserperu.com
-  Contact_5:
-    Company: Company_8
-    name: Ernesto Ramírez	
-    email: iscaycruz@explomin.com
-  Contact_6:
-    Company: Company_2
-    name: Nélida López M.
-    email: eservasmina@polosac.pe
-  Contact_7:
-    Company: Company_9
-    name: Aurelio Del Carmen	
-    email: adelcarmen@rentingsac.com.pe
-  Contact_8:
-    Company: Company_3
-    name: Isabel Fernández	
-    email: subterranea@glencore.com.pe
-  Contact_9:
-    Company: Company_10
-    name: Diego Tincopa
-    email: unicon@glencore.com.pe
-  Contact_10:
-    Company: Company_12
-    name: Luis Peñarrieta	
-    email: jylcompetitionsrl@hotmail.com
-  Contact_11:
-    Company: Company_12
-    name: Odón Espiritú	
-    email: jpalpa@glencore.com.pe
-  Contact_12:
-    Company: Company_14
-    name: Mary Ferroa	
-    email: centrodocumentario@glencore.com.pe
-  Contact_13:
-    Company: Company_15
-    name: Francisco Gonzáles	
-    email: cminsa@gmail.com
-  Contact_14:
-    Company: Company_16
-    name: Edgar Durand 	
-    email: JLIscaycruz@glencore.com.pe
-  Contact_15:
-    Company: Company_17
-    name: Rodrigo Valencia Julio Carpio	
-    email: rvalencia@glencore.com.pe   
+ 
 
 Bus:
   Bus_1:
@@ -218,18 +169,134 @@ Color:
     
 
 User:
-  User_1:
+  User_0:
+    Company: Company_2
+    Role: Role_1
     realname: 'David Tataje'
     username: admin
     password: 1234
     email: davidtataje@gmail.com
-    url: www.polosac.com
-    phone: null
     active: '1'
-    last_access_at: '2010-08-30 13:11:32'
-    slug: david
-    created_at: '2010-05-02 01:39:30'
-    updated_at: '2010-08-30 13:11:32'
+  User_1:
+    Company: Company_3
+    Role: Role_2
+    realname: Juan Carlos Vizcarra	
+    email: jvizcarra@aesa.com.pe
+    username: juan
+    password: 1234    
+    active: '1'
+  User_2:
+    Company: Company_4
+    Role: Role_2
+    realname: José Carlos Fierro
+    email: jfierro@jrcing.com.pe
+    username: jose
+    password: 1234    
+    active: '1'
+  User_3:
+    Company: Company_5
+    Role: Role_2
+    realname: Sonia Victorio	
+    email: bienestar.iscaycruz@multicosailor.com.pe
+    username: sonia
+    password: 1234    
+    active: '1'
+  User_4:
+    Company: Company_6
+    Role: Role_2
+    realname: Carla Bustamante	
+    email: gfeldmuth@geserperu.com
+    username: carla
+    password: 1234    
+    active: '1'
+  User_5:
+    Company: Company_8
+    Role: Role_2
+    realname: Ernesto Ramírez	
+    email: iscaycruz@explomin.com
+    username: ernesto
+    password: 1234   
+    active: '1'
+  User_6:
+    Company: Company_2
+    Role: Role_2
+    realname: Nélida López M.
+    email: eservasmina@polosac.pe
+    username: nelida
+    password: 1234
+    active: '1'
+  User_7:
+    Company: Company_9
+    Role: Role_2
+    realname: Aurelio Del Carmen	
+    email: adelcarmen@rentingsac.com.pe
+    username: aurelio
+    password: 1234
+    active: '1'
+  User_8:
+    Company: Company_3
+    Role: Role_2
+    realname: Isabel Fernández	
+    email: subterranea@glencore.com.pe
+    username: isabel
+    password: 1234
+  User_9:
+    Company: Company_10
+    Role: Role_2
+    realname: Diego Tincopa
+    email: unicon@glencore.com.pe
+    username: diego
+    password: 1234
+    active: '1'
+  User_10:
+    Company: Company_12
+    Role: Role_2
+    realname: Luis Peñarrieta	
+    email: jylcompetitionsrl@hotmail.com
+    username: luis
+    password: 1234
+    active: '1'
+  User_11:
+    Company: Company_12
+    Role: Role_2
+    realname: Odón Espiritú	
+    email: jpalpa@glencore.com.pe
+    username: odon
+    password: 1234
+    active: '1'
+  User_12:
+    Company: Company_14
+    Role: Role_2
+    realname: Mary Ferroa	
+    email: centrodocumentario@glencore.com.pe
+    username: mary
+    password: 1234
+    active: '1'
+  User_13:
+    Company: Company_15
+    Role: Role_2
+    realname: Francisco Gonzáles	
+    email: cminsa@gmail.com
+    username: francisco
+    password: 1234
+    active: '1'
+  User_14:
+    Company: Company_16
+    Role: Role_2
+    realname: Edgar Durand 	
+    email: JLIscaycruz@glencore.com.pe
+    username: edgar
+    password: 1234
+    active: '1'
+  User_15:
+    Company: Company_17
+    Role: Role_2
+    realname: Rodrigo Valencia Julio Carpio	
+    email: rvalencia@glencore.com.pe      
+    username: rodrigo
+    password: 1234
+    active: '1'
+    
 Visit:
   Visit_1:
     remote_address: 190.43.32.112

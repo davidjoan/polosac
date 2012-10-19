@@ -31,5 +31,15 @@ class PassengerTable extends DoctrineTable
   public function getStatuss()
   {
     return self::$status;
-  }     
+  }    
+  
+  public function updateQueryForList(DoctrineQuery $q)
+  {
+    $q->innerJoin('p.Company c');
+    if(!sfContext::getInstance()->getUser()->isAdmin())
+    {
+      $q->addWhere('c.slug = ?',sfContext::getInstance()->getUser()->getCompanySlug());    
+    }
+    
+  }    
 }
