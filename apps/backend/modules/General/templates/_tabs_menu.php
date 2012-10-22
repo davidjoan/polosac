@@ -47,6 +47,15 @@
                 ))
           ?>
             <?php endif; ?>
+            <?php if($sf_user->hasPermission('@schedule_detail_list')): ?>
+            <?php include_partial('General/tab', array
+                (
+                  'title'       => 'Distribución', 
+                  'uri'         => '@schedule_detail_list',
+                  'image'       => 'backend/menu/campaigns.gif',
+                ))
+          ?>        
+            <?php endif; ?>            
             <?php if($sf_user->hasPermission('@passenger_list')): ?>
           <?php include_partial('General/tab', array
                 (
@@ -54,20 +63,15 @@
                   'uri'         => '@passenger_list',
                   'image'       => 'backend/menu/user.gif',
                 ))
-          ?>            
-          <?php /*include_partial('General/tab', array
+          ?>
+            <?php endif; ?>
+            <?php if($sf_user->hasPermission('@boarding_list')): ?>          
+          <?php include_partial('General/tab', array
                 (
-                  'title'       => 'Tags', 
-                  'uri'         => '@tag_list',
+                  'title'       => 'Paraderos', 
+                  'uri'         => '@boarding_list',
                   'image'       => 'backend/menu/campaigns.gif',
-                ))*/
-          ?>         
-          <?php /*include_partial('General/tab', array
-                (
-                  'title'       => 'Fotos', 
-                  'uri'         => '@photo_list',
-                  'image'       => 'backend/menu/campaigns.gif',
-                ))*/
+                ))
           ?>  
           <?php endif; ?>
             <?php if($sf_user->hasPermission('@place_list')): ?>

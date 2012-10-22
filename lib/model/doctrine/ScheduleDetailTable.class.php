@@ -31,4 +31,44 @@ class ScheduleDetailTable extends DoctrineTable
   {
     return self::$status;
   } 
+  
+  public function updateQueryForList(DoctrineQuery $q)
+  {  
+    $q->innerJoin('sd.Schedule s');
+    $q->innerJoin('sd.Company c');
+    $q->innerJoin('s.Bus b');
+    if(!sfContext::getInstance()->getUser()->isAdmin())
+    {
+      $q->addWhere('c.slug = ?',sfContext::getInstance()->getUser()->getCompanySlug());    
+    }    
+    
+    $q->addWhere('sd.active = ?', 1);
+    $q->addWhere('s.active = ?', 1);    
+  }
+    
+    public function findOneBySlug($slug)
+    {
+    $q = $this->createAliasQuery()
+         ->where('sd.id = ?', $slug);
+         
+    return $q->fetchOne();        
+    
+    }  
+    
+  public function getCalendarClient()
+  { 
+    $q = $this->createAliasQuery();
+    $q->innerJoin('sd.Schedule s');
+    $q->innerJoin('sd.Company c');
+    $q->innerJoin('s.Bus b');
+    if(!sfContext::getInstance()->getUser()->isAdmin())
+    {
+      $q->addWhere('c.slug = ?',sfContext::getInstance()->getUser()->getCompanySlug());    
+    }    
+    
+    $q->addWhere('sd.active = ?', 1);
+    $q->addWhere('s.active = ?', 1);
+    
+    return $q->execute();
+  }    
 }

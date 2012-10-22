@@ -16,7 +16,7 @@
 			allDayText:      'todo el dia',
 						
 			editable: false,
-			events: '<?php echo url_for('@schedule_programacion');?>',
+			events: '<?php echo $sf_user->isAdmin()?url_for('@schedule_programacion'):url_for('@schedule_detail_programacion');?>',
 			
 			eventDrop: function(event, delta) {
 				alert(event.title + ' was moved ' + delta + ' days\n' +
@@ -48,7 +48,7 @@
 
 </style>
 
-<div class="title"> Programación de Horarios </div>
+<div class="title"> Programación de Viajes </div>
 <div class="subtitle">&nbsp;</div>
 <br/>
 <div id='loading' style='display:none'>cargando...</div>

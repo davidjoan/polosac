@@ -4,32 +4,24 @@
   </tr>
   <tr><td></td></tr>
   <tr>
-    <td>Cantidad de Visitas:</td>
-    <td><?php echo $visits ?></td>
-  </tr>
-  <tr><td></td></tr>
-  <tr><td></td></tr>
-  <tr><td></td></tr>
-  <tr>
-    <th colspan="2">Ultima Visita</th>
-  </tr>
-  <tr><td></td></tr>
-  <tr>
-    <td>Remote Address</td>
-    <td><b><?php echo $lastVisit->getRemoteAddress() ?></b></td>
+      <td colspan="2"><b>Bienvenidos al Sistema de Administración de Viajes de polosac</b></td>
   </tr>
   <tr>
-    <td>HTTP User Agent</td>
-    <td><b><small><?php echo $lastVisit->getHttpUserAgent() ?></small></b></td>
-  </tr>
+      <td colspan="2">Este sistema le ayudara a asignar rapidamente que personal de su empresa va a viajar, en los buses de <b>polosac</b>
+          como tambien, modificar datos personales como nombre, dni ó  paraderos, este aplicación le informara a los operadores de polosac, los cambios que usted a realizado antes del viaje.
+          ahorrante tiempo y dinero, siente libre de probar el sistema, registrar algunos datos, para que te familiarices con este nuevo sistema, <br> Que tengas un buen dia.</td>
+  </tr>    
   <tr>
-    <td>Datetime</td>
-    <td><b><?php echo $lastVisit->getDatetime() ?></b></td>
-  </tr>
+    <th colspan="2">Soporte</th>
+  </tr>  
+  <tr>
+      <td colspan="2">Si necesita ayuda para usar el sistema porfavor marcar al siguiente numero Telf. <b>713-0496</b> que nuestros operadores lo atender de inmediato.</td>
+  </tr>  
+  <tr><td></td></tr>
   <tr><td></td></tr>
   <tr>
     <th colspan="2">POLOSAC Versi&oacute;n</th>
-  </tr>
+  </tr>  
   <tr><td></td></tr>
   <tr>
     <td>Version</td>

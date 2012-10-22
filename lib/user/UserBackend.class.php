@@ -27,6 +27,7 @@ public function getPermissions()
     switch ($code)
     {
       case RoleTable::ADMIN:
+          $actions = $this->getActionsForAdmin($actions);
         break;
       case RoleTable::CLIENT:
         $actions = $this->getActionsForClient($actions);
@@ -104,20 +105,24 @@ public function getPermissions()
     return false;
   }
   
-  public function getActionsForSecretary($actions)
-  {
-    foreach ($actions as $name => $action)
-    {
-      if (false !== strpos($name, 'delete'))
-      {
-        unset($actions[$name]);
-      }
-    }
+  public function getActionsForAdmin($actions)
+  {       
+      
+    unset($actions['schedule_detail_list']);
+    unset($actions['schedule_detail_show']);
+    unset($actions['schedule_detail_new']);
+    unset($actions['schedule_detail_delete']);
     
-    unset($actions['user_list']);
-    unset($actions['user_show']);
-    unset($actions['user_new']);
-    unset($actions['user_edit']);
+    
+    unset($actions['passenger_list']);
+    unset($actions['passenger_show']);
+    unset($actions['passenger_new']);
+    unset($actions['passenger_delete']);
+    
+    unset($actions['boarding_list']);
+    unset($actions['boarding_show']);
+    unset($actions['boarding_new']);
+    unset($actions['boarding_delete']);
     
     return $actions;
   }
@@ -125,10 +130,19 @@ public function getPermissions()
   public function getActionsForClient($actions)
   {
     $actions = array();
+    
+    $actions['schedule_detail_list'] = true;
+    $actions['schedule_detail_edit'] = true;
+    
     $actions['passenger_list'] = true;
     $actions['passenger_show'] = true;
     $actions['passenger_new'] = true;
-    $actions['passenger_delete'] = true;
+    $actions['boarding_edit'] = true;
+    
+    $actions['boarding_list'] = true;
+    $actions['boarding_show'] = true;
+    $actions['boarding_new'] = true;
+    $actions['boarding_edit'] = true;
     
     return $actions;
   }    

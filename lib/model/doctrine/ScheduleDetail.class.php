@@ -12,4 +12,33 @@
  */
 class ScheduleDetail extends BaseScheduleDetail
 {
+  public function getActiveStr()
+  {  	
+  	$actives = $this->getTable()->getStatuss();
+  	return $actives[$this->getActive()];
+  }    
+    function getScheduleTravelDate()
+    {
+       return $this->getSchedule()->getFormattedTravelDate();
+    }
+    
+    function getScheduleTravelTime()
+    {
+       return $this->getSchedule()->getTravelTime();
+    }    
+    
+    function getScheduleBusName()
+    {
+        return $this->getSchedule()->getBus()->getName();
+    }
+    
+    function getSlug()
+    {
+        return $this->getId();
+    }
+    
+    function getBusName()
+    {
+        return $this->getScheduleBusName();
+    }
 }

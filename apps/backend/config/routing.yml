@@ -1,3 +1,69 @@
+###############################
+####### Schedule Detail #######
+###############################
+
+#appointment
+schedule_detail_programacion:
+  url:             /programaciones/cliente/polosac
+  param:           { module: ScheduleDetail, action: programacion, secure: false }
+
+
+#ScheduleDetail
+schedule_detail_show:
+  url:             /mostrar/asignacion/:slug
+  param:           { module: ScheduleDetail, action: show }
+  requirements:    { slug: \w+ }
+
+schedule_detail_list:
+  url:             /lista/asignaciones/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: ScheduleDetail, action: list, filter_by: id, filter: 0, order_by: id, order: a, max: 40, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+schedule_detail_new:
+  url:             /nueva/asignacion
+  param:           { module: ScheduleDetail, action: edit }
+
+schedule_detail_edit:
+  url:             /editar/asignacion/:slug
+  param:           { module: ScheduleDetail, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+schedule_detail_delete:
+  url:             /eliminar/asignacion/:slug
+  param:           { module: ScheduleDetail, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+
+#######################
+####### Boarding ######
+#######################
+
+#Boarding
+boarding_show:
+  url:             /mostrar/paradero/:slug
+  param:           { module: Boarding, action: show }
+  requirements:    { slug: \w+ }
+
+boarding_list:
+  url:             /lista/paraderos/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Boarding, action: list, filter_by: id, filter: 0, order_by: name, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+boarding_new:
+  url:             /nuevo/paradero
+  param:           { module: Boarding, action: edit }
+
+boarding_edit:
+  url:             /editar/paradero/:slug
+  param:           { module: Boarding, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+boarding_delete:
+  url:             /eliminar/paradero/:slug
+  param:           { module: Boarding, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+  
+  
+  
 ########################
 ####### Passenger ######
 ########################

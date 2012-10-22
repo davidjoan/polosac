@@ -12,4 +12,9 @@
  */
 class Boarding extends BaseBoarding
 {
+  public function getActiveStr()
+  {  	
+  	$actives = $this->getTable()->getStatuss();
+  	return $actives[$this->getActive()];
+  }      
 }

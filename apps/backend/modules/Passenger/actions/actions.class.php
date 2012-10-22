@@ -10,6 +10,10 @@
  */
 class PassengerActions extends ActionsCrud
 {
+  protected function getExtraFilterAndArrangeFields()
+  {
+    return array('c' => array('company_name' => 'name'), 'b' => array('boarding_name' => 'name'));
+  }    
   protected function complementList(sfWebRequest $request, DoctrineQuery $q)
   {
     Doctrine::getTable($this->modelClass)->updateQueryForList($q);

@@ -36,10 +36,25 @@ class PassengerTable extends DoctrineTable
   public function updateQueryForList(DoctrineQuery $q)
   {
     $q->innerJoin('p.Company c');
+    $q->innerJoin('p.Boarding b');
     if(!sfContext::getInstance()->getUser()->isAdmin())
     {
       $q->addWhere('c.slug = ?',sfContext::getInstance()->getUser()->getCompanySlug());    
     }
     
-  }    
+  }
+  
+  public function getQuery()
+  {
+    $q = $this->createAliasQuery()
+         ->innerJoin('p.Company c')
+         ->innerJoin('p.Boarding b');
+    if(!sfContext::getInstance()->getUser()->isAdmin())
+    {
+      $q->addWhere('c.slug = ?',sfContext::getInstance()->getUser()->getCompanySlug());    
+    }
+    $q->addWhere('p.active = ?', 1);
+    return $q;
+  }  
+  
 }

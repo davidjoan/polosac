@@ -12,4 +12,8 @@
  */
 class Passenger extends BasePassenger
 {
+    function getInfo()
+    {
+        return 'Nombres: '.$this->getNames().', DNI: '.$this->getDni();
+    }
 }

@@ -20,9 +20,11 @@
                                 ),
         'columns'            => array
                                 (
-                                  array('2' , ''               , ''                , ''                 ),
-                                  array('10', 'names'     , 'Nombres'     , 'getNames'   ),
-                                  array('10', 'dni'       , 'DNI'         , 'getDni'     ),
+                                  array('2' , ''              , ''         , ''           ),
+                                  array('10', 'boarding_name' , 'Paradero' , 'getBoardingName'   ),
+                                  array('10', 'company_name'  , 'Empresa'  , 'getCompanyName'   ),
+                                  array('10', 'names'     , 'Nombres'      , 'getNames'   ),
+                                  array('10', 'dni'       , 'DNI'          , 'getDni'     ),
 
                                   array('6' , 'disable_image'  , 'Activo'          , 'getDisableImage', 'center', false),
                                   array('2' , ''               , ''                , 'checkbox'         ),
