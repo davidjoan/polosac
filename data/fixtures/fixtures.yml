@@ -240,6 +240,7 @@ User:
     email: subterranea@glencore.com.pe
     username: isabel
     password: 1234
+    active: '1'
   User_9:
     Company: Company_10
     Role: Role_2

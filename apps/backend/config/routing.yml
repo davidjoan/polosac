@@ -99,6 +99,13 @@ passenger_delete:
 ########################
 
 #appointment
+
+schedule_report:
+  url:             /reporte/programacion/:slug
+  param:           { module: Schedule, action: report }
+  requirements:    { slug: '[\w-]+' }
+
+
 schedule_programacion:
   url:             /programaciones/polosac
   param:           { module: Schedule, action: programacion, secure: false }

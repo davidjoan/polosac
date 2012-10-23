@@ -23,7 +23,7 @@ class ScheduleActions extends ActionsCrud
     sfDynamicFormEmbedder::resetParams('schedule_detail');
   }  
   
-    public function executeProgramacion(sfWebRequest $request)
+  public function executeProgramacion(sfWebRequest $request)
   {
   	$datos = Doctrine::getTable('Schedule')->findAll();
   	$result = array();
@@ -42,5 +42,30 @@ class ScheduleActions extends ActionsCrud
   	}
   	return $this->renderJson($result);
   }
+  
+  public function executeReport(sfWebRequest $request)
+  {
+    sfConfig::set('sf_web_debug', false);
+    $slug    = $request->getParameter('slug');
+    
+    $schedule = Doctrine::getTable('Schedule')->findOneBySlug($slug);
+    $this->forward404Unless($schedule);
+    
+    $pdf = new ReportPolosacFPDF('P', 'mm', 'A4', $schedule);
+    $pdf->AddPage(); 
+    $pdf->Ln(10);
+    
+
+    $pdf->Image(sfConfig::get('sf_web_dir') .'/images/general/logo.png',10,10,33);
+    $pdf->Image(sfConfig::get('sf_web_dir') .'/images/general/numero1.png',155,10,25);
+   
+    
+    $pdf->Ln(20);  
+    
+    
+    $pdf->Output(sprintf('polosac-reporte-%s.pdf',Doctrine_Inflector::urlize($schedule->getFormattedTravelDate())),'I');
+   
+    throw new sfStopException();        
+  }  
   
 }
