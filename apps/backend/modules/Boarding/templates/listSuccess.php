@@ -1,9 +1,9 @@
 <?php slot('title') ?>
-  Paraderos
+  Embarques
 <?php end_slot() ?>
 
 <?php slot('subtitle') ?>
-  Lista de Paraderos
+  Lista de Embarques
 <?php end_slot() ?>
 
 <?php include_component('Crud', 'list', array

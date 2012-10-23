@@ -20,13 +20,15 @@
                                 ),
         'columns'            => array
                                 (
-                                  array('2' , ''               , ''            , ''                      ),
-                                  array('20', 'bus_name'       , 'Bus'         , 'getScheduleBusName'    ),
-                                  array('20', 'schedule_date'  , 'Fecha Viaje' , 'getScheduleTravelDate' ),
-                                  array('20', 'schedule_time'  , 'Hora de Viaje' , 'getScheduleTravelTime' ),
-                                  array('20', 'company_name'   , 'Empresa'     , 'getCompanyName'        ),
+                                  array('2' , ''               , ''            , ''                         ),
+                                  array('20', 'bus_name'       , 'Bus'         , 'getScheduleBusName'       ),
+                                  array('20', 'place_from_name', 'Origen'      , 'getSchedulePlaceFromName' ),
+                                  array('20', 'place_to_name'  , 'Destino'     , 'getSchedulePlaceToName'   ),
+                                  array('20', 'schedule_date'  , 'Fecha Viaje' , 'getScheduleTravelDate'    ),
+                                  array('20', 'schedule_time'  , 'Hora de Viaje' , 'getScheduleTravelTime'  ),
+                                  array('20', 'company_name'   , 'Empresa'     , 'getCompanyName'           ),
                                   array('6' , 'disable_image'  , 'Activo'      , 'getDisableImage', 'center', false),
-                                  array('2' , ''               , ''            , 'checkbox'              ),
+                                  array('2' , ''               , ''            , 'checkbox'                 ),
                                 )
       ))
 ?>

@@ -53,17 +53,21 @@ class ScheduleActions extends ActionsCrud
     
     $pdf = new ReportPolosacFPDF('P', 'mm', 'A4', $schedule);
     $pdf->AddPage(); 
-    $pdf->Ln(10);
+    $pdf->Ln(1);
     
 
-    $pdf->Image(sfConfig::get('sf_web_dir') .'/images/general/logo.png',10,10,33);
-    $pdf->Image(sfConfig::get('sf_web_dir') .'/images/general/numero1.png',155,10,25);
+    $pdf->Image(sfConfig::get('sf_web_dir') .'/images/general/logo.png',10,10,31);
+    $pdf->Image(sfConfig::get('sf_web_dir') .'/images/general/numero1.png',155,10,23);
    
     
-    $pdf->Ln(20);  
+    $pdf->Ln(2);  
     
+    $header = array('N°', 'APELLIDOS Y NOMBRES', 'DNI', 'EMPRESA', 'EMBARQUE','DESEMBARQUE', 'FIRMA', 'SS. HH.');
+    $records = Doctrine::getTable('ScheduleDetailPassenger')->getList($slug);    
+
+    $pdf->FancyTable($header,$records);
     
-    $pdf->Output(sprintf('polosac-reporte-%s.pdf',Doctrine_Inflector::urlize($schedule->getFormattedTravelDate())),'I');
+    $pdf->Output(sprintf('polosac-reporte-%s.pdf',Doctrine_Inflector::urlize($schedule->getFormattedTravelDate())),'D');
    
     throw new sfStopException();        
   }  

@@ -17,7 +17,8 @@ class PassengerForm extends BasePassengerForm
       'boarding_id'    => 'Paradero',
       'company_id'     => 'Empresa',
       'dni'            => 'Dni',
-      'names'          => 'Nombres',
+      'first_name'     => 'Nombres',
+      'last_name'      => 'Apellidos',
       'active'         => 'Activo?',
         
     );
@@ -53,7 +54,8 @@ class PassengerForm extends BasePassengerForm
                                     'add_empty' => '---Seleccionar---'
                                     )):new sfWidgetFormValue(array('value' => $company->getName())),
       'dni'                  => new sfWidgetFormInputText(array(), array('size' => 8, 'maxlength' => 8)),
-      'names'                => new sfWidgetFormInputText(array(), array('size' => 60)),
+      'first_name'           => new sfWidgetFormInputText(array(), array('size' => 60)),
+      'last_name'            => new sfWidgetFormInputText(array(), array('size' => 60)),
       'active'               => new sfWidgetFormChoice(array
                                 (
                                   'choices'          => $this->getTable()->getStatuss(),
@@ -75,7 +77,8 @@ $this->addValidators(array
       'id'             => '=',
       'boarding_id'    => 'combo',
       'company_id'     => ($is_admin)?'combo':'-',
-      'names'          => 'name',
+      'first_name'     => 'name',
+      'last_name'          => 'name',
       'dni'            => 'fixed_number',
       'active'         => array('combo', array('choices' => array_keys($this->getTable()->getStatuss()))),
       'slug'           => '-',

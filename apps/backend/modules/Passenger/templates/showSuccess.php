@@ -3,7 +3,7 @@
 <?php end_slot() ?>
 
 <?php slot('subtitle') ?>
-  Pasajero: <?php echo $form->getObject()->getNames() ?>
+  Pasajero: <?php echo $form->getObject()->getInfo() ?>
 <?php end_slot() ?>
 
 <?php include_component('Crud', 'show', array('form' => $form)) ?>

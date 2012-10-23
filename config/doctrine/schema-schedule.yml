@@ -62,17 +62,18 @@ Boarding:
 Passenger:
   tableName:                           t_passenger
   actAs:
-    SluggableExt:                      { fields: [ names ] }
+    SluggableExt:                      { fields: [ last_name ] }
     Timestampable:
   columns:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true         }
     boarding_id:                       { type: integer  , length: 20                    , notnull: false              }
     company_id:                        { type: integer  , length: 20                    , notnull: false              }
     dni:                               { type: string   , length: 8                     , notnull: true               }
-    names:                             { type: string   , length: 100                   , notnull: true               }    
+    first_name:                        { type: string   , length: 100                   , notnull: true               }    
+    last_name:                         { type: string   , length: 100                   , notnull: true               }    
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
   indexes:
-    u_name:                            { fields: [ names ]                               , type: unique                }
+    u_dni:                            { fields: [ dni ]                                 , type: unique                }
   relations:
     Boarding:                          { class: Boarding , local: boarding_id , foreign: id , type: one , alias: Boarding , onDelete: RESTRICT, onUpdate: CASCADE }
     Company:                           { class: Company  , local: company_id  , foreign: id , type: one , alias: Company  , onDelete: RESTRICT, onUpdate: CASCADE }

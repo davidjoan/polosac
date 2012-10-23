@@ -41,7 +41,7 @@
             <?php if($sf_user->hasPermission('@company_list')): ?>
           <?php include_partial('General/tab', array
                 (
-                  'title'       => 'Propietarios', 
+                  'title'       => 'Empresas', 
                   'uri'         => '@company_list',
                   'image'       => 'backend/menu/campaigns.gif',
                 ))

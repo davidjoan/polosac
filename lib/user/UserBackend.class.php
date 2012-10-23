@@ -137,7 +137,7 @@ public function getPermissions()
     $actions['passenger_list'] = true;
     $actions['passenger_show'] = true;
     $actions['passenger_new'] = true;
-    $actions['boarding_edit'] = true;
+    $actions['passenger_edit'] = true;
     
     $actions['boarding_list'] = true;
     $actions['boarding_show'] = true;

@@ -1,9 +1,9 @@
 <?php slot('title') ?>
-  Empresas
+  Embarques
 <?php end_slot() ?>
 
 <?php slot('subtitle') ?>
-  <?php echo $form->isNew() ? 'Agregar' : 'Editar' ?> Empresa
+  <?php echo $form->isNew() ? 'Agregar' : 'Editar' ?> Embarque
 <?php end_slot() ?>
 
 <?php include_component('Crud', 'edit', array('form' => $form)) ?>

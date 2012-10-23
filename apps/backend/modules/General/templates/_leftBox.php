@@ -9,7 +9,7 @@
   <tr>
       <td colspan="2">Este sistema le ayudara a asignar rapidamente que personal de su empresa va a viajar, en los buses de <b>polosac</b>
           como tambien, modificar datos personales como nombre, dni ó  paraderos, este aplicación le informara a los operadores de polosac, los cambios que usted a realizado antes del viaje.
-          ahorrante tiempo y dinero, siente libre de probar el sistema, registrar algunos datos, para que te familiarices con este nuevo sistema, <br> Que tengas un buen dia.</td>
+          ahorrandote tiempo y dinero, sientete libre de probar el sistema, registrar algunos datos, para que te familiarices con este nuevo sistema, <br> Que tengas un buen dia.</td>
   </tr>    
   <tr>
     <th colspan="2">Soporte</th>

@@ -76,7 +76,7 @@ passenger_show:
 
 passenger_list:
   url:             /lista/pasajeros/:filter_by/:filter/:order_by/:order/:max/:page
-  param:           { module: Passenger, action: list, filter_by: id, filter: 0, order_by: names, order: d, max: 20, page: 1, rflow: on }
+  param:           { module: Passenger, action: list, filter_by: id, filter: 0, order_by: last_name, order: d, max: 20, page: 1, rflow: on }
   requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
 
 passenger_new:

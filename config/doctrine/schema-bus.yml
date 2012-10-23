@@ -38,6 +38,7 @@ Bus:
   relations:
     Company:                           { class: Company , local: company_id , foreign: id , type: one , alias: Company , onDelete: RESTRICT, onUpdate: CASCADE }
     Color:                             { class: Color   , local: bus_id     , foreign: color_id , alias: Colors, refClass: BusColor        }
+    Crew:                              { class: Crew    , local: id , foreign: bus_id, type: many, alias: Crews }
   options:
     symfony:                           { filter: false, form: true }
     boolean_columns:                   [ active ]

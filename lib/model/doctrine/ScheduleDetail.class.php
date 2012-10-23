@@ -25,7 +25,17 @@ class ScheduleDetail extends BaseScheduleDetail
     function getScheduleTravelTime()
     {
        return $this->getSchedule()->getTravelTime();
-    }    
+    }
+    
+    function getSchedulePlaceFromName()
+    {
+        return $this->getSchedule()->getPlaceFrom()->getName();
+    }
+    
+    function getSchedulePlaceToName()
+    {
+        return $this->getSchedule()->getPlaceTo()->getName();
+    }
     
     function getScheduleBusName()
     {

@@ -11,8 +11,8 @@
             <td><?php echo button_to_get_url('Mostrar', sprintf('@%s_show?slug=slug', $usClass), array('slug' => array('id' => $usClass.'_slug', 'list' => true, 'validate' => true, 'single' => true)), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
           <?php endif ?>
           
-          <?php if ($buttons['add']): ?>
-            <?php if (isset($object) && $object  && $sf_user->hasPermission(sprintf('@%s_add', $usClass))): ?>
+          <?php if ($buttons['add'] && $sf_user->hasPermission(sprintf('@%s_new', $usClass))): ?>
+            <?php if (isset($object) && $object ): ?>
               <td><?php echo button_to('Agregar', sprintf('@%s_new?parent_slug=%s', $usClass, $object->getSlug()), array('onclick' => true, 'class' => 'inputbutton')) ?></td>
             <?php else: ?>
               <td><?php echo button_to('Agregar', sprintf('@%s_new', $usClass), array('onclick' => true, 'class' => 'inputbutton')) ?></td>

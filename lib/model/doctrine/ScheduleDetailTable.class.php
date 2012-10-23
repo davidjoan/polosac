@@ -37,6 +37,8 @@ class ScheduleDetailTable extends DoctrineTable
     $q->innerJoin('sd.Schedule s');
     $q->innerJoin('sd.Company c');
     $q->innerJoin('s.Bus b');
+    $q->innerJoin('s.PlaceFrom pf');
+    $q->innerJoin('s.PlaceFrom pt');    
     if(!sfContext::getInstance()->getUser()->isAdmin())
     {
       $q->addWhere('c.slug = ?',sfContext::getInstance()->getUser()->getCompanySlug());    
@@ -61,6 +63,8 @@ class ScheduleDetailTable extends DoctrineTable
     $q->innerJoin('sd.Schedule s');
     $q->innerJoin('sd.Company c');
     $q->innerJoin('s.Bus b');
+    $q->innerJoin('s.PlaceFrom pf');
+    $q->innerJoin('s.PlaceFrom pt');
     if(!sfContext::getInstance()->getUser()->isAdmin())
     {
       $q->addWhere('c.slug = ?',sfContext::getInstance()->getUser()->getCompanySlug());    

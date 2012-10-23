@@ -16,4 +16,42 @@ class ScheduleDetailPassengerTable extends DoctrineTable
     {
         return Doctrine_Core::getTable('ScheduleDetailPassenger');
     }
+    
+    public function getList($schedule_slug, $bus_size = 40)
+    {
+      $data = null;
+      $q = $this->createAliasQuery();
+      $q->innerJoin('sdp.Passenger p')
+        ->innerJoin('sdp.ScheduleDetail sd')
+        ->innerJoin('sd.Schedule s')
+        ->where('s.slug = ?', $schedule_slug);
+         
+      $count = 4;
+      $data[0] = array('1','RESERVADO', '-', '-','-');
+      $data[1] = array('2','RESERVADO', '-', '-','-');
+      $data[2] = array('3','RESERVADO', '-', '-','-');
+      $data[3] = array('4','RESERVADO', '-', '-','-');
+      
+      foreach($q->execute() as $key => $passenger)
+      {
+        $count++;
+        $data[$key+4] = array($count, sprintf('%s %s',$passenger->getPassenger()->getLastName(),
+                $passenger->getPassenger()->getFirstName()),
+            $passenger->getPassenger()->getDni(), $passenger->getPassenger()->getCompanyName(), 
+            $passenger->getPassenger()->getBoardingName());
+      }
+      
+      $cant_actual = count($data);
+      
+      $falta = $bus_size - $cant_actual;
+      
+      $counter=0;
+      for ($i = 0; $i<$falta; $i++)
+      {$counter++;
+        $data[$cant_actual+$counter] = array($cant_actual+$counter,'RESERVADO', '-', '-','-');    
+      }
+      
+      //Deb::print_r($data);
+      return $data;
+    }      
 }

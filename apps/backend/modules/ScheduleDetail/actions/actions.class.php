@@ -12,9 +12,11 @@ class ScheduleDetailActions extends ActionsCrud
 {
   protected function getExtraFilterAndArrangeFields()
   {
-    return array('s' => array('schedule_date' => 'travel_date', 'schedule_time' => 'travel_time'), 
-                 'c' => array('company_name' => 'name'),
-                 'b' => array('bus_name' => 'name'));
+    return array('s'  => array('schedule_date' => 'travel_date', 'schedule_time' => 'travel_time'), 
+                 'c'  => array('company_name' => 'name'),
+                 'b'  => array('bus_name' => 'name'),
+                 'pf' => array('place_from_name' => 'name'),
+                 'pt' => array('place_to_name' => 'name'));
   }    
   
   protected function complementEdit(sfWebRequest $request)
