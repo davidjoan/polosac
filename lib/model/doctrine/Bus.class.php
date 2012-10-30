@@ -19,7 +19,12 @@ class Bus extends BaseBus
   
     public function getBusNameForSChedule()
   {
-    return $this->getName().' - ('.$this->getCode().') - '.$this->getPadron().' - # Asientos: '.($this->getQtySeats()-sfConfig::get('app_qty_seats_reserverd'));
+    return $this->getName().' - ('.$this->getCode().') - '.$this->getPadron().' - # Asientos: '.($this->getRealQtyOfSeats());
+  }
+  
+  public function getRealQtyOfSeats()
+  {
+      return $this->getQtySeats()-sfConfig::get('app_qty_seats_reserverd');
   }
   
   public function getFuelStr()

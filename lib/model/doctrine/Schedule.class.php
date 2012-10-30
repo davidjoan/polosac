@@ -18,6 +18,11 @@ class Schedule extends BaseSchedule
   	return $actives[$this->getActive()];
   }
   
+  public function getPlaceName()
+  {
+      return $this->getPlaceFrom()->getName(). ' - '.$this->getPlaceTo()->getName();
+  }
+  
   public function getFormattedTravelDate($format = 'D')
   {
     return $this->getTable()->getDateTimeFormatter()->format($this->getTravelDate(), $format);

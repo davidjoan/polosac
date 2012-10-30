@@ -41,6 +41,14 @@ class UserProject extends sfUserExt
     $this->setAttribute('role_name' , $user->getRole()->getName() , ActionsProject::USER_NAMESPACE);
     $this->setAttribute('company_name' , $user->getCompany()->getName() , ActionsProject::USER_NAMESPACE);
     $this->setAttribute('company_slug' , $user->getCompany()->getSlug() , ActionsProject::USER_NAMESPACE);
+    
+    if($user->isAdmin())
+    {
+        $this->setAttribute('notifications' , Doctrine::getTable('Crew')->getCrewNotifications() , ActionsProject::USER_NAMESPACE);
+    }
+    
+    
+    
     $this->setAuthenticated(true);
     
     $this->mapPermissions($user);
@@ -96,6 +104,11 @@ class UserProject extends sfUserExt
   {
     return $this->getAttribute('company_slug'    , $default, ActionsProject::USER_NAMESPACE);
   }
+  
+  public function getNotifications($default = null)
+  {
+    return $this->getAttribute('notifications'    , $default, ActionsProject::USER_NAMESPACE);
+  }  
   
   
   public function isAdmin()

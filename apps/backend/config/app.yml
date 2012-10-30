@@ -1,2 +1,8 @@
 all:
   qty_seats_reserverd: 4
+  notificacion_mtc:     'Hoy se vence el MTC del tripulante'
+  notificacion_natclar: 'Hoy se vence el NATCLAR del tripulante '
+  notificacion_soat:    'Hoy se vence el SOAT del Bus con placa '
+  notificacion_poliza:  'Hoy se vence la POLIZA del Bus con placa '
+  notificacion_revision_tenica: 'Hoy se vence la REVISION TECNICA del Bus con placa '
+  notificacion_tarjeta_circulacion: 'Hoy se vence la TARJETA DE CIRCULACION del Bus con placa '

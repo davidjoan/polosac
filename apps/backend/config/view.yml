@@ -14,13 +14,15 @@ default:
     - backend/general.css:                 { position: first }
     - backend/button.css:                  { position: first }
     - general/jquery-ui-1.8.custom.css:    { position: first }
-    - fullcalendar/fullcalendar.print.css: { media: print }
+    - fullcalendar/fullcalendar.print.css: { media: print    }
+    - general/ui.notify.css:               { position: first }
     
   javascripts:
     - jquery/jquery-1.4.2.min.js
     - jquery/jquery-ui-1.8.min.js
     - general/general.js
     - jquery/i18n/jquery-ui-i18n.js
+    - jquery/jquery.notify.js
 
   has_layout:     true
   layout:         layout

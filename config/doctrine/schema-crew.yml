@@ -12,6 +12,8 @@ Crew:
     driver_license:                    { type: string   , length: 20                    , notnull: false                                         }
     position:                          { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                             }    
     phone:                             { type: string   , length: 100                   , notnull: false                                         }
+    natclar:                           { type: date }
+    mtc:                               { type: date }
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                             }
   indexes:
     u_name:                            { fields: [ name ]                               , type: unique                                           }

@@ -76,6 +76,18 @@ class ScheduleForm extends BaseScheduleForm
     ); 
     
   $this->addDetailsForm();
+  
+    $this->validatorSchema->setPostValidator(new sfValidatorAnd(array
+    (
+        new ScheduleSeetsValidator(),
+        new ScheduleCompanyValidator(),
+      new sfValidatorSchemaCompare
+      (
+        'place_from_id', sfValidatorSchemaCompare::NOT_EQUAL, 'place_to_id',
+        array('throw_global_error' => true),
+        array('invalid'            => 'Los campos \'%place_from_id%\' y \'%place_to_id%\' deben ser diferentes.')
+      )
+    )));  
   }
   
     public function addDetailsForm()

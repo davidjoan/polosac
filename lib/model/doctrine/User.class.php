@@ -18,6 +18,11 @@ class User extends BaseUser
   	return $actives[$this->getActive()];
   }
   
+  public function isAdmin()
+  {
+      return $this->getRole()->getCode() == 'AD';
+  }
+  
   public function setPassword($password)
   {
     $this->_set('password', kcCrypt::encrypt($password));

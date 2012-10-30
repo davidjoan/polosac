@@ -20,7 +20,9 @@ class CrewForm extends BaseCrewForm
       'driver_license' => 'Licencia de Manejo',
       'position'       => 'Cargo',
       'phone'          => 'Telefono',
-      'active'         => 'Activo?'
+      'natclar'        => 'Natclar',
+      'mtc'            => 'MTC',
+      'active'         => 'Activo?',
         
     );
   }  
@@ -44,6 +46,18 @@ class CrewForm extends BaseCrewForm
                
                                 )),      
       'phone'                => new sfWidgetFormInputText(array(), array('size' => 20)),
+      'natclar'              => new sfWidgetFormDateExt(array
+                                (
+                                  'format' => $this->widgetFormatter->getStandardDateFormat(),
+                                  'year_start' => 2000,
+                                  'year_end' => date('Y'),
+                                )),       
+      'mtc'                  => new sfWidgetFormDateExt(array
+                                (
+                                  'format' => $this->widgetFormatter->getStandardDateFormat(),
+                                  'year_start' => 2000,
+                                  'year_end' => date('Y'),
+                                )),             
       'active'               => new sfWidgetFormChoice(array
                                 (
                                   'choices'          => $this->getTable()->getStatuss(),
@@ -67,6 +81,8 @@ $this->addValidators(array
       'driver_license' => 'text',
       'position'       => array('combo', array('choices' => array_keys($this->getTable()->getPositions()))),
       'phone'          => 'phone',
+      'natclar'        => 'date',
+      'mtc'            => 'date',
       'active'         => array('combo', array('choices' => array_keys($this->getTable()->getStatuss()))),
       'slug'           => '-',
       'created_at'     => '-',

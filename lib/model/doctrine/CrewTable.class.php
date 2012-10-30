@@ -52,4 +52,100 @@ class CrewTable extends DoctrineTable
   {
     $q->innerJoin('c.Bus b');
   }
+  
+  public function getCrewNotifications()
+  {
+    $data = array();
+    
+    //Pasajero MTC
+    $q = $this->createAliasQuery();
+    $q->andWhere(sprintf('DATE_FORMAT(%s, \'%%Y-%%m-%%d\') LIKE DATE_FORMAT(?, \'%%Y-%%m-%%d\')', 'mtc'), date("Y-m-d"));
+    
+    $mtcs = $q->execute();
+    
+    $i = 0;
+    foreach($mtcs as $mtc)
+    {
+        
+       $data[$i] = sprintf('%s %s',sfConfig::get('app_notificacion_mtc'), $mtc->getName());
+       $i++;
+    }
+    
+    // Pasajero NAtclar
+    
+    $q = $this->createAliasQuery();
+    $q->andWhere(sprintf('DATE_FORMAT(%s, \'%%Y-%%m-%%d\') LIKE DATE_FORMAT(?, \'%%Y-%%m-%%d\')', 'natclar'), date("Y-m-d"));
+    
+    $natclars = $q->execute();
+    
+    foreach($natclars as $natclar)
+    {
+       $data[$i] = sprintf('%s %s',sfConfig::get('app_notificacion_natclar'), $natclar->getName());
+       $i++;
+    }
+
+    
+    //  SOAT
+    
+    
+    $q = DoctrineQuery::create()
+         ->select()->from('Bus b')
+            ->andWhere(sprintf('DATE_FORMAT(%s, \'%%Y-%%m-%%d\') LIKE DATE_FORMAT(?, \'%%Y-%%m-%%d\')', 'effective_soat_to'), date("Y-m-d"));
+    
+    $soats = $q->execute();
+    
+    foreach($soats as $soat)
+    {
+       $data[$i] = sprintf('%s %s',sfConfig::get('app_notificacion_soat'), $soat->getCode());
+       $i++;
+    }
+    
+    
+    // POLIZA
+    
+    $q = DoctrineQuery::create()
+         ->select()->from('Bus b')
+            ->andWhere(sprintf('DATE_FORMAT(%s, \'%%Y-%%m-%%d\') LIKE DATE_FORMAT(?, \'%%Y-%%m-%%d\')', 'effective_policy_to'), date("Y-m-d"));
+    
+    $policies = $q->execute();
+    
+    foreach($policies as $policy)
+    {
+       $data[$i] = sprintf('%s %s',sfConfig::get('app_notificacion_poliza'), $policy->getCode());
+       $i++;
+    }    
+    
+    
+    // REVISION TECNICA
+    
+    $q = DoctrineQuery::create()
+         ->select()->from('Bus b')
+            ->andWhere(sprintf('DATE_FORMAT(%s, \'%%Y-%%m-%%d\') LIKE DATE_FORMAT(?, \'%%Y-%%m-%%d\')', 'effective_technical_review_to'), date("Y-m-d"));
+    
+    $tecnicals = $q->execute();
+    
+    foreach($tecnicals as $tecnical)
+    {
+       $data[$i] = sprintf('%s %s',sfConfig::get('app_notificacion_revision_tenica'), $tecnical->getCode());
+       $i++;
+    }   
+    
+    
+    // REVISION TECNICA
+    
+    $q = DoctrineQuery::create()
+         ->select()->from('Bus b')
+            ->andWhere(sprintf('DATE_FORMAT(%s, \'%%Y-%%m-%%d\') LIKE DATE_FORMAT(?, \'%%Y-%%m-%%d\')', 'effective_circulation_card_to'), date("Y-m-d"));
+    
+    $circulations = $q->execute();
+    
+    foreach($circulations as $circulation)
+    {
+       $data[$i] = sprintf('%s %s',sfConfig::get('app_notificacion_tarjeta_circulacion'), $circulation->getCode());
+       $i++;
+    }    
+    
+    return $data;
+    
+  }  
 }

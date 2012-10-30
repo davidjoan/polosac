@@ -18,7 +18,9 @@ class ScheduleDetailClientForm extends BaseScheduleDetailForm
       'company_id'     => 'Empresa',
       'qty_seats'      => 'Cantidad de Asientos',
       'active'         => 'Activo?',
-      'passenger_list' => 'Pasajeros'
+      'passenger_list' => 'Pasajeros',
+      'qty_seats_hidden' => ''
+        
         
     );
   }  
@@ -30,6 +32,7 @@ class ScheduleDetailClientForm extends BaseScheduleDetailForm
       'schedule_id'          => new sfWidgetFormValue(array('value' => $this->object->getSchedule())),
       'company_id'           => new sfWidgetFormValue(array('value' => $this->object->getCompany()->getName())),
       'qty_seats'            => new sfWidgetFormValue(array('value' => $this->object->getQtySeats())),
+      'qty_seats_hidden'     => new sfWidgetFormInputHidden(),
       'active'               => new sfWidgetFormValue(array('value' => $this->object->getActiveStr())),
       'passenger_list'       => new sfWidgetFormDoctrineChoice(array
                                 (
@@ -43,6 +46,7 @@ class ScheduleDetailClientForm extends BaseScheduleDetailForm
                                 )),
     ));
   
+  $this->setDefault('qty_seats_hidden', $this->object->getQtySeats());
 
 
     $this->types = array
@@ -55,9 +59,13 @@ class ScheduleDetailClientForm extends BaseScheduleDetailForm
       'schedule_id'    => '-',
       'company_id'     => '-',
       'qty_seats'      => '-',
-      'passenger_list' => 'pass'
+      'passenger_list' => 'pass',
+      'qty_seats_hidden' => 'pass'
       
-    ); 
-  }
+    );
+    
+    $this->validatorSchema->setPostValidator(new ScheduleDetailSeatsValidator());  
+  }    
+  
 }
 
