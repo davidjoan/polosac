@@ -1,6 +1,6 @@
 <table class="left_box">
   <tr>
-    <th colspan="2">POLOSAC - ADMIN</th>
+    <th colspan="2">POLOSAC - <?php echo ($sf_user->isAdmin()? 'ADMIN': 'EMPRESA');?></th>
   </tr>
   <tr><td></td></tr>
   <tr>
@@ -25,7 +25,7 @@
   <tr><td></td></tr>
   <tr>
     <td>Version</td>
-    <td><b>1.0</b></td>
+    <td><b>1.4</b></td>
   </tr>
   <tr><td></td></tr>
   <tr><td></td></tr>
