@@ -15,7 +15,7 @@
     <th colspan="2">Importante</th>
   </tr>  
   <tr>
-      <td colspan="2" style="color: red; font-size: small;">Recuerde que tiene que asignar los pasajeros a los Buses correspondientes, como maximo <b><?php echo sfConfig::get('app_cantidad_horas_limite');?></b> horas antes de la hora antes de la partida del Bus.</td>
+      <td colspan="2" style="color: red; font-size: small;">Recuerde que tiene que asignar los pasajeros a los Buses correspondientes, como maximo <b><?php echo sfConfig::get('app_cantidad_horas_limite');?></b> horas antes de la partida del Bus.</td>
   </tr>
   <tr><td></td></tr>  
   <tr>
