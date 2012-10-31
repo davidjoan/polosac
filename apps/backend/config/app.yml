@@ -6,3 +6,4 @@ all:
   notificacion_poliza:  'Hoy se vence la POLIZA del Bus con placa '
   notificacion_revision_tenica: 'Hoy se vence la REVISION TECNICA del Bus con placa '
   notificacion_tarjeta_circulacion: 'Hoy se vence la TARJETA DE CIRCULACION del Bus con placa '
+  cantidad_horas_limite: 2

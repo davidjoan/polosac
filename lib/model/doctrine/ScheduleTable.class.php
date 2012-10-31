@@ -40,4 +40,13 @@ class ScheduleTable extends DoctrineTable
     $q->innerJoin('s.PlaceFrom pf');
     $q->innerJoin('s.PlaceTo pt');
   }
+  
+  public function findOneByIdAndTravelDate($bus_id, $travel_date)
+  {
+    $q = $this->createAliasQuery();
+    $q->addWhere('bus_id = ?', $bus_id);
+    $q->addWhere(sprintf('DATE_FORMAT(%s, \'%%Y-%%m-%%d\') LIKE ?', 'travel_date'), $travel_date);
+    
+    return $q->execute()->count();
+  }  
 }

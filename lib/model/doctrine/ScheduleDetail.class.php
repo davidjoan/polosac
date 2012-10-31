@@ -51,4 +51,18 @@ class ScheduleDetail extends BaseScheduleDetail
     {
         return $this->getScheduleBusName();
     }
+    
+    function getListPassengers()
+    {
+        $passengers = $this->getPassenger();
+        $list_passengers = '<b>Lo Sentimos ya paso el tiempo limite para asignar pasajeros a este viaje.</b></br></br>';
+        
+        foreach($passengers as $passenger)
+        {
+            $list_passengers .= $passenger->getInfo().'</br>';
+        }
+        
+        return $list_passengers;
+        
+    }
 }

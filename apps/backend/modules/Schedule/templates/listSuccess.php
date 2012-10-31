@@ -17,7 +17,11 @@
         'uri'                => '@schedule_list?filter_by=filter_by&filter=filter&order_by=order_by&order=order&max=max&page=page',
                                 
         'edit_field'         => 'travel_date',
-        'filter_fields'      => array('bus_name' => 'Bus'),
+        'filter_fields'      => array('bus_name' => 'Bus',
+                                      'travel_date' => 'Fecha', 
+                                      'travel_time' => 'Hora',
+                                      'place_from_name' => 'Origen',
+                                      'place_to_name' => 'Destino'),
         'columns'            => array
                                 (
                                   array('2' , ''                , ''              , ''                       ),

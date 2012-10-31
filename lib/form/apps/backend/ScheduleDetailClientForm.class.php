@@ -25,7 +25,7 @@ class ScheduleDetailClientForm extends BaseScheduleDetailForm
     );
   }  
   public function configure()
-  {
+  {   
   $this->setWidgets(array
     (
       'id'                   => new sfWidgetFormInputHidden(),
@@ -64,7 +64,11 @@ class ScheduleDetailClientForm extends BaseScheduleDetailForm
       
     );
     
-    $this->validatorSchema->setPostValidator(new ScheduleDetailSeatsValidator());  
+    $this->validatorSchema->setPostValidator(new sfValidatorAnd(array
+    (
+      new ScheduleDetailSeatsValidator(),
+      new ScheduleDetailTravelTimeAndDateValidator()
+    )));
   }    
   
 }

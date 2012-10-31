@@ -12,11 +12,18 @@
           ahorrandote tiempo y dinero, sientete libre de probar el sistema, registrar algunos datos, para que te familiarices con este nuevo sistema, <br> Que tengas un buen dia.</td>
   </tr>    
   <tr>
+    <th colspan="2">Importante</th>
+  </tr>  
+  <tr>
+      <td colspan="2" style="color: red; font-size: small;">Recuerde que tiene que asignar los pasajeros a los Buses correspondientes, como maximo <b><?php echo sfConfig::get('app_cantidad_horas_limite');?></b> horas antes de la hora antes de la partida del Bus.</td>
+  </tr>
+  <tr><td></td></tr>  
+  <tr>
     <th colspan="2">Soporte</th>
   </tr>  
   <tr>
       <td colspan="2">Si necesita ayuda para usar el sistema porfavor marcar al siguiente numero Telf. <b>713-0496</b> que nuestros operadores lo atender de inmediato.</td>
-  </tr>  
+  </tr>
   <tr><td></td></tr>
   <tr><td></td></tr>
   <tr>

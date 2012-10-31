@@ -59,5 +59,5 @@ class BusTable extends DoctrineTable
   public function getUse()
   {
     return self::$use;
-  }  
+  }
 }

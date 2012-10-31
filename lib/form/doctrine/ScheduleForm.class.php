@@ -80,6 +80,7 @@ class ScheduleForm extends BaseScheduleForm
     $this->validatorSchema->setPostValidator(new sfValidatorAnd(array
     (
         new ScheduleSeetsValidator(),
+        new ScheduleBusValidator(),
         new ScheduleCompanyValidator(),
       new sfValidatorSchemaCompare
       (
