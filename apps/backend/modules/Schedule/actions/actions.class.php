@@ -56,7 +56,7 @@ class ScheduleActions extends ActionsCrud
     $pdf->Ln(1);
     
 
-    $pdf->Image(sfConfig::get('sf_web_dir') .'/images/general/logo.png',10,10,31);
+    $pdf->Image(sfConfig::get('sf_web_dir') .'/images/general/logo_pdf.jpg',10,10,31);
     //$pdf->Image(sfConfig::get('sf_web_dir') .'/images/general/numero1.png',155,10,23);
    
     

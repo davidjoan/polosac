@@ -13,7 +13,7 @@
   <body>
     <div class="wrap">
       <div class="header">
-        <?php echo image_tag('general/logo.png')?>
+        <?php echo image_tag('general/logo.jpg', array('size' => '240x109'))?>
       </div>
       
       <div class="content">
@@ -21,7 +21,7 @@
       </div>
       
       <div class="footer">
-        © 2012  - <?php echo link_to('POLO S.A.C.', '/') ?> .  Todos los Derechos Reservados. 
+          &copy; 2012  - <?php echo link_to('POLO S.A.C.', '/') ?> .  Todos los Derechos Reservados. 
       </div>
     </div>
   </body>
