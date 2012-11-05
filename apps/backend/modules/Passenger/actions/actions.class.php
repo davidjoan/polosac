@@ -12,7 +12,9 @@ class PassengerActions extends ActionsCrud
 {
   protected function getExtraFilterAndArrangeFields()
   {
-    return array('c' => array('company_name' => 'name'), 'b' => array('boarding_name' => 'name'));
+    return array('c' => array('company_name' => 'name'), 
+                 'b' => array('boarding_name' => 'name'),
+                 'd' => array('disembarking_name' => 'name'));
   }    
   protected function complementList(sfWebRequest $request, DoctrineQuery $q)
   {

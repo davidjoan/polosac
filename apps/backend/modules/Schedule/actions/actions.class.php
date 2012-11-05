@@ -62,8 +62,8 @@ class ScheduleActions extends ActionsCrud
     
     $pdf->Ln(2);  
     
-    $header = array('N°', 'APELLIDOS Y NOMBRES', 'DNI', 'EMPRESA', 'EMBARQUE','DESEMBARQUE', 'FIRMA', 'SS. HH.');
-    $records = Doctrine::getTable('ScheduleDetailPassenger')->getList($slug);    
+    $header = array('N°', 'APELLIDOS Y NOMBRES', 'DNI', 'EMPRESA', 'EMBARQUE','DESEMBARQUE', 'FIRMA');
+    $records = Doctrine::getTable('ScheduleDetailPassenger')->getList($slug,43);    
 
     $pdf->FancyTable($header,$records);
     

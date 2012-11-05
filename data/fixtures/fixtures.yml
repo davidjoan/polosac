@@ -18,7 +18,39 @@ Boarding:
   Boarding_3:
     name: Huacho
   Boarding_4:
-    name: Lima    
+    name: Sayan    
+  Boarding_5:
+    name: Churin    
+  Boarding_6:
+    name: Oyon
+  Boarding_7:
+    name: C. Central
+  Boarding_8:
+    name: C. Sur
+
+
+Disembarking:
+  Disembarking_1:
+    name: C. Central
+  Disembarking_2:
+    name: C. Sur
+  Disembarking_3:
+    name: Oyon
+  Disembarking_4:
+    name: Churin 
+  Disembarking_5:
+    name: Sayan
+  Disembarking_6:
+    name: Huacho
+  Disembarking_7:
+    name: Chancay
+  Disembarking_8:
+    name: Ventanilla
+  Disembarking_9:
+    name: Plaza Norte
+  Disembarking_10:
+    name: T. Junin
+
 Place:
   Place_1:
     name: Lima

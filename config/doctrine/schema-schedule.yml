@@ -34,7 +34,7 @@ ScheduleDetail:
     active:                  { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
   indexes:
   relations:
-    Schedule:                { class: Schedule  , local: schedule_id , foreign: id , type: one , alias: Schedule , onDelete: RESTRICT, onUpdate: CASCADE }
+    Schedule:                { class: Schedule  , local: schedule_id , foreign: id , type: one , alias: Schedule , onDelete: CASCADE, onUpdate: CASCADE }
     Company:                 { class: Company   , local: company_id  , foreign: id , type: one , alias: Company  , onDelete: RESTRICT, onUpdate: CASCADE }
     Passenger:               { class: Passegner , local: schedule_detail_id , foreign: passenger_id , alias: Passengers, refClass: ScheduleDetailPassenger }
   options:
@@ -53,12 +53,31 @@ Boarding:
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
   indexes:
     u_name:                            { fields: [ name ]                               , type: unique                }
-  relations:
-    Passenger:                         { class: Passenger , local: id,   foreign: boarding_id   , type: many , alias: Passengers }
+  #relations:
+  #  Passenger:                         { class: Passenger , local: id,   foreign: boarding_id   , type: many , alias: Passengers }
   options:
     symfony:                           { filter: false, form: true }
     boolean_columns:                   [ active ]  
+
   
+Disembarking:
+  tableName:                           t_disembarking
+  actAs:
+    SluggableExt:                      { fields: [ name ] }
+    Timestampable:
+  columns:
+    id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true         }
+    name:                              { type: string   , length: 100                   , notnull: true               }    
+    active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
+  indexes:
+    u_name:                            { fields: [ name ]                               , type: unique                }
+  #relations:
+  #  Passenger:                         { class: Passenger , local: id,   foreign: boarding_id   , type: many , alias: Passengers }
+  options:
+    symfony:                           { filter: false, form: true }
+    boolean_columns:                   [ active ]  
+    
+    
 Passenger:
   tableName:                           t_passenger
   actAs:
@@ -67,15 +86,17 @@ Passenger:
   columns:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true         }
     boarding_id:                       { type: integer  , length: 20                    , notnull: false              }
+    disembarking_id:                   { type: integer  , length: 20                    , notnull: false              }
     company_id:                        { type: integer  , length: 20                    , notnull: false              }
     dni:                               { type: string   , length: 8                     , notnull: true               }
     first_name:                        { type: string   , length: 100                   , notnull: true               }    
     last_name:                         { type: string   , length: 100                   , notnull: true               }    
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
   indexes:
-    u_dni:                            { fields: [ dni ]                                 , type: unique                }
+    u_dni:                             { fields: [ dni ]                                 , type: unique                }
   relations:
     Boarding:                          { class: Boarding , local: boarding_id , foreign: id , type: one , alias: Boarding , onDelete: RESTRICT, onUpdate: CASCADE }
+    Disembarking:                      { class: Disembarking , local: disembarking_id , foreign: id , type: one , alias: Disembarking , onDelete: RESTRICT, onUpdate: CASCADE }
     Company:                           { class: Company  , local: company_id  , foreign: id , type: one , alias: Company  , onDelete: RESTRICT, onUpdate: CASCADE }
     ScheduleDetail:                    { class: ScheduleDetail , local: passenger_id , foreign: schedule_detail_id , alias: ScheduleDetails, refClass: ScheduleDetailPassenger }
   options:

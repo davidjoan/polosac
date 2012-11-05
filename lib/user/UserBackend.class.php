@@ -119,10 +119,10 @@ public function getPermissions()
     unset($actions['passenger_new']);
     unset($actions['passenger_delete']);
     
-    unset($actions['boarding_list']);
-    unset($actions['boarding_show']);
-    unset($actions['boarding_new']);
-    unset($actions['boarding_delete']);
+//    unset($actions['boarding_list']);
+//    unset($actions['boarding_show']);
+//    unset($actions['boarding_new']);
+//    unset($actions['boarding_delete']);
     
     return $actions;
   }
@@ -139,10 +139,10 @@ public function getPermissions()
     $actions['passenger_new'] = true;
     $actions['passenger_edit'] = true;
     
-    $actions['boarding_list'] = true;
-    $actions['boarding_show'] = true;
-    $actions['boarding_new'] = true;
-    $actions['boarding_edit'] = true;
+//    $actions['boarding_list'] = true;
+//    $actions['boarding_show'] = true;
+//    $actions['boarding_new'] = true;
+//    $actions['boarding_edit'] = true;
     
     return $actions;
   }    

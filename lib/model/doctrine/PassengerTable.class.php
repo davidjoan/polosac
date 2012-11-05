@@ -37,6 +37,7 @@ class PassengerTable extends DoctrineTable
   {
     $q->innerJoin('p.Company c');
     $q->innerJoin('p.Boarding b');
+    $q->innerJoin('p.Disembarking d');
     if(!sfContext::getInstance()->getUser()->isAdmin())
     {
       $q->addWhere('c.slug = ?',sfContext::getInstance()->getUser()->getCompanySlug());    

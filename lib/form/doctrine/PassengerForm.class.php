@@ -14,7 +14,8 @@ class PassengerForm extends BasePassengerForm
   {
     $this->labels = array
     (
-      'boarding_id'    => 'Paradero',
+      'boarding_id'    => 'Embarque',
+      'disembarking_id'=> 'Desembarque',
       'company_id'     => 'Empresa',
       'dni'            => 'Dni',
       'first_name'     => 'Nombres',
@@ -33,7 +34,6 @@ class PassengerForm extends BasePassengerForm
       {
         $company_slug = sfContext::getInstance()->getUser()->getCompanySlug();
         $company = Doctrine::getTable('Company')->findOneBySlug($company_slug);
-        //Deb::print_r($company->toArray());
         $this->object->setCompany($company);
         $this->object->setCompanyId($company->getId());
         
@@ -47,6 +47,10 @@ class PassengerForm extends BasePassengerForm
       'id'                   => new sfWidgetFormInputHidden(),
       'boarding_id'          => new sfWidgetFormDoctrineChoice(array(
                                     'model'   => 'Boarding',
+                                    'add_empty' => '---Seleccionar---'
+                                    )),
+      'disembarking_id'      => new sfWidgetFormDoctrineChoice(array(
+                                    'model'   => 'Disembarking',
                                     'add_empty' => '---Seleccionar---'
                                     )),
       'company_id'           => ($is_admin)?new sfWidgetFormDoctrineChoice(array(
@@ -76,9 +80,10 @@ $this->addValidators(array
     (  
       'id'             => '=',
       'boarding_id'    => 'combo',
+      'disembarking_id'=> 'combo',
       'company_id'     => ($is_admin)?'combo':'-',
       'first_name'     => 'name',
-      'last_name'          => 'name',
+      'last_name'      => 'name',
       'dni'            => 'fixed_number',
       'active'         => array('combo', array('choices' => array_keys($this->getTable()->getStatuss()))),
       'slug'           => '-',

@@ -21,7 +21,8 @@
         'columns'            => array
                                 (
                                   array('2' , ''              , ''         , ''           ),
-                                  array('10', 'boarding_name' , 'Paradero' , 'getBoardingName'   ),
+                                  array('10', 'boarding_name' , 'Embarque' , 'getBoardingName'   ),
+                                  array('10', 'disembarking_name' , 'Desembarque' , 'getDisembarkingName'   ),
                                   array('10', 'company_name'  , 'Empresa'  , 'getCompanyName'   ),
                                   array('10', 'dni'           , 'DNI'          , 'getDni'     ),
                                   array('10', 'first_name'    , 'Nombres'      , 'getFirstName'   ),

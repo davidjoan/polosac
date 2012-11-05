@@ -127,7 +127,7 @@ class ReportPolosacFPDF extends FPDF
     $this->SetLineWidth(.3);
     $this->SetFont('','B');
     // Cabecera
-    $w = array(10,55,20, 20, 20,30,15,15);
+    $w = array(10,55,20, 25,30,30,15);
     for($i=0;$i<count($header);$i++)
     { 
       $this->Cell($w[$i],7,utf8_decode($header[$i]),1,0,'C',true);
@@ -148,9 +148,6 @@ class ReportPolosacFPDF extends FPDF
         $this->Cell($w[4],5,$row[4],'LR',0,'C',$fill);
         $this->Cell($w[5],5,"",'LR',0,'C',$fill);
         $this->Cell($w[6],5,"",'LR',0,'C',$fill);
-        $this->Cell(5,5,"",'LR',0,'C',$fill);
-        $this->Cell(5,5,"",'LR',0,'C',$fill);
-        $this->Cell(5,5,"",'LR',0,'C',$fill);
         $this->Ln();
         $fill = !$fill;
     }
