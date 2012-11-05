@@ -103,27 +103,6 @@ Passenger:
   options:
     symfony:                           { filter: false, form: true }
     boolean_columns:                   [ active ]    
-    
-    
-#ScheduleDetailPassenger:
-#  tableName:                 t_schedule_detail_passenger
-#  actAs:
-#    Timestampable:
-#  columns:
-#    id:                      { type: integer  , length: 20 , primary: true    , autoincrement: true         }
-#    schedule_detail_id:      { type: integer  , length: 20                    , notnull: true               }
-#    passenger_id:            { type: integer  , length: 20                    , notnull: true               }
-#    seat:                    { type: string   , length: 100                   , notnull: true               }
-#    rank:                    { type: integer  , length: 5                     , notnull: true , default: 0  }
-#    active:                  { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
-#  indexes:
-#    i_rank:                  { fields: [ rank ]                                                             }
-#  relations:
-#    ScheduleDetail:          { class: ScheduleDetail , local: schedule_detail_id , foreign: id , type: one , alias: ScheduleDetail , onDelete: RESTRICT, onUpdate: CASCADE }
-#    Passenger:               { class: Passenger      , local: passenger_id       , foreign: id , type: one , alias: Passenger      , onDelete: RESTRICT, onUpdate: CASCADE }
-#  options:
-#    symfony:                 { filter: false, form: true }
-#    boolean_columns:         [ active ]
 
 ScheduleDetailPassenger:
   tableName:                           t_schedule_detail_passenger

@@ -51,5 +51,22 @@ class UserTable extends DoctrineTable
   {
     $q->innerJoin('u.Company c');
     $q->innerJoin('u.Role r');
-  }  
+  } 
+  
+  public function getEmailBosses($company_slug)
+  {
+      $response = array();
+    $q = $this->createAliasQuery();
+    $q->innerJoin('u.Company c');
+         $q->where('c.slug = ?', $company_slug);
+         
+         foreach($q->execute() as $user)
+         {
+           $response[$user->getEmailBoss()]  = 'Jefe(a) de '.$user->getRealName();
+           $response[$user->getEmail()]  = $user->getRealName();
+         }
+         
+         
+    return $response;
+  }   
 }

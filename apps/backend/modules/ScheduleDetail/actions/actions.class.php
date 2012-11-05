@@ -32,13 +32,39 @@ class ScheduleDetailActions extends ActionsCrud
   
   protected function complementSave(sfWebRequest $request)
   {
+      if($this->getUser()->isAdmin())
+      {
+          
+          
+    $scheduleDetail = Doctrine::getTable('ScheduleDetail')->findOneById($this->object->getId());
+    
+    $fecha_de_viaje        = $scheduleDetail->getSchedule()->getTravelDate();
+    $hora_de_viaje         = $scheduleDetail->getSchedule()->getTravelTime();
+    $cantidad_horas_limite = sfConfig::get('app_cantidad_horas_limite');
+
+    $limit_date            = date("Y-m-d H:i:s", strtotime($fecha_de_viaje.''.$hora_de_viaje.' -'.$cantidad_horas_limite.' hours'));
+    $real_date             = date("Y-m-d H:i:s", strtotime($fecha_de_viaje.''.$hora_de_viaje));
+      
+
+    if((strtotime($limit_date) < strtotime(date('Y-m-d H:i:s'))) and (strtotime($limit_date) < strtotime($real_date)))
+    {
+        
+       $emails = Doctrine::getTable('User')->getEmailBosses($this->object->getCompany()->getSlug());
        $mensage = Swift_Message::newInstance()
 		  ->setFrom(sfConfig::get('app_email_notification_from'))
-                  ->setTo(sfConfig::get('app_email_notifications'))
+                  ->setTo(array_merge(sfConfig::get('app_email_notifications'), $emails))
 		  ->setSubject(sfConfig::get('app_email_subject'))
-		  ->setBody($this->getPartial('notification'), 'text/html');
+		  ->setBody($this->getPartial('notification', array('schedule_detail' => $this->object)), 'text/html');
  
-             $this->getMailer()->send($mensage); //enable in production
+       //Deb::print_r($mensage->toString());
+             $this->getMailer()->send($mensage); //enable in production      
+             
+    }
+    
+    
+    
+      }
+
   }
   
     public function executeProgramacion(sfWebRequest $request)

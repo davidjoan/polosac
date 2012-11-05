@@ -66,7 +66,12 @@ class ScheduleDetailClientForm extends BaseScheduleDetailForm
     
     if(sfContext::getInstance()->getUser()->isAdmin())
     {
-      $this->validatorSchema->setPostValidator(new ScheduleDetailSeatsValidator());         
+    $this->validatorSchema->setPostValidator(new sfValidatorAnd(array
+    (
+      new ScheduleDetailSeatsValidator(),
+      new ScheduleDetailTravelTimeAndDateForAdminValidator()
+    )));
+      
     }  else {
     $this->validatorSchema->setPostValidator(new sfValidatorAnd(array
     (

@@ -13,11 +13,11 @@ all:
   email_notifications:
     davidtataje@gmail.com: Rodrigo Valencia
   #rvalencia@glencore.com.pe
-    ronald_reyn@hotmail.com: Julio Carpio
+    #ronald_reyn@hotmail.com: Julio Carpio
   #jcarpio@glencore.com.pe
     new.skin007@gmail.com: N&eacute;lia L&oacute;pez
   #ipolo@glencore.com.pe
-    reservasmina@polosac.pe: N&eacute;lia L&oacute;pez
-    hperez@polosac.pe:  Hugo Perez
-    reservaslima@polosac.pe: Iris Canchan
+    #reservasmina@polosac.pe: N&eacute;lia L&oacute;pez
+    #hperez@polosac.pe:  Hugo Perez
+    #reservaslima@polosac.pe: Iris Canchan
   email_subject: Notificaci&oacute;n Autogenerada por el sistema de reservas POLOSAC
