@@ -68,13 +68,22 @@
             <?php if($sf_user->hasPermission('@boarding_list')): ?>          
           <?php include_partial('General/tab', array
                 (
-                  'title'       => 'Paraderos', 
+                  'title'       => 'Embarques', 
                   'uri'         => '@boarding_list',
                   'image'       => 'backend/menu/campaigns.gif',
                 ))
           ?>  
           <?php endif; ?>
-            <?php if($sf_user->hasPermission('@place_list')): ?>
+          <?php if($sf_user->hasPermission('@disembarking_list')): ?>          
+          <?php include_partial('General/tab', array
+                (
+                  'title'       => 'Desembarques', 
+                  'uri'         => '@disembarking_list',
+                  'image'       => 'backend/menu/campaigns.gif',
+                ))
+          ?>  
+          <?php endif; ?>
+          <?php if($sf_user->hasPermission('@place_list')): ?>
           <?php include_partial('General/tab', array
                 (
                   'title'       => 'Lugares', 

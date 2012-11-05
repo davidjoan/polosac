@@ -39,7 +39,7 @@ class ScheduleDetailActions extends ActionsCrud
   		$result[$key] = array
   		                (
   		                  'id' => $dato->getId(),
-  		                  'title' => $dato->getSchedule()->getTravelTime().' | '.$dato->getSchedule()->getBus().' | '.$dato->getActiveStr(),
+  		                  'title' => $dato->getSchedule()->getNumber().'.- '.$dato->getSchedule()->getTravelTime().' | '.$dato->getSchedule()->getBus().' | '.$dato->getActiveStr(),
   		                  'start' => $dato->getSchedule()->getFormattedTravelDate('yyyy-MM-dd').' '.$dato->getSchedule()->getTravelTime(),
   		                  'url' => sfContext::getInstance()->getRouting()->generate('schedule_detail_edit', array('slug' => $dato->getSlug())),
   		                  'color' => ($dato->getActive() == 1 )?'#7D58EE':'#C31434'

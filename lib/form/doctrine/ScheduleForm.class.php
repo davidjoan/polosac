@@ -22,6 +22,7 @@ class ScheduleForm extends BaseScheduleForm
       'place_to_id'   => 'Destino',
       'travel_date'   => 'Fecha de Viaje',
       'travel_time'   => 'Hora de Viaje',
+      'number'        => 'N&uacute;mero de Viaje',
       'active'        => 'Activo?',
     );
   } 
@@ -49,7 +50,12 @@ class ScheduleForm extends BaseScheduleForm
                                   'year_start' => 2011,
                                   'year_end' => date('Y')
                                 )),
-      'travel_time'          => new sfWidgetFormTime(),        
+      'travel_time'          => new sfWidgetFormTime(),
+      'number'               => new sfWidgetFormChoice(array
+                                (
+                                  'choices'          => $this->getTable()->getNumbers(),
+                                  'expanded'         => false
+                                )),
       'active'               => new sfWidgetFormChoice(array
                                 (
                                   'choices'          => $this->getTable()->getStatuss(),
@@ -69,6 +75,7 @@ class ScheduleForm extends BaseScheduleForm
       'place_to_id'    => 'Combo',
       'travel_date'    => 'date',
       'travel_time'    => '=',
+      'number'         => '=',
       'active'         => array('combo', array('choices' => array_keys($this->getTable()->getStatuss()))),
       'slug'           => '-',
       'created_at'     => '-',

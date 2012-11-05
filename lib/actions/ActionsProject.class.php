@@ -22,5 +22,6 @@ abstract class ActionsProject extends sfActionsExt
     SCHEDULE_NAMESPACE                 = 'Schedule',
     PASSENGER_NAMESPACE                = 'Passenger',
     BOARDING_NAMESPACE                 = 'Boarding',
-    SCHEDULE_DETAIL_NAMESPACE          = 'ScheduleDetail';
+    SCHEDULE_DETAIL_NAMESPACE          = 'ScheduleDetail',
+    DISEMBARKING_NAMESPACE             = 'Disembarking';
 }

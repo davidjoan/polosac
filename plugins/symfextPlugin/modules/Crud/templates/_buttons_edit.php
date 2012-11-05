@@ -8,6 +8,9 @@
       <td align="<?php echo $right ? 'right' : 'left' ?>">
         <table class="buttons">
           <tr>
+          <?php if (has_slot('buttons')): ?>
+            <?php include_slot('buttons') ?>
+          <?php endif ?>              
             <td><?php echo button_to_function($object ? ($object->isNew() ? 'Grabar' : 'Modificar') : 'Grabar Cambios', $function, array('type' => 'submit', 'id' => 'Save', 'class' => 'inputsubmit')) ?></td>
             <?php if (has_slot('buttons_edit_cancel')): ?>
               <?php include_slot('buttons_edit_cancel') ?>

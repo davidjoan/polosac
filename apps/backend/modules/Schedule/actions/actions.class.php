@@ -33,7 +33,7 @@ class ScheduleActions extends ActionsCrud
   		$result[$key] = array
   		                (
   		                  'id' => $dato->getId(),
-  		                  'title' => $dato->getTravelTime().' | '.$dato->getBus().' | '.$dato->getActiveStr(),
+  		                  'title' => $dato->getNumber().'.- '.$dato->getTravelTime().' | '.$dato->getBus().' | '.$dato->getActiveStr(),
   		                  'start' => $dato->getFormattedTravelDate('yyyy-MM-dd').' '.$dato->getTravelTime(),
   		                  'url' => sfContext::getInstance()->getRouting()->generate('schedule_edit', array('slug' => $dato->getSlug())),
   		                  'color' => ($dato->getActive() == 1 )?'#7D58EE':'#C31434'
@@ -57,17 +57,17 @@ class ScheduleActions extends ActionsCrud
     
 
     $pdf->Image(sfConfig::get('sf_web_dir') .'/images/general/logo.png',10,10,31);
-    $pdf->Image(sfConfig::get('sf_web_dir') .'/images/general/numero1.png',155,10,23);
+    //$pdf->Image(sfConfig::get('sf_web_dir') .'/images/general/numero1.png',155,10,23);
    
     
     $pdf->Ln(2);  
     
     $header = array('N°', 'APELLIDOS Y NOMBRES', 'DNI', 'EMPRESA', 'EMBARQUE','DESEMBARQUE', 'FIRMA');
-    $records = Doctrine::getTable('ScheduleDetailPassenger')->getList($slug,43);    
+    $records = Doctrine::getTable('ScheduleDetailPassenger')->getList($slug,$schedule->getBus()->getRealQtyOfSeats());    
 
     $pdf->FancyTable($header,$records);
     
-    $pdf->Output(sprintf('polosac-reporte-%s.pdf',Doctrine_Inflector::urlize($schedule->getFormattedTravelDate())),'D');
+    $pdf->Output(sprintf('polosac-reporte-%s.pdf',Doctrine_Inflector::urlize($schedule->getFormattedTravelDate())),'I');//D
    
     throw new sfStopException();        
   }  

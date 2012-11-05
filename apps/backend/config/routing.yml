@@ -1,4 +1,33 @@
-###############################
+#######################
+####### Disembarking ##
+#######################
+
+#disembarking
+disembarking_show:
+  url:             /mostrar/desembarque/:slug
+  param:           { module: Disembarking, action: show }
+  requirements:    { slug: \w+ }
+
+disembarking_list:
+  url:             /lista/desembarques/:filter_by/:filter/:order_by/:order/:max/:page
+  param:           { module: Disembarking, action: list, filter_by: id, filter: 0, order_by: name, order: d, max: 20, page: 1, rflow: on }
+  requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
+
+disembarking_new:
+  url:             /nuevo/desembarque
+  param:           { module: Disembarking, action: edit }
+
+disembarking_edit:
+  url:             /editar/desembarque/:slug
+  param:           { module: Disembarking, action: edit }
+  requirements:    { slug: '[\w-]+' }
+
+disembarking_delete:
+  url:             /eliminar/desembarque/:slug
+  param:           { module: Disembarking, action: delete }
+  requirements:    { slug: '[\w-,]+' }
+  
+  ###############################
 ####### Schedule Detail #######
 ###############################
 
@@ -39,26 +68,26 @@ schedule_detail_delete:
 
 #Boarding
 boarding_show:
-  url:             /mostrar/paradero/:slug
+  url:             /mostrar/embarque/:slug
   param:           { module: Boarding, action: show }
   requirements:    { slug: \w+ }
 
 boarding_list:
-  url:             /lista/paraderos/:filter_by/:filter/:order_by/:order/:max/:page
+  url:             /lista/embarques/:filter_by/:filter/:order_by/:order/:max/:page
   param:           { module: Boarding, action: list, filter_by: id, filter: 0, order_by: name, order: d, max: 20, page: 1, rflow: on }
   requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
 
 boarding_new:
-  url:             /nuevo/paradero
+  url:             /nuevo/embarque
   param:           { module: Boarding, action: edit }
 
 boarding_edit:
-  url:             /editar/paradero/:slug
+  url:             /editar/embarque/:slug
   param:           { module: Boarding, action: edit }
   requirements:    { slug: '[\w-]+' }
 
 boarding_delete:
-  url:             /eliminar/paradero/:slug
+  url:             /eliminar/embarque/:slug
   param:           { module: Boarding, action: delete }
   requirements:    { slug: '[\w-,]+' }
   

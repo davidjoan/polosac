@@ -11,6 +11,7 @@ Schedule:
     place_to_id:             { type: integer  , length: 20                    , notnull: true               }
     travel_date:             { type: date }
     travel_time:             { type: time }
+    number:                  { type: string   , length: 2                     , notnull: true               }
     active:                  { type: string   , length: 1  , fixed: true      , notnull: true , default: 1  }
   indexes:
   relations:

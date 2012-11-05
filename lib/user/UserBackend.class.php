@@ -114,10 +114,6 @@ public function getPermissions()
     unset($actions['schedule_detail_delete']);
     
     
-    unset($actions['passenger_list']);
-    unset($actions['passenger_show']);
-    unset($actions['passenger_new']);
-    unset($actions['passenger_delete']);
     
 //    unset($actions['boarding_list']);
 //    unset($actions['boarding_show']);

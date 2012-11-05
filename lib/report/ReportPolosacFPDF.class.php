@@ -3,7 +3,7 @@
 /**
  * PostPDF
  *
- * @package    adehr
+ * @package    polosac
  * @subpackage lib
  * @author     David Joan Tataje Mendoza <dtataje@datasolutions.pe>
  */
@@ -45,6 +45,11 @@ class ReportPolosacFPDF extends FPDF
     $titulo = 'MANIFIESTO DE PASAJEROS';
     $this->Cell(100,8,utf8_decode($titulo),0,0,'C');
     
+    $this->SetFont('Arial','B',15);
+    $this->Cell(40,10,utf8_decode($this->schedule->getNumber()),1,0,'C');
+    
+    
+    $this->SetFont('Arial','BU',12);
     $this->Ln();
     $this->Cell(38);
     $placa = 'PLACA : '.$this->schedule->getBus()->getCode();
@@ -127,10 +132,10 @@ class ReportPolosacFPDF extends FPDF
     $this->SetLineWidth(.3);
     $this->SetFont('','B');
     // Cabecera
-    $w = array(10,55,20, 25,30,30,15);
+    $w = array(10,55,20, 35,24,25,15);
     for($i=0;$i<count($header);$i++)
     { 
-      $this->Cell($w[$i],7,utf8_decode($header[$i]),1,0,'C',true);
+      $this->Cell($w[$i],6,utf8_decode($header[$i]),1,0,'C',true);
     }
     $this->Ln();
     // Restauración de colores y fuentes
@@ -141,13 +146,13 @@ class ReportPolosacFPDF extends FPDF
     $fill = false;
     foreach($data as $row)
     {
-        $this->Cell($w[0],5,$row[0],'LR',0,'C',$fill);
-        $this->Cell($w[1],5,$row[1],'LR',0,'L',$fill);
-        $this->Cell($w[2],5,$row[2],'LR',0,'C',$fill);
-        $this->Cell($w[3],5,$row[3],'LR',0,'C',$fill);
-        $this->Cell($w[4],5,$row[4],'LR',0,'C',$fill);
-        $this->Cell($w[5],5,"",'LR',0,'C',$fill);
-        $this->Cell($w[6],5,"",'LR',0,'C',$fill);
+        $this->Cell($w[0],4,$row[0],'LR',0,'C',$fill);
+        $this->Cell($w[1],4,utf8_decode($row[1]),'LR',0,'L',$fill);
+        $this->Cell($w[2],4,utf8_decode($row[2]),'LR',0,'C',$fill);
+        $this->Cell($w[3],4,utf8_decode($row[3]),'LR',0,'C',$fill);
+        $this->Cell($w[4],4,utf8_decode($row[4]),'LR',0,'C',$fill);
+        $this->Cell($w[5],4,utf8_decode($row[5]),'LR',0,'C',$fill);
+        $this->Cell($w[6],4,"",'LR',0,'C',$fill);
         $this->Ln();
         $fill = !$fill;
     }

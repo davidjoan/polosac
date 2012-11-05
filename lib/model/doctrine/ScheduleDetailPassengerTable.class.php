@@ -19,6 +19,8 @@ class ScheduleDetailPassengerTable extends DoctrineTable
     
     public function getList($schedule_slug, $bus_size = 40)
     {
+        
+      $schedule = Doctrine::getTable('Schedule')->findOneBySlug($schedule_slug);
       $data = null;
       $q = $this->createAliasQuery();
       $q->innerJoin('sdp.Passenger p')
@@ -26,20 +28,56 @@ class ScheduleDetailPassengerTable extends DoctrineTable
         ->innerJoin('sd.Schedule s')
         ->where('s.slug = ?', $schedule_slug);
          
-      $count = 4;
-      $data[0] = array('1','RESERVADO', '-', '-','-');
-      $data[1] = array('2','RESERVADO', '-', '-','-');
-      $data[2] = array('3','RESERVADO', '-', '-','-');
-      $data[3] = array('4','RESERVADO', '-', '-','-');
+      $count = 0;
+      $id = 0;
+
       
+      if($schedule->getPlaceFrom()->getName() == 'Lima')
+      {
       foreach($q->execute() as $key => $passenger)
       {
+          if($key == 2)
+          {
+              $data[2] = array('3','RESERVADO AUXILIAR', '-', '-','-','-');
+              $count++;
+              $id++;
+          }
         $count++;
-        $data[$key+4] = array($count, sprintf('%s %s',$passenger->getPassenger()->getLastName(),
+        $data[$id] = array($count, sprintf('%s %s',$passenger->getPassenger()->getLastName(),
                 $passenger->getPassenger()->getFirstName()),
-            $passenger->getPassenger()->getDni(), $passenger->getPassenger()->getCompanyName(), 
-            $passenger->getPassenger()->getBoardingName());
+                $passenger->getPassenger()->getDni(), 
+                $passenger->getPassenger()->getCompanyName(), 
+                $passenger->getPassenger()->getBoardingName(),
+                $passenger->getPassenger()->getDisembarkingName()
+                
+                );
+        
+        $id++;
+      }          
       }
+      else
+      {
+      foreach($q->execute() as $key => $passenger)
+      {
+          if($key == 2)
+          {
+              $data[2] = array('3','RESERVADO AUXILIAR', '-', '-','-','-');
+              $count++;
+              $id++;
+          }
+        $count++;
+        $data[$id] = array($count, sprintf('%s %s',$passenger->getPassenger()->getLastName(),
+                $passenger->getPassenger()->getFirstName()),
+                $passenger->getPassenger()->getDni(), 
+                $passenger->getPassenger()->getCompanyName(), 
+                $passenger->getPassenger()->getDisembarkingName(),
+                $passenger->getPassenger()->getBoardingName() 
+                );
+        
+        $id++;
+      }     
+      }
+
       
       $cant_actual = count($data);
       
@@ -48,10 +86,9 @@ class ScheduleDetailPassengerTable extends DoctrineTable
       $counter=0;
       for ($i = 0; $i<$falta; $i++)
       {$counter++;
-        $data[$cant_actual+$counter] = array($cant_actual+$counter,'RESERVADO', '-', '-','-');    
+        $data[$cant_actual+$counter] = array($cant_actual+$counter,'RESERVADO', '-', '-','-', '-');    
       }
       
-      //Deb::print_r($data);
       return $data;
     }      
 }

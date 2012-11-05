@@ -7,3 +7,12 @@ all:
   notificacion_revision_tenica: 'Hoy se vence la REVISION TECNICA del Bus con placa '
   notificacion_tarjeta_circulacion: 'Hoy se vence la TARJETA DE CIRCULACION del Bus con placa '
   cantidad_horas_limite: 2
+  email_notificacion_1: davidtataje@gmail.com 
+  #rvalencia@glencore.com.pe
+  email_notificacion_2: ronald_reyn@hotmail.com
+  #jcarpio@glencore.com.pe
+  email_notificacion_3: new.skin007@gmail.com
+  #ipolo@glencore.com.pe
+  email_notificacion_4: reservasmina@polosac.pe
+  email_notificacion_5: hperez@polosac.pe
+  email_notificacion_6: reservaslima@polosac.pe
