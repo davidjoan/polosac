@@ -8,7 +8,7 @@
                 (
                   'title'       => 'Inicio', 
                   'uri'         => '@home',
-                  'image'       => 'backend/menu/user.gif',
+                  'image'       => 'backend/menu/home.gif',
                 ))
           ?>
           <?php if($sf_user->hasPermission('@schedule_list')): ?>
@@ -16,18 +16,18 @@
                 (
                   'title'       => 'Programación', 
                   'uri'         => '@schedule_list',
-                  'image'       => 'backend/menu/marketing.gif',
+                  'image'       => 'backend/menu/inventory.gif',
                 ))
           ?>
             <?php endif; ?>
-            <?php if($sf_user->hasPermission('@crew_list')): ?>
-          <?php include_partial('General/tab', array
+            <?php if($sf_user->hasPermission('@schedule_detail_list')): ?>
+            <?php include_partial('General/tab', array
                 (
-                  'title'       => 'Tripulación', 
-                  'uri'         => '@crew_list',
-                  'image'       => 'backend/menu/marketing.gif',
+                  'title'       => 'Distribución', 
+                  'uri'         => '@schedule_detail_list',
+                  'image'       => 'backend/menu/inventory.gif',
                 ))
-          ?>
+          ?>        
             <?php endif; ?>
             <?php if($sf_user->hasPermission('@bus_list')): ?>
           <?php include_partial('General/tab', array
@@ -43,19 +43,36 @@
                 (
                   'title'       => 'Empresas', 
                   'uri'         => '@company_list',
-                  'image'       => 'backend/menu/campaigns.gif',
+                  'image'       => 'backend/menu/marketing.gif',
                 ))
           ?>
-            <?php endif; ?>
-            <?php if($sf_user->hasPermission('@schedule_detail_list')): ?>
-            <?php include_partial('General/tab', array
+            <?php endif; ?>           
+            <?php if($sf_user->hasPermission('@boarding_list')): ?>          
+          <?php include_partial('General/tab', array
                 (
-                  'title'       => 'Distribución', 
-                  'uri'         => '@schedule_detail_list',
-                  'image'       => 'backend/menu/campaigns.gif',
+                  'title'       => 'Embarques', 
+                  'uri'         => '@boarding_list',
+                  'image'       => 'backend/menu/marketing.gif',
                 ))
-          ?>        
-            <?php endif; ?>            
+          ?>  
+          <?php endif; ?>
+          <?php if($sf_user->hasPermission('@disembarking_list')): ?>          
+          <?php include_partial('General/tab', array
+                (
+                  'title'       => 'Desembarques', 
+                  'uri'         => '@disembarking_list',
+                  'image'       => 'backend/menu/marketing.gif',
+                ))
+          ?>  
+          <?php endif; ?>
+          <?php if($sf_user->hasPermission('@place_list')): ?>
+          <?php include_partial('General/tab', array
+                (
+                  'title'       => 'Lugares', 
+                  'uri'         => '@place_list',
+                  'image'       => 'backend/menu/marketing.gif',
+                ))
+          ?><?php endif; ?>
             <?php if($sf_user->hasPermission('@passenger_list')): ?>
           <?php include_partial('General/tab', array
                 (
@@ -65,32 +82,15 @@
                 ))
           ?>
             <?php endif; ?>
-            <?php if($sf_user->hasPermission('@boarding_list')): ?>          
+            <?php if($sf_user->hasPermission('@crew_list')): ?>
           <?php include_partial('General/tab', array
                 (
-                  'title'       => 'Embarques', 
-                  'uri'         => '@boarding_list',
-                  'image'       => 'backend/menu/campaigns.gif',
+                  'title'       => 'Tripulación', 
+                  'uri'         => '@crew_list',
+                  'image'       => 'backend/menu/user.gif',
                 ))
-          ?>  
-          <?php endif; ?>
-          <?php if($sf_user->hasPermission('@disembarking_list')): ?>          
-          <?php include_partial('General/tab', array
-                (
-                  'title'       => 'Desembarques', 
-                  'uri'         => '@disembarking_list',
-                  'image'       => 'backend/menu/campaigns.gif',
-                ))
-          ?>  
-          <?php endif; ?>
-          <?php if($sf_user->hasPermission('@place_list')): ?>
-          <?php include_partial('General/tab', array
-                (
-                  'title'       => 'Lugares', 
-                  'uri'         => '@place_list',
-                  'image'       => 'backend/menu/campaigns.gif',
-                ))
-          ?><?php endif; ?>
+          ?>
+            <?php endif; ?>            
             <?php if($sf_user->hasPermission('@user_list')): ?>
            
           <?php include_partial('General/tab', array

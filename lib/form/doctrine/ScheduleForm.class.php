@@ -65,6 +65,8 @@ class ScheduleForm extends BaseScheduleForm
       
     ));  
   
+    
+    $this->setDefaults(array('travel_date' => date('Y-m-d'), 'travel_time' => date('H:i:s')));
 
 
     $this->types = array

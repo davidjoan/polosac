@@ -12,4 +12,19 @@
  */
 class ScheduleDetailPassenger extends BaseScheduleDetailPassenger
 {
+    public function save(Doctrine_Connection $conn = null) {
+        
+        if ($this->isNew()) {
+            $this->setNewRank();
+        }
+
+        
+        parent::save($conn);
+    }
+    
+     public function setNewRank() {
+        $rank = $this->getTable()->getNewRank();
+        $this->setRank($rank);
+    }
+
 }

@@ -29,6 +29,18 @@ class ScheduleDetailActions extends ActionsCrud
     Doctrine::getTable($this->modelClass)->updateQueryForList($q);
   }
   
+  
+  protected function complementSave(sfWebRequest $request)
+  {
+       $mensage = Swift_Message::newInstance()
+		  ->setFrom(sfConfig::get('app_email_notification_from'))
+                  ->setTo(sfConfig::get('app_email_notifications'))
+		  ->setSubject(sfConfig::get('app_email_subject'))
+		  ->setBody($this->getPartial('notification'), 'text/html');
+ 
+             $this->getMailer()->send($mensage); //enable in production
+  }
+  
     public function executeProgramacion(sfWebRequest $request)
   {
   	$datos = Doctrine::getTable('ScheduleDetail')->getCalendarClient();

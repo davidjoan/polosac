@@ -39,11 +39,11 @@ class ScheduleSeetsValidator extends sfGlobalValidator
         if($real_qty > $qty_of_seats)
         {
             throw new sfValidatorError($this, 'invalid');
-        }
+        }    
+
         
         
 
- 
     return $value;
   }
 }

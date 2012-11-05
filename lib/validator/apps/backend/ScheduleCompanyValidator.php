@@ -33,7 +33,7 @@ class ScheduleCompanyValidator extends sfGlobalValidator
         {
             @$datos[$detail['company_id']] = (($datos[$detail['company_id']] == null)?0:$datos[$detail['company_id']]) + 1;
         }
-        
+                
         foreach ($datos as $dato)
         {
             if($dato > 1)

@@ -17,6 +17,34 @@ class ScheduleDetailPassengerTable extends DoctrineTable
         return Doctrine_Core::getTable('ScheduleDetailPassenger');
     }
     
+    public function getNewRank()
+  {
+  	 $q = $this->createQuery('a')
+  	           ->addSelect('MAX(rank)');
+  	           
+  	 $dato = $q->execute()->getFirst()->toArray();
+  	 return $dato['MAX']+1;
+  	 
+  } 
+    
+      public function getQuery($slug = null)
+  {
+    $slug = (is_null($slug))?sfContext::getInstance()->getUser()->getCompanySlug():$slug;
+    
+    $q = $this->createAliasQuery()
+         ->innerJoin('sdp.Passenger p')   
+         ->innerJoin('p.Company c')
+         ->innerJoin('p.Boarding b');
+ 
+      $q->addWhere('c.slug = ?',$slug);    
+    
+    $q->addWhere('p.active = ?', 1);
+    return $q;
+  }  
+  
+            
+            
+    
     public function getList($schedule_slug, $bus_size = 40)
     {
         

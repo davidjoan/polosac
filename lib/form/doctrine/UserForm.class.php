@@ -21,6 +21,7 @@ class UserForm extends BaseUserForm
       'password'         => 'Contrase&ntilde;a',
       'confirm_password' => 'Confirma Password',
       'email'            => 'Correo Electr&oacute;nico',
+      'email_boss'       => 'Correo Electr&oacute;nico del Jefe Inmediato',
       'phone'            => 'Telefono',
       'active'           => 'Activo',
     );
@@ -44,6 +45,7 @@ class UserForm extends BaseUserForm
       'password'             => new sfWidgetFormInputPassword(array(), array('size' => '30')),
       'confirm_password'     => new sfWidgetFormInputPassword(array(), array('size' => '30')),
       'email'                => new sfWidgetFormInputText(array(), array('size' => 30)),
+      'email_boss'           => new sfWidgetFormInputText(array(), array('size' => 30)),
       'phone'                => new sfWidgetFormInputText(array(), array('size' => 15)),
       'active'               => new sfWidgetFormChoice(array
                                 (
@@ -65,6 +67,7 @@ class UserForm extends BaseUserForm
       'password'         => 'password',
       'confirm_password' => 'password',
       'email'            => 'email',
+      'email_boss'       => 'email',
       'phone'            => 'phone',
       'active'           => array('combo', array('choices' => array_keys($this->getTable()->getStatuss()))),
       'last_access_at'   => '-',

@@ -45,14 +45,16 @@ class PassengerTable extends DoctrineTable
     
   }
   
-  public function getQuery()
+  public function getQuery($slug = null)
   {
+    $slug = (is_null($slug))?sfContext::getInstance()->getUser()->getCompanySlug():$slug;
+    
     $q = $this->createAliasQuery()
          ->innerJoin('p.Company c')
          ->innerJoin('p.Boarding b');
     if(!sfContext::getInstance()->getUser()->isAdmin())
     {
-      $q->addWhere('c.slug = ?',sfContext::getInstance()->getUser()->getCompanySlug());    
+      $q->addWhere('c.slug = ?',$slug);    
     }
     $q->addWhere('p.active = ?', 1);
     return $q;

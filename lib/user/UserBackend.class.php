@@ -107,19 +107,7 @@ public function getPermissions()
   
   public function getActionsForAdmin($actions)
   {       
-      
-    unset($actions['schedule_detail_list']);
-    unset($actions['schedule_detail_show']);
-    unset($actions['schedule_detail_new']);
     unset($actions['schedule_detail_delete']);
-    
-    
-    
-//    unset($actions['boarding_list']);
-//    unset($actions['boarding_show']);
-//    unset($actions['boarding_new']);
-//    unset($actions['boarding_delete']);
-    
     return $actions;
   }
   

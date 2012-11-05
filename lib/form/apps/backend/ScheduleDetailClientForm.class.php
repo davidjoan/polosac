@@ -36,11 +36,11 @@ class ScheduleDetailClientForm extends BaseScheduleDetailForm
       'active'               => new sfWidgetFormValue(array('value' => $this->object->getActiveStr())),
       'passenger_list'       => new sfWidgetFormDoctrineChoice(array
                                 (
-                                  'model'            => $this->getRelatedModelName('Passenger'),
+                                  'model'            => $this->getRelatedModelName('ScheduleDetailPassenger'),
                                   'expanded'         => true,
                                   'multiple'         => true,
                                   'method'           => 'getInfo',
-                                  'query'            => Doctrine::getTable('Passenger')->getQuery(),
+                                  'query'            => Doctrine::getTable('Passenger')->getQuery($this->object->getCompany()->getSlug()),
                                   'renderer_class'   => 'sfWidgetFormSelectDoubleList',
                                   'renderer_options' => array('label_unassociated' => 'No Seleccionados','label_associated'   => 'Seleccionados')
                                 )),
@@ -64,12 +64,18 @@ class ScheduleDetailClientForm extends BaseScheduleDetailForm
       
     );
     
+    if(sfContext::getInstance()->getUser()->isAdmin())
+    {
+      $this->validatorSchema->setPostValidator(new ScheduleDetailSeatsValidator());         
+    }  else {
     $this->validatorSchema->setPostValidator(new sfValidatorAnd(array
     (
       new ScheduleDetailSeatsValidator(),
       new ScheduleDetailTravelTimeAndDateValidator()
     )));
-  }    
+  }         
+    }
+   
   
 }
 

@@ -132,6 +132,7 @@ ScheduleDetailPassenger:
   columns:
     schedule_detail_id:               { type: integer  , length: 20 , primary: true                                                               }
     passenger_id:                     { type: integer  , length: 20 , primary: true                                                               }
+    rank:                             { type: integer  , length: 20         }
   relations:
     ScheduleDetail:                   { class: ScheduleDetail , local: schedule_detail_id , foreign: id, type: one , alias: ScheduleDetail , onDelete: CASCADE , onUpdate: CASCADE }
     Passenger:                        { class: Passenger      , local: passenger_id       , foreign: id, type: one , alias: Passenger      , onDelete: CASCADE , onUpdate: CASCADE }

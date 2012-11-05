@@ -7,12 +7,17 @@ all:
   notificacion_revision_tenica: 'Hoy se vence la REVISION TECNICA del Bus con placa '
   notificacion_tarjeta_circulacion: 'Hoy se vence la TARJETA DE CIRCULACION del Bus con placa '
   cantidad_horas_limite: 2
-  email_notificacion_1: davidtataje@gmail.com 
+  
+  
+  email_notification_from: new.skin007@gmail.com #replace for other
+  email_notifications:
+    davidtataje@gmail.com: Rodrigo Valencia
   #rvalencia@glencore.com.pe
-  email_notificacion_2: ronald_reyn@hotmail.com
+    ronald_reyn@hotmail.com: Julio Carpio
   #jcarpio@glencore.com.pe
-  email_notificacion_3: new.skin007@gmail.com
+    new.skin007@gmail.com: N&eacute;lia L&oacute;pez
   #ipolo@glencore.com.pe
-  email_notificacion_4: reservasmina@polosac.pe
-  email_notificacion_5: hperez@polosac.pe
-  email_notificacion_6: reservaslima@polosac.pe
+    reservasmina@polosac.pe: N&eacute;lia L&oacute;pez
+    hperez@polosac.pe:  Hugo Perez
+    reservaslima@polosac.pe: Iris Canchan
+  email_subject: Notificaci&oacute;n Autogenerada por el sistema de reservas POLOSAC

@@ -11,6 +11,7 @@ User:
     username:                          { type: string   , length: 50                    , notnull: true                                                        }
     password:                          { type: string   , length: 255                   , notnull: true                                                        }
     email:                             { type: string   , length: 100                   , notnull: true                                                        }
+    email_boss:                        { type: string   , length: 100                   , notnull: false                                                        }
     phone:                             { type: string   , length: 100                                                                                          }
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 0                                           }
     last_access_at:                    { type: timestamp                                                                                                       }
