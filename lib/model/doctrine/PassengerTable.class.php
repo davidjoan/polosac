@@ -53,10 +53,9 @@ class PassengerTable extends DoctrineTable
          ->innerJoin('p.Company c')
          ->leftJoin('p.Boarding b');
     $q->leftJoin('p.Disembarking d');
-    if(!sfContext::getInstance()->getUser()->isAdmin())
-    {
-      $q->addWhere('c.slug = ?',$slug);    
-    }
+
+    $q->addWhere('c.slug = ?',$slug);    
+    
     $q->addWhere('p.active = ?', 1);
     return $q;
   }  
