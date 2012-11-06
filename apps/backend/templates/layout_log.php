@@ -13,7 +13,7 @@
   <body>
     <div class="wrap">
       <div class="header">
-        <?php echo image_tag('general/logo.jpg', array('size' => '240x109'))?>
+        <?php echo image_tag('general/logo.gif', array('height' => '160px'))?>
       </div>
       
       <div class="content">
