@@ -88,7 +88,7 @@ Passenger:
     id:                                { type: integer  , length: 20 , primary: true    , autoincrement: true         }
     boarding_id:                       { type: integer  , length: 20                    , notnull: false              }
     disembarking_id:                   { type: integer  , length: 20                    , notnull: false              }
-    company_id:                        { type: integer  , length: 20                    , notnull: false              }
+    company_id:                        { type: integer  , length: 20                    , notnull: true               }
     dni:                               { type: string   , length: 8                     , notnull: true               }
     first_name:                        { type: string   , length: 100                   , notnull: true               }    
     last_name:                         { type: string   , length: 100                   , notnull: true               }    

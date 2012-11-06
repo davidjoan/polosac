@@ -1,7 +1,7 @@
 <h3>Usted ha recibido un nuevo mensaje autogenerado por el Sistema de Reservaciones POLOSAC</h3>
 
 
-<p>La presente para hacer de conocimiento que se est&aacute; agregando  un Pasajero a la Lista de Pasajeros del Bus con placa <?php echo $schedule_detail->getSchedule()->getBus()->getCode(); ?> desde la Cuenta Administrador ya que dicho Pasajero no fue registrado en nuestro Sistema Web<br/> 
+<p>La presente para hacer de conocimiento que se est&aacute; agregando  un Pasajero al <b>Manifiesto de Pasajeros</b> del Bus con placa <b><?php echo $schedule_detail->getSchedule()->getBus()->getCode(); ?></b> desde la Cuenta Administrador ya que dicho Pasajero no fue registrado en nuestro Sistema Web<br/> 
  dentro de los plazos establecidos por los administradores; esperando que  no se vuelva a suscitar dicho contratiempo <br/> ya que nos retrasa la salida de los buses a fin de brindarles un servicio de Calidad.
 </p>
 <p></p>
@@ -12,7 +12,7 @@
 
 <b>Fecha:</b> <?php echo $schedule_detail->getSchedule()->getFormattedTravelDate(); ?><br>
 <b>Hora de Viaje:</b> <?php echo $schedule_detail->getSchedule()->getTravelTime(); ?><br>
-<b>Hora de Modificación:</b> <?php echo date("H:i:s",strtotime($schedule_detail->getUpdatedAt())); ?><br>
+<b>Hora de Modificación:</b> <?php echo date("H:i:s"); ?><br>
 
 <b>Empresa:</b> <?php echo $schedule_detail->getCompanyName(); ?><br>
 <b>Cantidad Asientos Asignados:</b> <?php echo $schedule_detail->getQtySeats(); ?><br>

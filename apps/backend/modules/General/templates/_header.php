@@ -37,7 +37,8 @@
       <?php echo link_to(image_tag('general/logo.jpg', array('height' => '60px')), 'http://polosac.pe/') ?>
     </td>
     <td class="right">
-      <?php echo image_tag('backend/secure_user.png') ?>&nbsp;<?php echo $sf_user->getUsername() ?> | <?php echo $sf_user->getCompanyName() ?>
+      <?php echo image_tag('backend/secure_user.png') ?>&nbsp;<?php echo $sf_user->getUsername() ?> | <?php echo $sf_user->getCompanyName() ?><br/><br/>
+      <?php echo $sf_user->getDatetimeFormatter()->getCurrentDateTime('dd / MMMM / yyyy - HH:mm:ss'); ?>
     </td>
   </tr>
 </table>
