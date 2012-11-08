@@ -81,32 +81,32 @@ class BusForm extends BaseBusForm
                                 (
                                   'format' => $this->widgetFormatter->getStandardDateFormat(),
                                   'year_start' => 2000,
-                                  'year_end' => date('Y'),
+                                  'year_end' => date('Y')+5
                                 )), 
       'effective_soat_to'    => new sfWidgetFormDateExt(array
                                 (
                                   'format' => $this->widgetFormatter->getStandardDateFormat(),
                                   'year_start' => 2000,
-                                  'year_end' => date('Y')
+                                  'year_end' => date('Y')+5
                                 )),
       'policy_number'          => new sfWidgetFormInputText(array(), array('size' => 40)),
       'effective_policy_from'  => new sfWidgetFormDateExt(array
                                 (
                                   'format' => $this->widgetFormatter->getStandardDateFormat(),
                                   'year_start' => 2000,
-                                  'year_end' => date('Y'),
+                                  'year_end' => date('Y')+5,
                                 )), 
       'effective_policy_to'    => new sfWidgetFormDateExt(array
                                 (
                                   'format' => $this->widgetFormatter->getStandardDateFormat(),
                                   'year_start' => 2000,
-                                  'year_end' => date('Y')
+                                  'year_end' => date('Y')+5
                                 )),      
       'effective_technical_review_from'  => new sfWidgetFormDateExt(array
                                 (
                                   'format' => $this->widgetFormatter->getStandardDateFormat(),
                                   'year_start' => 2000,
-                                  'year_end' => date('Y'),
+                                  'year_end' => date('Y')+5
                                 )), 
       'effective_technical_review_to'    => new sfWidgetFormDateExt(array
                                 (
@@ -119,13 +119,13 @@ class BusForm extends BaseBusForm
                                 (
                                   'format' => $this->widgetFormatter->getStandardDateFormat(),
                                   'year_start' => 2000,
-                                  'year_end' => date('Y'),
+                                  'year_end' => date('Y')+5
                                 )), 
       'effective_circulation_card_to'    => new sfWidgetFormDateExt(array
                                 (
                                   'format' => $this->widgetFormatter->getStandardDateFormat(),
                                   'year_start' => 2000,
-                                  'year_end' => date('Y')
+                                  'year_end' => date('Y')+5
                                 )),
       'vehicle_use'               => new sfWidgetFormChoice(array
                                 (
@@ -150,17 +150,17 @@ class BusForm extends BaseBusForm
       'code'                            => 'code',
       'name'                            => 'text',
       'phone'                           => 'phone',
-      'mining_unit'                     => 'name',
+      'mining_unit'                     => 'text',
       'padron'                          => 'code',
       'category_class'                  => 'text',
-      'brand'                           => 'name',
+      'brand'                           => 'text',
       'model'                           => 'text',
       'year_of_manufacture'             => 'fixed_number',
       'fuel'                            => array('combo', array('choices' => array_keys($this->getTable()->getFuel()))),
       'serial_number'                   => 'text',
       'motor_number'                    => 'text',
       'qty_seats'                       => 'fixed_number',
-      'body'                            => 'name',
+      'body'                            => 'text',
       'card_property_number'            => 'text',
       'effective_soat_from'             => 'date',
       'effective_soat_to'               => 'date',

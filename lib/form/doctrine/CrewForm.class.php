@@ -76,7 +76,7 @@ $this->addValidators(array
     (  
       'id'             => '=',
       'bus_id'         => 'combo',
-      'name'           => 'name',
+      'name'           => 'text',
       'dni'            => 'fixed_number',
       'driver_license' => 'text',
       'position'       => array('combo', array('choices' => array_keys($this->getTable()->getPositions()))),
