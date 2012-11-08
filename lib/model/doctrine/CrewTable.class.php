@@ -50,7 +50,7 @@ class CrewTable extends DoctrineTable
   
   public function updateQueryForList(DoctrineQuery $q)
   {
-    $q->innerJoin('c.Bus b');
+    $q->leftJoin('c.Bus b');
   }
   
   public function getCrewNotifications()
