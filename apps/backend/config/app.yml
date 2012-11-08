@@ -1,7 +1,8 @@
 all:
   qty_seats_reserverd: 1
-  notificacion_mtc:     'Hoy se vence el MTC del tripulante'
+  notificacion_mtc:     'Hoy se vence el MTC del tripulante '
   notificacion_natclar: 'Hoy se vence el NATCLAR del tripulante '
+  notificacion_expired_drivers_license: 'Hoy se vence la LICENCIA DE CONDUCIR del tripulante '
   notificacion_soat:    'Hoy se vence el SOAT del Bus con placa '
   notificacion_poliza:  'Hoy se vence la POLIZA del Bus con placa '
   notificacion_revision_tenica: 'Hoy se vence la REVISION TECNICA del Bus con placa '

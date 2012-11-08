@@ -36,7 +36,7 @@ class ReportPolosacFPDF extends FPDF
   {
     $this->SetFont('Arial','BU',8);
     $this->Cell(38);
-    $titulo = 'INVERSIONER Y REPRESENTACIONES POLO SAC - RUC 20503370574';//$this->post->getTitle();
+    $titulo = 'INVERSIONES Y REPRESENTACIONES POLO SAC - RUC 20503370574';//$this->post->getTitle();
     $this->Cell(100,8,utf8_decode($titulo),0,0,'C');
     $this->SetFont('Arial','BU',12);
     
@@ -92,9 +92,11 @@ class ReportPolosacFPDF extends FPDF
     $this->SetFont('Arial','',8);
     $this->Cell(35,8,utf8_decode($dia),1,0,'C');
     $this->Cell(10);
-    $this->Cell(25,8,"PILOTO A",1,0,'L');
-    $this->Cell(55,8,utf8_decode($piloto_a["name"]),1,0,'C');
-    $this->Cell(25,8,utf8_decode($piloto_a["licence"]),1,0,'C');
+    $this->SetFont('Arial','B',9);
+    $this->Cell(22,8,"PILOTO A",1,0,'L');
+    $this->SetFont('Arial','',8);
+    $this->Cell(61,8,utf8_decode($piloto_a["name"]),1,0,'C');
+    $this->Cell(22,8,utf8_decode($piloto_a["licence"]),1,0,'C');
     $this->Ln();
     
     $hora = $this->schedule->getTravelTime();
@@ -103,9 +105,11 @@ class ReportPolosacFPDF extends FPDF
     $this->SetFont('Arial','',8);
     $this->Cell(35,8,utf8_decode($hora),1,0,'C');
     $this->Cell(10);
-    $this->Cell(25,8,"PILOTO B",1,0,'L');
-    $this->Cell(55,8,utf8_decode($piloto_b["name"]),1,0,'C');
-    $this->Cell(25,8,utf8_decode($piloto_b["licence"]),1,0,'C');
+    $this->SetFont('Arial','B',9);
+    $this->Cell(22,8,"PILOTO B",1,0,'L');
+    $this->SetFont('Arial','',8);
+    $this->Cell(61,8,utf8_decode($piloto_b["name"]),1,0,'C');
+    $this->Cell(22,8,utf8_decode($piloto_b["licence"]),1,0,'C');
     $this->Ln();
     
     $viaje = sprintf('%s - %s',$this->schedule->getPlaceFrom()->getName(), $this->schedule->getPlaceTo()->getName());
@@ -114,9 +118,11 @@ class ReportPolosacFPDF extends FPDF
     $this->SetFont('Arial','',8);
     $this->Cell(35,8,utf8_decode($viaje),1,0,'C');
     $this->Cell(10);
-    $this->Cell(25,8,"T. AUXILIAR",1,0,'L');
-    $this->Cell(55,8,utf8_decode($piloto_c["name"]),1,0,'C');
-    $this->Cell(25,8,utf8_decode($piloto_c["licence"]),1,0,'C');
+    $this->SetFont('Arial','B',9);
+    $this->Cell(22,8,"T. AUXILIAR",1,0,'L');
+    $this->SetFont('Arial','',8);
+    $this->Cell(61,8,utf8_decode($piloto_c["name"]),1,0,'C');
+    $this->Cell(22,8,utf8_decode($piloto_c["licence"]),1,0,'C');
     $this->Ln();    
     
     

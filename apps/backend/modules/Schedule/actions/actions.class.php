@@ -67,7 +67,7 @@ class ScheduleActions extends ActionsCrud
 
     $pdf->FancyTable($header,$records);
     
-    $pdf->Output(sprintf('polosac-reporte-%s.pdf',Doctrine_Inflector::urlize($schedule->getFormattedTravelDate())),'I');//D
+    $pdf->Output(sprintf('polosac-reporte-%s.pdf',Doctrine_Inflector::urlize($schedule->getFormattedTravelDate())),'I');//I
    
     throw new sfStopException();        
   }  

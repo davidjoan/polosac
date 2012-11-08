@@ -22,6 +22,7 @@ class CrewForm extends BaseCrewForm
       'phone'          => 'Telefono',
       'natclar'        => 'Natclar',
       'mtc'            => 'MTC',
+      'expired_drivers_license' => 'Vencimiento de licencia de conducir',
       'active'         => 'Activo?',
         
     );
@@ -57,7 +58,13 @@ class CrewForm extends BaseCrewForm
                                   'format' => $this->widgetFormatter->getStandardDateFormat(),
                                   'year_start' => 2000,
                                   'year_end' => date('Y')+5,
-                                )),             
+                                )), 
+      'expired_drivers_license'=> new sfWidgetFormDateExt(array
+                                (
+                                  'format' => $this->widgetFormatter->getStandardDateFormat(),
+                                  'year_start' => 2000,
+                                  'year_end' => date('Y')+5,
+                                )), 
       'active'               => new sfWidgetFormChoice(array
                                 (
                                   'choices'          => $this->getTable()->getStatuss(),
@@ -83,6 +90,7 @@ $this->addValidators(array
       'phone'          => 'phone',
       'natclar'        => 'date',
       'mtc'            => 'date',
+      'expired_drivers_license' => 'date',
       'active'         => array('combo', array('choices' => array_keys($this->getTable()->getStatuss()))),
       'slug'           => '-',
       'created_at'     => '-',

@@ -83,6 +83,20 @@ class CrewTable extends DoctrineTable
        $data[$i] = sprintf('%s %s',sfConfig::get('app_notificacion_natclar'), $natclar->getName());
        $i++;
     }
+    
+    
+    // Pasajero Vencimiento Licencia de Conducir
+    
+    $q = $this->createAliasQuery();
+    $q->andWhere(sprintf('DATE_FORMAT(%s, \'%%Y-%%m-%%d\') LIKE DATE_FORMAT(?, \'%%Y-%%m-%%d\')', 'expired_drivers_license'), date("Y-m-d"));
+    
+    $natclars = $q->execute();
+    
+    foreach($natclars as $natclar)
+    {
+       $data[$i] = sprintf('%s %s',sfConfig::get('app_notificacion_expired_drivers_license'), $natclar->getName());
+       $i++;
+    }    
 
     
     //  SOAT

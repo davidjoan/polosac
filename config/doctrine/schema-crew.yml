@@ -14,6 +14,7 @@ Crew:
     phone:                             { type: string   , length: 100                   , notnull: false                                         }
     natclar:                           { type: date }
     mtc:                               { type: date }
+    expired_drivers_license:           { type: date }
     active:                            { type: string   , length: 1  , fixed: true      , notnull: true , default: 1                             }
   indexes:
     u_name:                            { fields: [ name ]                               , type: unique                                           }
