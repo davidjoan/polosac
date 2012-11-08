@@ -15,7 +15,7 @@ class UserForm extends BaseUserForm
     $this->labels = array
     (
       'role_id'          => 'Rol',
-      'company_id'       => 'Emppresa',
+      'company_id'       => 'Empresa',
       'realname'         => 'Nombres y Apellidos',
       'username'         => 'Nombre de Usuario',
       'password'         => 'Contrase&ntilde;a',

@@ -1,5 +1,5 @@
 <?php slot('title') ?>
-  Lugaress
+  Lugares
 <?php end_slot() ?>
 
 <?php slot('subtitle') ?>
