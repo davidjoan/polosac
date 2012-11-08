@@ -37,11 +37,11 @@ class ScheduleForm extends BaseScheduleForm
                                     'add_empty' => '---Seleccionar---'
                                     )),
       'place_from_id'        => new sfWidgetFormDoctrineChoice(array(
-                                    'model'   => 'Place',
+                                    'model'   => $this->getRelatedModelName('PlaceFrom'),
                                     'add_empty' => '---Seleccionar---'
                                     )),
       'place_to_id'          => new sfWidgetFormDoctrineChoice(array(
-                                    'model'   => 'Place',
+                                    'model'   => $this->getRelatedModelName('PlaceTo'),
                                     'add_empty' => '---Seleccionar---'
                                     )),        
       'travel_date'          => new sfWidgetFormDateExt(array

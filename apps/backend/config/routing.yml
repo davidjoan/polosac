@@ -45,7 +45,7 @@ schedule_detail_show:
 
 schedule_detail_list:
   url:             /lista/asignaciones/:filter_by/:filter/:order_by/:order/:max/:page
-  param:           { module: ScheduleDetail, action: list, filter_by: id, filter: 0, order_by: id, order: a, max: 40, page: 1, rflow: on }
+  param:           { module: ScheduleDetail, action: list, filter_by: id, filter: 0, order_by: schedule_date, order: d, max: 40, page: 1, rflow: on }
   requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
 
 schedule_detail_new:
@@ -148,7 +148,7 @@ schedule_show:
 
 schedule_list:
   url:             /lista/programaciones/:filter_by/:filter/:order_by/:order/:max/:page
-  param:           { module: Schedule, action: list, filter_by: id, filter: 0, order_by: travel_date, order: d, max: 40, page: 1, rflow: on }
+  param:           { module: Schedule, action: list, filter_by: id, filter: 0, order_by: travel_date, order: d, max: 60, page: 1, rflow: on }
   requirements:    { filter_by: \w+, filter: '[^\/^\s]+', order_by: \w+, order: \w+, max: \d+, page: \d+ }
 
 schedule_new:

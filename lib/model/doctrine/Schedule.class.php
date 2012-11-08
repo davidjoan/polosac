@@ -37,4 +37,9 @@ class Schedule extends BaseSchedule
   {
       return 'Bus: '.$this->getBus()->getName().', Fecha Viaje: '.$this->getFormattedTravelDate().', Hora '.$this->getTravelTime();
   }
+  
+  public function getNumberName()
+  {
+      return $this->getNumber();
+  }
 }
