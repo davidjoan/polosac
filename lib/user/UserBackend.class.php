@@ -108,6 +108,7 @@ public function getPermissions()
   public function getActionsForAdmin($actions)
   {       
     unset($actions['schedule_detail_delete']);
+    unset($actions['schedule_detail_new']);
     return $actions;
   }
   

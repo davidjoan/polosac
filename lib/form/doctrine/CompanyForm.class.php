@@ -39,7 +39,7 @@ class CompanyForm extends BaseCompanyForm
     $this->types = array
     (  
       'id'             => '=',
-      'name'           => 'name',
+      'name'           => 'text',
       'active'         => array('combo', array('choices' => array_keys($this->getTable()->getStatuss()))),
       'slug'           => '-',
       'created_at'     => '-',
