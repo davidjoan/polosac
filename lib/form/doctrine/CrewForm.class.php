@@ -50,13 +50,13 @@ class CrewForm extends BaseCrewForm
                                 (
                                   'format' => $this->widgetFormatter->getStandardDateFormat(),
                                   'year_start' => 2000,
-                                  'year_end' => date('Y'),
+                                  'year_end' => date('Y')+5,
                                 )),       
       'mtc'                  => new sfWidgetFormDateExt(array
                                 (
                                   'format' => $this->widgetFormatter->getStandardDateFormat(),
                                   'year_start' => 2000,
-                                  'year_end' => date('Y'),
+                                  'year_end' => date('Y')+5,
                                 )),             
       'active'               => new sfWidgetFormChoice(array
                                 (
