@@ -112,7 +112,7 @@ class BusForm extends BaseBusForm
                                 (
                                   'format' => $this->widgetFormatter->getStandardDateFormat(),
                                   'year_start' => 2000,
-                                  'year_end' => date('Y')
+                                  'year_end' => date('Y')+5
                                 )),
       'circulation_card_number' => new sfWidgetFormInputText(array(), array('size' => 40)),
       'effective_circulation_card_from'  => new sfWidgetFormDateExt(array
