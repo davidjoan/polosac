@@ -49,7 +49,7 @@ class UserTable extends DoctrineTable
   
   public function updateQueryForList(DoctrineQuery $q)
   {
-    $q->innerJoin('u.Company c');
+    $q->leftJoin('u.Company c');
     $q->innerJoin('u.Role r');
   } 
   

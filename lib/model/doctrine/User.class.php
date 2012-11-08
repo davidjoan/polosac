@@ -32,9 +32,4 @@ class User extends BaseUser
   {
       return $this->getRole()->getName();
   }
-
-  public function getCompanyName()
-  {
-      return $this->getCompany()->getName();
-  }  
 }

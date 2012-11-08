@@ -36,7 +36,7 @@ ScheduleDetail:
   indexes:
   relations:
     Schedule:                { class: Schedule  , local: schedule_id , foreign: id , type: one , alias: Schedule , onDelete: CASCADE, onUpdate: CASCADE }
-    Company:                 { class: Company   , local: company_id  , foreign: id , type: one , alias: Company  , onDelete: RESTRICT, onUpdate: CASCADE }
+    Company:                 { class: Company   , local: company_id  , foreign: id , type: one , alias: Company  , onDelete: CASCADE, onUpdate: CASCADE }
     Passenger:               { class: Passegner , local: schedule_detail_id , foreign: passenger_id , alias: Passengers, refClass: ScheduleDetailPassenger }
   options:
     symfony:                 { filter: false, form: true }
@@ -96,9 +96,9 @@ Passenger:
   indexes:
     u_dni:                             { fields: [ dni ]                                 , type: unique                }
   relations:
-    Boarding:                          { class: Boarding , local: boarding_id , foreign: id , type: one , alias: Boarding , onDelete: RESTRICT, onUpdate: CASCADE }
-    Disembarking:                      { class: Disembarking , local: disembarking_id , foreign: id , type: one , alias: Disembarking , onDelete: RESTRICT, onUpdate: CASCADE }
-    Company:                           { class: Company  , local: company_id  , foreign: id , type: one , alias: Company  , onDelete: RESTRICT, onUpdate: CASCADE }
+    Boarding:                          { class: Boarding , local: boarding_id , foreign: id , type: one , alias: Boarding , onDelete: 'SET NULL', onUpdate: CASCADE }
+    Disembarking:                      { class: Disembarking , local: disembarking_id , foreign: id , type: one , alias: Disembarking , onDelete: 'SET NULL', onUpdate: CASCADE }
+    Company:                           { class: Company  , local: company_id  , foreign: id , type: one , alias: Company  , onDelete: CASCADE, onUpdate: CASCADE }
     ScheduleDetail:                    { class: ScheduleDetail , local: passenger_id , foreign: schedule_detail_id , alias: ScheduleDetails, refClass: ScheduleDetailPassenger }
   options:
     symfony:                           { filter: false, form: true }
