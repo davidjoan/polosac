@@ -112,6 +112,10 @@ abstract class sfActionsCrud extends ActionsProject
     $this->complementEdit($request);
     if ($request->isMethod('post'))
     {
+      if(!$this->getUser()->isAuthenticated())
+      {
+        $this->redirect('@default_login');
+      }
       $params = $request->getParameter($this->form->getName());
       $this->form->bind($params, $request->getFiles($this->form->getName()));
       

@@ -28,13 +28,13 @@
       </div>
       
       <div class="content">
-        <h1>An Error Occurred</h1>
-        <h5>We are having some troubles. Please try again in a few seconds...</h5>
+        <h1>Ocurrio un error en el sistema</h1>
+        <h5>Estamos teniendo algunos problemas. Por favor, int&eacute;ntelo de nuevo en unos segundos ...</h5>
         
         <br/><br/>
         <br/><br/>
         
-        <a href="#" onclick="history.back(); return false;">Back to previous page</a>
+        <a href="#" onclick="history.back(); return false;">Regresar a la p&aacute;gina anterior</a>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="/home">Ir a la pagina de Inicio</a>
       </div>

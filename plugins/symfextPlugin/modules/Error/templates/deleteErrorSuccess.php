@@ -3,16 +3,16 @@
 </div>
   
 <div class="subtitle">
-  Error at deleting
+  Error al Momento de Eliminar
 </div>
 
 <br/><br/><br/>
 <br/><br/><br/>
 <p>
   <strong>
-    The last action couldn't be completed because it was going to erase a record related to others in the system.
+    La última acción no pudo completarse debido a que se va a borrar un registro relacionado con otros datos en el sistema.
     <br/>
-    Please, verify its relations.
+    Porfavor verifique esta relación, o elimine todos los datos que dependa del actual, para poder eliminarlo.
   </strong>
 </p>
 
@@ -20,7 +20,7 @@
 <br/><br/><br/>
 <br/><br/><br/>
 <center>
-  <?php echo button_to_function('Return', 'history.back();', array('class' => 'inputsubmit')) ?>
+  <?php echo button_to_function('Regresar', 'history.back();', array('class' => 'inputsubmit')) ?>
 </center>
 <br/><br/><br/>
 <br/><br/><br/>

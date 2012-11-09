@@ -1,10 +1,10 @@
-<h1>The Page is Unavailable</h1>
-<h5>This page has been disabled.</h5>
+<h1>Esta p&aacute;gina desactivada</h1>
+<h5>Esta p&aacute;gina a sido desactivada.</h5>
 
-<dt>What's next</dt>
-<br/><br/>
+<dt>Que sigue</dt>
+<br/>Contacte al Administrador para mayor informaci&oacute;n.<br/>
 <br/><br/>
 
-<?php echo link_to_function('Back to previous page', 'history.back()') ?>
+<?php echo link_to_function('Regresar a la pagina anterior', 'history.back()') ?>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<?php echo link_to('Go to Homepage', '@home') ?>
+<?php echo link_to('Ir al inicio', '@home') ?>

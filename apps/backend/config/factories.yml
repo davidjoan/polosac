@@ -7,41 +7,34 @@ prod:
   mailer:
     class: sfMailer
     param:
-      logging: %SF_LOGGING_ENABLED%
-      charset: %SF_CHARSET%
+      logging:           %SF_LOGGING_ENABLED%
+      charset:           %SF_CHARSET%
       delivery_strategy: realtime
       transport:
-        class: Swift_MailTransport      
-
+        class: Swift_SendmailTransport
 test:
-  response:
-    class:                   sfWebResponse
-    param:
-      send_http_headers:     false
-      
   storage:
-    class:                   sfSessionTestStorage
+    class: sfSessionTestStorage
     param:
-      session_path:          %SF_TEST_CACHE_DIR%/sessions
-  
+      session_path: %SF_TEST_CACHE_DIR%/sessions
+
+  response:
+    class: sfWebResponse
+    param:
+      send_http_headers: false
+
   mailer:
     param:
-      delivery_strategy:     none
+      delivery_strategy: none
 
 dev:
   mailer:
     param:
-      transport:
-        class: Swift_SmtpTransport
-        param:
-          host:       smtp.gmail.com
-          port:       465
-          encryption: ssl
-          username: davidtataje@gmail.com
-          password: jasminalexandra1
+      delivery_strategy: none
+
 all:
   routing:
-    class:                   sfPatternRoutingExt
+    class:                   sfPatternRouting
     param:
       generate_shortest_url:            true
       extra_parameters_as_query_string: true
@@ -52,19 +45,17 @@ all:
       session_name:          polosac
       
   user:
-    class: UserBackend
+    class:                   UserBackend
     param:
-      timeout: 180000
-      logging: %SF_LOGGING_ENABLED%
-      use_flash: true
-      default_culture: es
+      timeout:               18000000
+      logging:               %SF_LOGGING_ENABLED%
+      use_flash:             true
+      default_culture:       es
   mailer:
+    class: sfMailer
     param:
+      logging:           %SF_LOGGING_ENABLED%
+      charset:           %SF_CHARSET%
+      delivery_strategy: realtime
       transport:
-        class: Swift_SmtpTransport
-        param:
-          host:       smtp.gmail.com
-          port:       465
-          encryption: ssl
-          username: davidtataje@gmail.com
-          password: jasminalexandra1
+        class: Swift_SendmailTransport

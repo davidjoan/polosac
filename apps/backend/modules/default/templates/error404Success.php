@@ -1,11 +1,10 @@
-<h1>Page Not Found</h1>
-<h5>The server returned a 404 response.</h5>
+<h1>P&aacute;gina  No Encontrada</h1>
+<h5>El servidor devuelvio una respuesta con c&oacute;digo 404.</h5>
 
-<dt>Did you type the URL?</dt>
-<dd>You may have typed the address (URL) incorrectly.</dd>
-<dd>Check it to make sure you've got the exact right spelling, capitalization, etc.</dd>
+<dt>¿Te escriba la direcci&oacute;n URL?</dt>
+<dd>Es posible que haya escrito la direcci&oacute;n (URL) incorrectamente.</dd>
 
 <br/><br/>
 <br/><br/>
 
-<?php echo link_to_function('Return', 'history.back()') ?>
+<?php echo link_to_function('Regresar', 'history.back()') ?>
