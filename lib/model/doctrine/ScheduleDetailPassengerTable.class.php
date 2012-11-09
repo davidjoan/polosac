@@ -45,7 +45,7 @@ class ScheduleDetailPassengerTable extends DoctrineTable
             
             
     
-    public function getList($schedule_slug, $bus_size = 40)
+    public function getList($schedule_slug, $bus_size = 44)
     {
         
       $schedule = Doctrine::getTable('Schedule')->findOneBySlug($schedule_slug);
@@ -66,7 +66,7 @@ class ScheduleDetailPassengerTable extends DoctrineTable
       {
           if($key == 2)
           {
-              $data[2] = array('3','RESERVADO AUXILIAR', '-', '-','-','-');
+              $data[2] = array('3','TRIPULANTE AUXILIAR', '-', '-','-','-');
               $count++;
               $id++;
           }
@@ -89,7 +89,7 @@ class ScheduleDetailPassengerTable extends DoctrineTable
       {
           if($key == 2)
           {
-              $data[2] = array('3','RESERVADO AUXILIAR', '-', '-','-','-');
+              $data[2] = array('3','TRIPULANTE AUXILIAR', '-', '-','-','-');
               $count++;
               $id++;
           }
@@ -110,11 +110,23 @@ class ScheduleDetailPassengerTable extends DoctrineTable
       $cant_actual = count($data);
       
       $falta = $bus_size - $cant_actual;
-      
+     /* Deb::print_r_pre('falta: '.$falta);
+      Deb::print_r_pre('total: '.$bus_size);
+      Deb::print_r_pre('actual: '.$cant_actual);*/
       $counter=0;
+      
       for ($i = 0; $i<$falta; $i++)
       {$counter++;
-        $data[$cant_actual+$counter] = array($cant_actual+$counter,'RESERVADO', '-', '-','-', '-');    
+      
+      if($cant_actual <= 2 and ($cant_actual+$counter) == 3 )
+      {
+          $data[$cant_actual+$counter] = array($cant_actual+$counter,'TRIPULANTE AUXILIAR', '-', '-','-', '-');    
+      }
+      else
+      {
+          $data[$cant_actual+$counter] = array($cant_actual+$counter,'RESERVADO', '-', '-','-', '-');    
+      }
+        
       }
       
       return $data;
